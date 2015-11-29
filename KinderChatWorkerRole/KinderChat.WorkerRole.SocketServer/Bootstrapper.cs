@@ -69,7 +69,7 @@ namespace KinderChat.WorkerRole.SocketServer
             registerAdditionalTypes(builder);
             builder.Register(c => new ProcessedMessagesQueue(commonServiceBusConnectionString)).SingleInstance();
             builder.Register(c => new LiveServer(new BasicSubProtocol<LiveSession>("Basic", new List<Assembly> { Assembly.GetExecutingAssembly() }),
-                                        c.Resolve<IGlobalSessionsRegistry>())).As<ISessionsServer>().SingleInstance();
+                        c.Resolve<IGlobalSessionsRegistry>())).As<ISessionsServer>().SingleInstance();
 
             var container = builder.Build();
             ServiceLocator.Init(container);

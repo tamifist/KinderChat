@@ -19,25 +19,27 @@ namespace KinderChat
 		Categories = new [] { "@PACKAGE_NAME@" })]
 	public class KinderGcmBroadcastReceiver : GcmBroadcastReceiverBase<KinderGcmService>
 	{
-		//IMPORTANT: Change this to your own Sender ID!
-		//The SENDER_ID is your Google API Console App Project Number
-		public static string[] SenderIds = { "339146720750" };
-	}
+		//Google API Console App Project Number
+		public static string[] SenderIds = { "144208723707" };
+    }
 
-	[Service] //Must use the service tag
+    [Service] //Must use the service tag
 	public class KinderGcmService : GcmServiceBase
 	{
-		const string hubName = "kinder-chat-messages";
-		const string connectionPath = "Endpoint=sb://kinder-chat.servicebus.windows.net/;SharedAccessKeyName=DefaultFullSharedAccessSignature;SharedAccessKey=fJTzehXef3r9GTuhaouH47Qm92naTGkbNMZl2I1GtGE=";
-		const string sharedAccessKey = "fJTzehXef3r9GTuhaouH47Qm92naTGkbNMZl2I1GtGE=";
-		const string ServiceBus = "sb://kinder-chat.servicebus.windows.net";
+		const string hubName = "inner6notifications";
+		const string connectionPath = "Endpoint=sb://inner6notifications-ns.servicebus.windows.net/;SharedAccessKeyName=DefaultFullSharedAccessSignature;SharedAccessKey=Lu8wegPXUSHfRCqQ2Xfcv6WKF9s7Xai30r1PirMsdLU=";
+		const string sharedAccessKey = "Lu8wegPXUSHfRCqQ2Xfcv6WKF9s7Xai30r1PirMsdLU=";
+		const string ServiceBus = "sb://inner6notifications-ns.servicebus.windows.net";
 
 
 		public static void Register(Context context)
 		{
-			
-			// Makes this easier to call from our Activity
-			GcmClient.Register (context, KinderGcmBroadcastReceiver.SenderIds);
+            // Check to ensure everything's set up right
+            GcmClient.CheckDevice(context);
+            GcmClient.CheckManifest(context);
+
+            // Makes this easier to call from our Activity
+            GcmClient.Register (context, KinderGcmBroadcastReceiver.SenderIds);
 		}
 
 		public KinderGcmService() : base(KinderGcmBroadcastReceiver.SenderIds)
@@ -70,8 +72,8 @@ namespace KinderChat
 		{
 			Console.WriteLine ("Received Notification");
 
-			if (Settings.InForeground)
-				return;
+			//if (Settings.InForeground)
+				//return;
 
 			//Push Notification arrived - print out the keys/values
 			if (intent != null || intent.Extras != null) {
@@ -138,7 +140,7 @@ namespace KinderChat
 
 			var builder = new NotificationCompat.Builder (this)
 				.SetContentIntent (pendingIntent)
-				.SetContentTitle ("Kinder Chat")
+				.SetContentTitle ("Inner6")
 				.SetAutoCancel (true)
 				.SetSmallIcon(Resource.Drawable.ic_notification)
 				.SetContentText(notification.Message)
@@ -164,7 +166,8 @@ namespace KinderChat
 
 		protected override void OnError (Context context, string errorId)
 		{
-			//Some more serious error happened
+		    var test = errorId;
+		    //Some more serious error happened
 		}
 	}
 }

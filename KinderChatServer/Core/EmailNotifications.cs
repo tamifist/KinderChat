@@ -17,7 +17,7 @@ namespace KinderChatServer.Core
         protected EmailNotification()
         {
             Message = new SendGridMessage();
-            Message.AddTo("Admin <admin@example.com>");
+            Message.AddTo("Admin <admin@inner6.com>");
         }
 
         internal abstract void GenerateMessage();
@@ -28,8 +28,8 @@ namespace KinderChatServer.Core
 
             try
             {
-                var credentials = new NetworkCredential("azure_4b721d9081d6ff95ef3fb5333bd60dd7@azure.com", "KHCLTE94rvwQ0dS");
-                Message.From = new MailAddress("admin@kinder-chat.com", "Admin");
+                var credentials = new NetworkCredential("azure_6a6cfd1acd89ad1b240ac3f3f55fb39e@azure.com", "8cbGXNV0jmXK3YN");
+                Message.From = new MailAddress("admin@inner6.com", "Inner6");
                 var transportWeb = new Web(credentials);
                 transportWeb.Deliver(Message);
             }

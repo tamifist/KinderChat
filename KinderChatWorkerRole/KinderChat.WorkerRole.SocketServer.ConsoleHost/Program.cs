@@ -12,13 +12,20 @@ namespace WorkerRoleConsoleHost
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter port to host websockets (0 for default & single instance):");
-            port = int.Parse(Console.ReadLine());
+            try
+            {
+                Console.WriteLine("Enter port to host websockets (0 for default & single instance):");
+                port = int.Parse(Console.ReadLine());
 
-            LogFactory.Initialize(name => new ConsoleLogger(name));
-            ThreadPool.QueueUserWorkItem(_ => Initialize());
-            Console.ReadKey();
-            Bootstrapper.Stop();
+                LogFactory.Initialize(name => new ConsoleLogger(name));
+                ThreadPool.QueueUserWorkItem(_ => Initialize());
+                Console.ReadKey();
+                Bootstrapper.Stop();
+            }
+            catch (Exception ex)
+            {
+                var test = ex;
+            }
         }
 
         private static async void Initialize()
@@ -26,15 +33,15 @@ namespace WorkerRoleConsoleHost
             if (port == 0)
             {
                 Bootstrapper.RunInSingleInstanceMode(serverName: "Server", port: 6102,
-                    commonServiceBusConnectionString: "Endpoint=sb://kinderchattest.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=c1VtNbMPHDwx2nsxz+zwzyGCc2Izv32Y1c0oR7gy9oc=",
+                    commonServiceBusConnectionString: "Endpoint=sb://inner6.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=e2m6DE0uqc9eWnPEd8ACzRhew6NLT7Kxe0Nv+qW4dVM=",
                     connections: 1000);
                 return;
             }
             Bootstrapper.RunInMultiInstanceMode(serverName: "Server" + port, port: port,
-                redisSessionsConnectionString: "kinderchattest.redis.cache.windows.net,password=LnY8qaNLc9tUBY8jQ8fJbNs5EndCgGwl3uPzz2oAGzY=,syncTimeout=10000",
-                redisEventsConnectionString: "kinderchattest.redis.cache.windows.net,password=LnY8qaNLc9tUBY8jQ8fJbNs5EndCgGwl3uPzz2oAGzY=,syncTimeout=10000",
-                internalServiceBusConnectionString: "Endpoint=sb://kinderchattest.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=c1VtNbMPHDwx2nsxz+zwzyGCc2Izv32Y1c0oR7gy9oc=",
-                commonServiceBusConnectionString: "Endpoint=sb://kinderchattest.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=c1VtNbMPHDwx2nsxz+zwzyGCc2Izv32Y1c0oR7gy9oc=",
+                redisSessionsConnectionString: "inner6.redis.cache.windows.net,password=Bc84QBvQZmCt7ytbDpN3tGElxNf4FozxR18MnntJ800=,syncTimeout=10000",
+                redisEventsConnectionString: "inner6.redis.cache.windows.net,password=Bc84QBvQZmCt7ytbDpN3tGElxNf4FozxR18MnntJ800=,syncTimeout=10000",
+                internalServiceBusConnectionString: "Endpoint=sb://inner6.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=e2m6DE0uqc9eWnPEd8ACzRhew6NLT7Kxe0Nv+qW4dVM=",
+                commonServiceBusConnectionString: "Endpoint=sb://inner6.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=e2m6DE0uqc9eWnPEd8ACzRhew6NLT7Kxe0Nv+qW4dVM=",
                 connections: 1000);
         }
     }

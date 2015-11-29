@@ -17,7 +17,7 @@ namespace KinderChatServer
 {
     public partial class Startup
     {
-        private const string ConnectionString = "Endpoint=sb://kinderchat-ns.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=ggJ8eNLIkipevig9g7J2PzoW0h1iArizyA4XNMJtJJo=";
+        private const string ConnectionString = "Endpoint=sb://inner6.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=e2m6DE0uqc9eWnPEd8ACzRhew6NLT7Kxe0Nv+qW4dVM=";
 
         public void Configuration(IAppBuilder app)
         {
@@ -28,7 +28,8 @@ namespace KinderChatServer
                 RequestPath = new PathString("/Images")
             });
 
-            var messages = new ProcessedMessagesQueue(ConnectionString, OnMessageArrived);
+            var messages = new ProcessedMessagesQueue(ConnectionString);
+            messages.SubscribeForMessages(OnMessageArrived);
         }
 
         private bool OnMessageArrived(Message messageDto)

@@ -16,8 +16,8 @@ namespace KinderChatServer.Core
         private Notifications()
         {
             Hub = NotificationHubClient.CreateClientFromConnectionString(
-                "Endpoint=sb://kinder-chat.servicebus.windows.net/;SharedAccessKeyName=DefaultFullSharedAccessSignature;SharedAccessKey=fJTzehXef3r9GTuhaouH47Qm92naTGkbNMZl2I1GtGE=",
-                "kinder-chat-messages");
+                "Endpoint=sb://inner6notifications-ns.servicebus.windows.net/;SharedAccessKeyName=DefaultFullSharedAccessSignature;SharedAccessKey=Lu8wegPXUSHfRCqQ2Xfcv6WKF9s7Xai30r1PirMsdLU=",
+                "inner6notifications");
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using KinderChat.ServerClient.Managers;
 using KinderChat.Services.Messages;
 using KinderChat.ViewModels.Messages;
 
@@ -178,8 +179,10 @@ namespace KinderChat
                         throw new ArgumentOutOfRangeException();
                 }
 
+                //var notificationManager = new NotificationManager(Settings.AccessToken);
+			    //bool isSuccessfullySent = await notificationManager.SendPushNotification(Settings.UserDeviceId, Settings.UserDeviceId, Settings.NickName);
 
-			    App.Logger.Track("SendMessage");
+                App.Logger.Track("SendMessage");
 		    }
 		    catch (Exception ex)
             {

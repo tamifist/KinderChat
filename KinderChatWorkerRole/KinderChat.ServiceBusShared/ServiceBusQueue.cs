@@ -22,9 +22,9 @@ namespace KinderChat.ServiceBusShared
                 queue = namespaceManager.CreateQueue(queueName);
                 queue.EnableBatchedOperations = false;
                 queue.EnableExpress = true;
-                queue.DefaultMessageTimeToLive = TimeSpan.FromMinutes(5);
+                queue.DefaultMessageTimeToLive = TimeSpan.FromDays(30);
                 //queue.EnableLargeMessages = true;
-                queue.MaxDeliveryCount = 100;
+                queue.MaxDeliveryCount = int.MaxValue;
                 //queue.RequiresSession = false;
                 queue.SupportOrdering = true;
             }

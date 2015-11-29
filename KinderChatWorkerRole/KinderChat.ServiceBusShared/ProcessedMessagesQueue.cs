@@ -10,8 +10,7 @@ namespace KinderChat.ServiceBusShared
         private Func<Message, bool> _messageCallback;
         private readonly ServiceBusQueue _serviceBus;
         private const string QueueName = "ProcessedMessagesQueue";
-
-        /// <param name="serviceBusConnectionString">for tests: Endpoint=sb://kinderchattest.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=c1VtNbMPHDwx2nsxz+zwzyGCc2Izv32Y1c0oR7gy9oc=</param>
+        
         public ProcessedMessagesQueue(string serviceBusConnectionString)
         {
             //create blank queue in case of empty CS

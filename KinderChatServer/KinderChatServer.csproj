@@ -495,8 +495,8 @@
     <Content Include="Scripts\ww.jquery.js" />
     <Content Include="Scripts\ww.jquery.min.js" />
     <Content Include="Views\Templates\NewUser.cshtml" />
-    <None Include="Properties\PublishProfiles\kinder-chat - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\kinder-chat - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\inner6 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\inner6 - Web Deploy.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -620,7 +620,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>40619</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

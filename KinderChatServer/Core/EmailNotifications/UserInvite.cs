@@ -22,10 +22,10 @@ namespace KinderChatServer.Core.EmailNotifications
         }
         internal override void GenerateMessage()
         {
-            MailAddress[] list = { new MailAddress(Email, "(Future) Kinder User")};
+            MailAddress[] list = { new MailAddress(Email, "(Future) Inner6 User")};
             Message.To = list;
             var name = User.NickName ?? User.Email;
-            Message.Subject = name + " has invited you to Kinder Chat!";
+            Message.Subject = name + " has invited you to Inner6 Chat!";
             // TODO: Make a better email message.
             Message.Html = ViewRenderer.RenderView("~/views/templates/UserInvite.cshtml", User);
         }

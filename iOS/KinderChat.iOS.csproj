@@ -197,6 +197,15 @@
     <InterfaceDefinition Include="LaunchScreen.xib" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="BTProgressHUD">
+      <HintPath>..\Components\btprogresshud-1.15\lib\ios-unified\BTProgressHUD.dll</HintPath>
+    </Reference>
+    <Reference Include="GCDiscreetNotification">
+      <HintPath>..\Components\gcdiscreetnotification-1.0.2.2\lib\ios-unified\GCDiscreetNotification.dll</HintPath>
+    </Reference>
+    <Reference Include="JSQMessagesViewController">
+      <HintPath>..\Components\jsqmessagesviewcontroller-7.0.0\lib\ios-unified\JSQMessagesViewController.dll</HintPath>
+    </Reference>
     <Reference Include="PCLCrypto, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d4421c8a4786956c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\PCLCrypto.1.0.2.15130\lib\Xamarin.iOS\PCLCrypto.dll</HintPath>
@@ -233,12 +242,6 @@
     <Reference Include="Media.Plugin.Abstractions">
       <HintPath>..\packages\Xam.Plugin.Media.1.0.0\lib\Xamarin.iOS10\Media.Plugin.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="BTProgressHUD">
-      <HintPath>..\Components\btprogresshud-1.15\lib\ios-unified\BTProgressHUD.dll</HintPath>
-    </Reference>
-    <Reference Include="GCDiscreetNotification">
-      <HintPath>..\Components\gcdiscreetnotification-1.0.2.2\lib\ios-unified\GCDiscreetNotification.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -259,9 +262,6 @@
     </Reference>
     <Reference Include="SQLite-net">
       <HintPath>..\packages\sqlite-net-pcl.1.0.11\lib\portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\SQLite-net.dll</HintPath>
-    </Reference>
-    <Reference Include="JSQMessagesViewController">
-      <HintPath>..\Components\jsqmessagesviewcontroller-7.0.0\lib\ios-unified\JSQMessagesViewController.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -285,115 +285,333 @@
     <Folder Include="Resources\Images.xcassets\MessageBubble.imageset\" />
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\SignUpBubble.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\SignUpBubble.imageset\signUpBubble.png" />
-    <ImageAsset Include="Resources\Images.xcassets\SignUpBubble.imageset\signUpBubble%402.png" />
-    <ImageAsset Include="Resources\Images.xcassets\SignUpBubble.imageset\signUpBubble%403.png" />
-    <ImageAsset Include="Resources\Images.xcassets\Disclosure.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\Disclosure.imageset\disclosure.png" />
-    <ImageAsset Include="Resources\Images.xcassets\Disclosure.imageset\disclosure%402.png" />
-    <ImageAsset Include="Resources\Images.xcassets\Disclosure.imageset\disclosure%403.png" />
-    <ImageAsset Include="Resources\Images.xcassets\bubble_stroked.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\bubble_stroked.imageset\bubble_stroked.png" />
-    <ImageAsset Include="Resources\Images.xcassets\bubble_stroked.imageset\bubble_stroked%402x.png" />
-    <ImageAsset Include="Resources\Images.xcassets\bubble_stroked.imageset\bubble_stroked%403x.png" />
-    <ImageAsset Include="Resources\Images.xcassets\bubble_regular.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\bubble_regular.imageset\bubble_regular.png" />
-    <ImageAsset Include="Resources\Images.xcassets\bubble_regular.imageset\bubble_regular%402x.png" />
-    <ImageAsset Include="Resources\Images.xcassets\bubble_regular.imageset\bubble_regular%403x.png" />
-    <ImageAsset Include="Resources\Images.xcassets\newMessageIcon.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\newMessageIcon.imageset\newMessageIcon.png" />
-    <ImageAsset Include="Resources\Images.xcassets\newMessageIcon.imageset\newMessageIcon%402.png" />
-    <ImageAsset Include="Resources\Images.xcassets\newMessageIcon.imageset\newMessageIcon%403.png" />
-    <ImageAsset Include="Resources\Images.xcassets\bearIcon.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\bearIcon.imageset\bearIcon.png" />
-    <ImageAsset Include="Resources\Images.xcassets\bearIcon.imageset\bearIcon%402.png" />
-    <ImageAsset Include="Resources\Images.xcassets\bearIcon.imageset\bearIcon%403.png" />
-    <ImageAsset Include="Resources\Images.xcassets\bearIconWithBook.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\bearIconWithBook.imageset\bearIconWithBook.png" />
-    <ImageAsset Include="Resources\Images.xcassets\bearIconWithBook.imageset\bearIconWithBook%402.png" />
-    <ImageAsset Include="Resources\Images.xcassets\bearIconWithBook.imageset\bearIconWithBook%403.png" />
-    <ImageAsset Include="Resources\Images.xcassets\editNickName.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\editNickName.imageset\editNickName.png" />
-    <ImageAsset Include="Resources\Images.xcassets\editNickName.imageset\editNickName%402.png" />
-    <ImageAsset Include="Resources\Images.xcassets\editNickName.imageset\editNickName%403.png" />
-    <ImageAsset Include="Resources\Images.xcassets\avatarSelectionMask.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\avatarSelectionMask.imageset\avatarSelectionMask.png" />
-    <ImageAsset Include="Resources\Images.xcassets\avatarSelectionMask.imageset\avatarSelectionMask%402.png" />
-    <ImageAsset Include="Resources\Images.xcassets\avatarSelectionMask.imageset\avatarSelectionMask%403.png" />
-    <ImageAsset Include="Resources\Images.xcassets\tabIconBear.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\tabIconBear.imageset\bearTabIcon.png" />
-    <ImageAsset Include="Resources\Images.xcassets\tabIconBear.imageset\bearTabIcon%402.png" />
-    <ImageAsset Include="Resources\Images.xcassets\tabIconBear.imageset\bearTabIcon%403.png" />
-    <ImageAsset Include="Resources\Images.xcassets\tabIconProfile.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\tabIconProfile.imageset\ProfileTabBarIcon.png" />
-    <ImageAsset Include="Resources\Images.xcassets\tabIconProfile.imageset\ProfileTabBarIcon%402.png" />
-    <ImageAsset Include="Resources\Images.xcassets\tabIconProfile.imageset\ProfileTabBarIcon%403.png" />
-    <ImageAsset Include="Resources\Images.xcassets\tabIconMessages.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\29x29.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\58x58.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\87x87.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\80x80.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\120x120.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\57x57.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\114x114.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\180x180.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\40x40.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\50x50.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\100x100.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\72x72.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\76x76.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\152x152.png" />
-    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\144x144.png" />
-    <ImageAsset Include="Resources\Images.xcassets\toolbarLinkIcon.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\toolbarLinkIcon.imageset\linkToolbarIcon.png" />
-    <ImageAsset Include="Resources\Images.xcassets\toolbarLinkIcon.imageset\linkToolbarIcon%402x.png" />
-    <ImageAsset Include="Resources\Images.xcassets\toolbarLinkIcon.imageset\linkToolbarIcon%403x.png" />
-    <ImageAsset Include="Resources\Images.xcassets\tabIconMessages.imageset\tabIconMessages.png" />
-    <ImageAsset Include="Resources\Images.xcassets\tabIconMessages.imageset\tabIconMessages%402.png" />
-    <ImageAsset Include="Resources\Images.xcassets\tabIconMessages.imageset\tabIconMessages%403.png" />
-    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\1242x2208.png" />
-    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\750x1334.png" />
-    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\640x960.png" />
-    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\640x1136.png" />
-    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\320x480.png" />
-    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\2208x1242.png" />
-    <ImageAsset Include="Resources\Images.xcassets\splashLogo.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\splashLogo.imageset\splashLogo.png" />
-    <ImageAsset Include="Resources\Images.xcassets\splashLogo.imageset\splashLogo%402.png" />
-    <ImageAsset Include="Resources\Images.xcassets\splashLogo.imageset\splashLogo%403.png" />
-    <ImageAsset Include="Resources\Images.xcassets\taskIconBrocolli.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\taskIconBrocolli.imageset\brocolli.png" />
-    <ImageAsset Include="Resources\Images.xcassets\taskIconBrocolli.imageset\brocolli%402x.png" />
-    <ImageAsset Include="Resources\Images.xcassets\taskIconBrocolli.imageset\brocolli%403x.png" />
-    <ImageAsset Include="Resources\Images.xcassets\taskIconFinishedHomework.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\taskIconFinishedHomework.imageset\finishedHomework.png" />
-    <ImageAsset Include="Resources\Images.xcassets\taskIconFinishedHomework.imageset\finishedHomework%402x.png" />
-    <ImageAsset Include="Resources\Images.xcassets\taskIconFinishedHomework.imageset\finishedHomework%403x.png" />
-    <ImageAsset Include="Resources\Images.xcassets\taskIconToothbrush.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\taskIconToothbrush.imageset\toothbrush.png" />
-    <ImageAsset Include="Resources\Images.xcassets\taskIconToothbrush.imageset\toothbrush%402x.png" />
-    <ImageAsset Include="Resources\Images.xcassets\taskIconToothbrush.imageset\toothbrush%403x.png" />
-    <ImageAsset Include="Resources\Images.xcassets\taskIconVacuumCleaner.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\taskIconVacuumCleaner.imageset\vacuumCleaner.png" />
-    <ImageAsset Include="Resources\Images.xcassets\taskIconVacuumCleaner.imageset\vacuumCleaner%402x.png" />
-    <ImageAsset Include="Resources\Images.xcassets\taskIconVacuumCleaner.imageset\vacuumCleaner%403x.png" />
-    <ImageAsset Include="Resources\Images.xcassets\tabIconPoints.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\tabIconPoints.imageset\points.png" />
-    <ImageAsset Include="Resources\Images.xcassets\tabIconPoints.imageset\points%402x.png" />
-    <ImageAsset Include="Resources\Images.xcassets\tabIconPoints.imageset\points%403x.png" />
-    <ImageAsset Include="Resources\Images.xcassets\MessageBubble.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\MessageBubble.imageset\MessageBubble%402x.png" />
-    <ImageAsset Include="Resources\Images.xcassets\bubble_regular_mirror.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\bubble_regular_mirror.imageset\bubble_regular.png" />
-    <ImageAsset Include="Resources\Images.xcassets\bubble_regular_mirror.imageset\bubble_regular%402x.png" />
-    <ImageAsset Include="Resources\Images.xcassets\bubble_regular_mirror.imageset\bubble_regular%403x.png" />
-    <ImageAsset Include="Resources\Images.xcassets\bubble_stroked_mirror.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\bubble_stroked_mirror.imageset\bubble_stroked.png" />
-    <ImageAsset Include="Resources\Images.xcassets\bubble_stroked_mirror.imageset\bubble_stroked%402x.png" />
-    <ImageAsset Include="Resources\Images.xcassets\bubble_stroked_mirror.imageset\bubble_stroked%403x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\SignUpBubble.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\SignUpBubble.imageset\signUpBubble.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\SignUpBubble.imageset\signUpBubble%402.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\SignUpBubble.imageset\signUpBubble%403.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Disclosure.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Disclosure.imageset\disclosure.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Disclosure.imageset\disclosure%402.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Disclosure.imageset\disclosure%403.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\bubble_stroked.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\bubble_stroked.imageset\bubble_stroked.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\bubble_stroked.imageset\bubble_stroked%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\bubble_stroked.imageset\bubble_stroked%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\bubble_regular.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\bubble_regular.imageset\bubble_regular.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\bubble_regular.imageset\bubble_regular%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\bubble_regular.imageset\bubble_regular%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\newMessageIcon.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\newMessageIcon.imageset\newMessageIcon.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\newMessageIcon.imageset\newMessageIcon%402.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\newMessageIcon.imageset\newMessageIcon%403.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\bearIcon.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\bearIcon.imageset\bearIcon.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\bearIcon.imageset\bearIcon%402.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\bearIcon.imageset\bearIcon%403.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\bearIconWithBook.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\bearIconWithBook.imageset\bearIconWithBook.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\bearIconWithBook.imageset\bearIconWithBook%402.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\bearIconWithBook.imageset\bearIconWithBook%403.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\editNickName.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\editNickName.imageset\editNickName.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\editNickName.imageset\editNickName%402.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\editNickName.imageset\editNickName%403.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\avatarSelectionMask.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\avatarSelectionMask.imageset\avatarSelectionMask.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\avatarSelectionMask.imageset\avatarSelectionMask%402.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\avatarSelectionMask.imageset\avatarSelectionMask%403.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\tabIconBear.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\tabIconBear.imageset\bearTabIcon.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\tabIconBear.imageset\bearTabIcon%402.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\tabIconBear.imageset\bearTabIcon%403.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\tabIconProfile.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\tabIconProfile.imageset\ProfileTabBarIcon.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\tabIconProfile.imageset\ProfileTabBarIcon%402.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\tabIconProfile.imageset\ProfileTabBarIcon%403.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\tabIconMessages.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\29x29.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\58x58.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\87x87.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\80x80.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\120x120.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\57x57.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\114x114.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\180x180.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\40x40.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\50x50.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\100x100.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\72x72.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\76x76.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\152x152.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\144x144.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\toolbarLinkIcon.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\toolbarLinkIcon.imageset\linkToolbarIcon.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\toolbarLinkIcon.imageset\linkToolbarIcon%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\toolbarLinkIcon.imageset\linkToolbarIcon%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\tabIconMessages.imageset\tabIconMessages.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\tabIconMessages.imageset\tabIconMessages%402.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\tabIconMessages.imageset\tabIconMessages%403.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\1242x2208.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\750x1334.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\640x960.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\640x1136.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\320x480.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\2208x1242.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\splashLogo.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\splashLogo.imageset\splashLogo.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\splashLogo.imageset\splashLogo%402.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\splashLogo.imageset\splashLogo%403.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\taskIconBrocolli.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\taskIconBrocolli.imageset\brocolli.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\taskIconBrocolli.imageset\brocolli%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\taskIconBrocolli.imageset\brocolli%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\taskIconFinishedHomework.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\taskIconFinishedHomework.imageset\finishedHomework.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\taskIconFinishedHomework.imageset\finishedHomework%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\taskIconFinishedHomework.imageset\finishedHomework%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\taskIconToothbrush.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\taskIconToothbrush.imageset\toothbrush.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\taskIconToothbrush.imageset\toothbrush%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\taskIconToothbrush.imageset\toothbrush%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\taskIconVacuumCleaner.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\taskIconVacuumCleaner.imageset\vacuumCleaner.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\taskIconVacuumCleaner.imageset\vacuumCleaner%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\taskIconVacuumCleaner.imageset\vacuumCleaner%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\tabIconPoints.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\tabIconPoints.imageset\points.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\tabIconPoints.imageset\points%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\tabIconPoints.imageset\points%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\MessageBubble.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\MessageBubble.imageset\MessageBubble%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\bubble_regular_mirror.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\bubble_regular_mirror.imageset\bubble_regular.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\bubble_regular_mirror.imageset\bubble_regular%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\bubble_regular_mirror.imageset\bubble_regular%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\bubble_stroked_mirror.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\bubble_stroked_mirror.imageset\bubble_stroked.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\bubble_stroked_mirror.imageset\bubble_stroked%402x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\bubble_stroked_mirror.imageset\bubble_stroked%403x.png">
+      <InProject>false</InProject>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="gcdiscreetnotification">

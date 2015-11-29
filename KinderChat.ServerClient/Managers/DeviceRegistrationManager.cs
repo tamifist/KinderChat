@@ -54,7 +54,7 @@ namespace KinderChat.ServerClient.Managers
         {
             using (var httpClient = new HttpClient())
             {
-                var putUri = "https://kinder-chat.azurewebsites.net/api/register" + "/?id=" + regId;
+                var putUri = "https://inner6.azurewebsites.net/api/register" + "/?id=" + regId;
 
                 string json = JsonConvert.SerializeObject(deviceRegistration);
                 var response = await httpClient.PutAsync(putUri, new StringContent(json, Encoding.UTF8, "application/json"));
@@ -66,7 +66,7 @@ namespace KinderChat.ServerClient.Managers
         {
             using (var httpClient = new HttpClient())
             {
-                var response = await httpClient.PostAsync("https://kinder-chat.azurewebsites.net/api/register", new StringContent(""));
+                var response = await httpClient.PostAsync("https://inner6.azurewebsites.net/api/register", new StringContent(""));
                 if (response.IsSuccessStatusCode)
                 {
                     string regId = await response.Content.ReadAsStringAsync();

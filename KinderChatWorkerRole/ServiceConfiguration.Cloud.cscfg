@@ -3,11 +3,11 @@
   <Role name="KinderChat.WorkerRole.SocketServer">
     <Instances count="1" />
     <ConfigurationSettings>
-      <Setting name="CommonServiceBusConnectionString" value="%FILL%" />
-      <Setting name="InternalServiceBusConnectionString" value="%FILL%" />
-      <Setting name="RedisMessagesConnectionString" value="%FILL%" />
-      <Setting name="RedisSessionsConnectionString" value="%FILL%" />
-      <Setting name="Standalone" value="true" />
+      <Setting name="CommonServiceBusConnectionString" value="Endpoint=sb://inner6.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=e2m6DE0uqc9eWnPEd8ACzRhew6NLT7Kxe0Nv+qW4dVM=" />
+      <Setting name="InternalServiceBusConnectionString" value="Endpoint=sb://inner6.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=e2m6DE0uqc9eWnPEd8ACzRhew6NLT7Kxe0Nv+qW4dVM=" />
+      <Setting name="RedisMessagesConnectionString" value="inner6.redis.cache.windows.net,password=Bc84QBvQZmCt7ytbDpN3tGElxNf4FozxR18MnntJ800=,syncTimeout=10000" />
+      <Setting name="RedisSessionsConnectionString" value="inner6.redis.cache.windows.net,password=Bc84QBvQZmCt7ytbDpN3tGElxNf4FozxR18MnntJ800=,syncTimeout=10000" />
+      <Setting name="Standalone" value="false" />
     </ConfigurationSettings>
   </Role>
 </ServiceConfiguration>

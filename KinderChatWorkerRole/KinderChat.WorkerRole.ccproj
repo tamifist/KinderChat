@@ -53,6 +53,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <PublishProfile Include="Profiles\inner6wsProduction.azurePubxml" />
     <PublishProfile Include="Profiles\kinder-server-egorboProduction.azurePubxml" />
   </ItemGroup>
   <!-- Import the target files for this project template -->

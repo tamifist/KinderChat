@@ -153,6 +153,11 @@ namespace KinderChat
         
         private async void OnIncomingMessages(IEnumerable<IncomingMessage> messages)
         {
+            if (messages == null)
+            {
+                return;
+            }
+
             var incomingMessages = messages.Where(m => m.GroupId == Guid.Empty /*not supported yet*/).OrderBy(m => m.Time).ToList();
             foreach (var msg in incomingMessages)
             {

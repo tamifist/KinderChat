@@ -102,7 +102,8 @@ namespace KinderChat.ServerClient.Ws.Proxy
                 requestsTasks[request.RequestToken] = taskSource;
             }
             connection.Send("Request", request);
-            return (TResponse)await taskSource.Task.ConfigureAwait(false);
+            var result = await taskSource.Task.ConfigureAwait(false);
+            return (TResponse)result;
         }
 
         internal async Task SendRequest(BaseRequest request)
