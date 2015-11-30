@@ -13,16 +13,22 @@ namespace KinderChatServer.Controllers
 {
     public class NotificationsController : ApiController
     {
-        public async Task<HttpResponseMessage> Post(string toDeviceId, string fromDeviceId, string fromUser)
+        public async Task<HttpResponseMessage> Post(string toDeviceId, string fromUserId, string fromUserName, string message, string iconUrl)
         {
             var userTag = new string[2];
 
             userTag[0] = "username:" + toDeviceId;
-            userTag[1] = "from:" + fromUser;
+            userTag[1] = "from:" + fromUserName;
 
-            var notification = new Dictionary<string, string> { { "message", fromUser + " sent you a message!"} };
+            var notification = new Dictionary<string, string>
+            {
+                { "userid", fromUserId },
+                { "username", fromUserName },
+                { "message", message},
+                { "usericon", iconUrl},
+                
+            };
             await Notifications.Instance.Hub.SendTemplateNotificationAsync(notification, userTag);
-
             return Request.CreateResponse(HttpStatusCode.OK);
         }
     }

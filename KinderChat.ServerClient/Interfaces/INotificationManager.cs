@@ -8,6 +8,6 @@ namespace KinderChat.ServerClient.Interfaces
 {
     public interface INotificationManager
     {
-        Task<bool> SendPushNotification(string toDeviceId, string fromDeviceId, string fromUser);
+        Task<bool> SendPushNotification(string toDeviceId, string fromUserId, string fromUserName, string message, string iconUrl);
     }
 }

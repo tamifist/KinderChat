@@ -19,7 +19,8 @@ namespace KinderChat
 	    readonly OpponentTypingController opponentTypingController;
 	    readonly CurrentUserTypingController currentUserTypingController;
 	    readonly IUIThreadDispacher uiThreadDispacher;
-	    readonly long recipientId;
+	    private NotificationManager notificationManager;
+        readonly long recipientId;
         bool isTyping;
 
 		public ConversationViewModel (long recipientId)
@@ -38,6 +39,18 @@ namespace KinderChat
             currentUserTypingController = new CurrentUserTypingController(recipientId, typingManager, App.FriendsViewModel);
             opponentTypingController.Subscribe(recipientId, i => IsTyping = i);
 		}
+
+	    public NotificationManager NotificationManager {
+	        get
+	        {
+	            if (notificationManager == null)
+	            {
+                    notificationManager = new NotificationManager(Settings.AccessToken);
+                }
+
+	            return notificationManager;
+	        }
+	    }
 
 	    private void OnMessageStatusChanged(object sender, MessageStatusEventArgs e)
 	    {
@@ -179,8 +192,7 @@ namespace KinderChat
                         throw new ArgumentOutOfRangeException();
                 }
 
-                NotificationManager notificationManager = new NotificationManager(Settings.AccessToken);
-			    bool isSuccessfullySent = await notificationManager.SendPushNotification(Settings.UserDeviceId, Settings.UserDeviceId, Settings.NickName);
+                bool isSuccessfullySent = await SendPushNotificationToFriendDevices(Friend.FriendId, text);
 
                 App.Logger.Track("SendMessage");
 		    }
@@ -191,9 +203,21 @@ namespace KinderChat
 		    }
 		}
 
+	    private async Task<bool> SendPushNotificationToFriendDevices(long friendId, string message)
+	    {
 
+	        List<string> friendDevicesIds = await dataManager.GetDeviceListAsync(friendId);
+	        foreach (string friendDeviceId in friendDevicesIds)
+	        {
+                bool isSuccessfullySent = await NotificationManager.SendPushNotification(
+                    friendDeviceId, Settings.MyId.ToString(), Settings.NickName, message, Settings.Avatar);
+	            bool test = isSuccessfullySent;
+	        }
 
-        private void OnMessageArrived(object sender, MessageEventArgs e)
+	        return true;
+	    }
+
+	    private void OnMessageArrived(object sender, MessageEventArgs e)
         {
             uiThreadDispacher.Dispatch(() =>
                 {

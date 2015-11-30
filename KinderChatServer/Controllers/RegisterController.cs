@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
 using Microsoft.ServiceBus.Messaging;
-using Microsoft.ServiceBus.Notifications;
 using KinderChatServer.Core;
+using Microsoft.Azure.NotificationHubs;
 
 namespace KinderChatServer.Controllers
 {
@@ -85,7 +85,7 @@ namespace KinderChatServer.Controllers
                     registration = new AppleTemplateRegistrationDescription(deviceUpdate.Handle, alertTemplate);
                     break;
                 case "gcm":
-                    var messageTemplate = "{\"data\":{\"msg\":\"$(message)\"}}";
+                    var messageTemplate = "{\"data\":{\"msg\":\"$(message)\",\"senderid\":\"$(userid)\",\"sender\":\"$(username)\",\"icon\":\"$(usericon)\"}}";
                     registration = new GcmTemplateRegistrationDescription(deviceUpdate.Handle, messageTemplate);
                     break;
                 default:

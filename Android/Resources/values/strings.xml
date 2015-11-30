@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Kinder Chat</string>
+    <string name="app_name">Inner6</string>
     <string name="welcome_to_kinderchat">Welcome to Kinder Chat</string>
    	<string name="get_started_welcome">Get started by setting up your profile and staring a conversation with some friends.</string>
     <!--Login Screen-->

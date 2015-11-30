@@ -20,9 +20,9 @@ namespace KinderChat.ServerClient.Managers
         {
         }
 
-        public async Task<bool> SendPushNotification(string toDeviceId, string fromDeviceId, string fromUser)
+        public async Task<bool> SendPushNotification(string toDeviceId, string fromUserId, string fromUserName, string message, string iconUrl)
         {
-            var uri = new Uri(string.Format(EndPoints.PushMessage, toDeviceId, fromDeviceId, fromUser));
+            var uri = new Uri(string.Format(EndPoints.PushMessage, toDeviceId, fromUserId, fromUserName, message, iconUrl));
             var result = await _webManager.PostData(uri, null, null);
             if (!result.IsSuccess)
             {

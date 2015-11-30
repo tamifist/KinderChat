@@ -1,10 +1,15 @@
 ﻿using System;
+using System.Net;
+using System.Net.Http;
+using System.Threading.Tasks;
 using Android.App;
 using Android.Content;
+using Android.Graphics;
 using Android.Support.V4.App;
 using KinderChat.ServerClient.Managers;
 using KinderChat.ServerClient.Interfaces;
 using Gcm.Client;
+using KinderChat.ServerClient;
 using Newtonsoft.Json;
 
 namespace KinderChat
@@ -57,7 +62,7 @@ namespace KinderChat
 					var manager = new DeviceRegistrationManager ();
 					await manager.RegisterAsync(Settings.NotificationRegId, new string[] { "username:" + Settings.UserDeviceId}, PlatformType.Android, null);
 				}catch(Exception ex) {
-					//App.Logger.Report (ex);
+					App.Logger.Report (ex);
 				}
 			}
 
@@ -65,56 +70,45 @@ namespace KinderChat
 
 		protected override void OnUnRegistered (Context context, string registrationId)
 		{
-			
 		}
 
 		protected override void OnMessage (Context context, Intent intent)
 		{
 			Console.WriteLine ("Received Notification");
 
-			//if (Settings.InForeground)
-				//return;
-
-			//Push Notification arrived - print out the keys/values
-			if (intent != null || intent.Extras != null) {
-
-				var keyset = intent.Extras.KeySet ();
-
-				foreach (var key in keyset)
-					Console.WriteLine ("Key: {0}, Value: {1}", key, intent.Extras.GetString(key));
-
+		    if (Settings.InForeground)
+		    {
+                return;
+            }
+				
+			if (intent != null || intent.Extras != null)
+            {
 				ShowNotification (intent);
 			}
 		}
-
-
-
-		private void ShowNotification(Intent intent)
+        
+		private async void ShowNotification(Intent intent)
 		{
-			const string key = "msg";
+			const string msgKey = "msg";
+			const string senderIdKey = "senderid";
+			const string senderKey = "sender";
+			const string iconKey = "icon";
 
-			if (!intent.Extras.ContainsKey(key))
-				return;
-
-			var message = intent.Extras.GetString(key);
-				
-			NotificationMessage notification;
-			try
-			{
-				notification = JsonConvert.DeserializeObject<NotificationMessage>(message);
-			}
-			catch(Exception ex) {
-				App.Logger.Report (ex);
-				return;
-			}
-
-			if (notification == null || string.IsNullOrWhiteSpace (notification.Message))
-				return;
-	
+		    if (!intent.Extras.ContainsKey(msgKey) || !intent.Extras.ContainsKey(senderIdKey) ||
+		        !intent.Extras.ContainsKey(senderKey) || !intent.Extras.ContainsKey(iconKey))
+		    {
+                return;
+            }
 			
-			var notificationManager = NotificationManagerCompat.From (this);
+			NotificationMessage notification = new NotificationMessage();
+            notification.Title = intent.Extras.GetString(senderKey);
+            notification.Message = intent.Extras.GetString(msgKey);
+            notification.IconUrl = intent.Extras.GetString(iconKey);
+			notification.FromId = int.Parse(intent.Extras.GetString(senderIdKey));
 
+            Bitmap largeIconBitmap = await GetImageBitmapFromUrlAsync(EndPoints.BaseUrl + notification.IconUrl);
 
+            var notificationManager = NotificationManagerCompat.From (this);
 
 			Intent notificationIntent = null;
 
@@ -135,23 +129,24 @@ namespace KinderChat
 			var wearableExtender =
 				new NotificationCompat.WearableExtender ()
 					.SetContentIcon (Resource.Drawable.ic_launcher);
-			
 
+            NotificationCompat.Action reply =
+                    new NotificationCompat.Action.Builder(Resource.Drawable.ic_stat_social_reply,
+                        "Reply", pendingIntent)
+                        .Build();
 
-			var builder = new NotificationCompat.Builder (this)
+            var builder = new NotificationCompat.Builder (this)
 				.SetContentIntent (pendingIntent)
-				.SetContentTitle ("Inner6")
+				.SetContentTitle (notification.Title)
 				.SetAutoCancel (true)
 				.SetSmallIcon(Resource.Drawable.ic_notification)
+                .SetLargeIcon(largeIconBitmap)
 				.SetContentText(notification.Message)
+                .AddAction(reply)
 				.Extend(wearableExtender);
 
 			// Obtain a reference to the NotificationManager
-
-
-
-				
-
+            
 			var notif = builder.Build ();
 			notif.Defaults = NotificationDefaults.All; //add sound, vibration, led :)
 
@@ -169,6 +164,22 @@ namespace KinderChat
 		    var test = errorId;
 		    //Some more serious error happened
 		}
-	}
+
+        private async Task<Bitmap> GetImageBitmapFromUrlAsync(string url)
+        {
+            Bitmap imageBitmap = null;
+
+            using (var httpClient = new HttpClient())
+            {
+                var imageBytes = await httpClient.GetByteArrayAsync(url);
+                if (imageBytes != null && imageBytes.Length > 0)
+                {
+                    imageBitmap = BitmapFactory.DecodeByteArray(imageBytes, 0, imageBytes.Length);
+                }
+            }
+
+            return imageBitmap;
+        }
+    }
 }
 
