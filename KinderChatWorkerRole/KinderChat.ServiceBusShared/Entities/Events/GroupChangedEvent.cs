@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace KinderChat.ServiceBusShared.Entities
 {
+    [Serializable]
     public class GroupChangedEvent : Event
     {
         public Guid GroupId { get; set; }

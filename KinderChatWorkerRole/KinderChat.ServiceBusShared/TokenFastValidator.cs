@@ -16,7 +16,7 @@
             //TODO: just a quick call - does deviceId and userId belong to this token or not
             //TODO: implement using Redis cache
 
-            return true;
+            return !string.IsNullOrWhiteSpace(accessToken) && !string.IsNullOrWhiteSpace(deviceId) && userId > 0;
         }
     }
 }

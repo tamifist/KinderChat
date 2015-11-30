@@ -2,6 +2,7 @@
 
 namespace KinderChat.ServiceBusShared.Entities
 {
+    [Serializable]
     public class Message : Event
     {
         public string SenderAccessToken { get; set; }

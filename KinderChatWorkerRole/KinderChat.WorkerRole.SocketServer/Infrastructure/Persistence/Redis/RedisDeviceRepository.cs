@@ -19,14 +19,7 @@ namespace KinderChat.WorkerRole.SocketServer.Infrastructure.Persistence.Redis
 
         public List<string> GetDevices(long userId)
         {
-            try
-            {
-                return _cache.ListRange(KeyPrefix + userId.ToString(), flags: CommandFlags.FireAndForget).Select(i => i.ToString()).Distinct().ToList();
-            }
-            catch (Exception)
-            {
-                return new List<string>();
-            }
+            return _cache.ListRange(KeyPrefix + userId.ToString()).Select(i => i.ToString()).Distinct().ToList();
         }
 
         public void AddDevice(long userId, string deviceId)

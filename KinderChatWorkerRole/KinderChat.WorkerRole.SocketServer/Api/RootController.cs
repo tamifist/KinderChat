@@ -44,6 +44,7 @@ namespace KinderChat.WorkerRole.SocketServer.Api
             if (!_accessTokenFastValidator.Validate(request.AccessToken, request.DeviceId, request.UserId))
             {
                 respone.Success = false;
+                respone.Error = Errors.AccessTokenInvalid;
                 return respone;
             }
 

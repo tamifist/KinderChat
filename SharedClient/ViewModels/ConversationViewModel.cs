@@ -179,8 +179,8 @@ namespace KinderChat
                         throw new ArgumentOutOfRangeException();
                 }
 
-                //var notificationManager = new NotificationManager(Settings.AccessToken);
-			    //bool isSuccessfullySent = await notificationManager.SendPushNotification(Settings.UserDeviceId, Settings.UserDeviceId, Settings.NickName);
+                NotificationManager notificationManager = new NotificationManager(Settings.AccessToken);
+			    bool isSuccessfullySent = await notificationManager.SendPushNotification(Settings.UserDeviceId, Settings.UserDeviceId, Settings.NickName);
 
                 App.Logger.Track("SendMessage");
 		    }
@@ -190,6 +190,8 @@ namespace KinderChat
                 App.MessageDialog.SendMessage("Message wasn't sent", "Oops..");
 		    }
 		}
+
+
 
         private void OnMessageArrived(object sender, MessageEventArgs e)
         {

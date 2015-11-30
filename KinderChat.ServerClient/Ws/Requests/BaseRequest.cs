@@ -34,11 +34,16 @@ namespace KinderChat.ServerClient.Entities.Ws.Requests
         public long RequestToken { get; set; }
 
         public Errors Error { get; set; }
+
+        public string ErrorMessage { get; set; }
+        public string ErrorStackTrace { get; set; }
+        public string InnerExceptionMessage { get; set; }
     }
 
     public enum Errors
     {
         Success,
+        AccessTokenInvalid,
         AccessTokenExpired,
         ServerOnMaintenance,
         OperationIsNotPermitted,
@@ -48,6 +53,7 @@ namespace KinderChat.ServerClient.Entities.Ws.Requests
         SendMessage_ProvideKeysForTheseDevices,
         SendMessage_ReceiverAndSenderAreSame,
         KickParticipants_OnlyOwnerCanKickParticipants,
-        DeviceRegistrationRequired
+        DeviceRegistrationRequired,
+        InternalServerError,
     }
 }

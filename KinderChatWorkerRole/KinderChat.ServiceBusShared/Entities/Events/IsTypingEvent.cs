@@ -2,6 +2,7 @@
 
 namespace KinderChat.ServiceBusShared.Entities
 {
+    [Serializable]
     public class IsTypingEvent : Event
     {
         public bool IsTyping { get; set; }

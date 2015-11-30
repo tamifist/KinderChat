@@ -81,6 +81,15 @@ namespace KinderChat.WorkerRole.SocketServer.Infrastructure.Transport.Sockets.Co
             }
             catch (Exception exc)
             {
+                var response = request.CreateResponse<BaseResponse>();
+                response.Success = false;
+                response.Error = Errors.InternalServerError;
+                response.ErrorMessage = exc.ToString();
+                response.ErrorStackTrace = exc.StackTrace;
+                response.InnerExceptionMessage = exc.InnerException.Message;
+
+                session.Send("Response", response);
+
                 Logger.Exception(exc, "{0} failed ({1},  {2})", methodAndInstancePair.Item1.Name, request.GetType().Name, session.ToString());
             }
         }
