@@ -20,9 +20,7 @@ namespace KinderChat.iOS
 		public PointsViewController (IntPtr handle)
 			: base(handle)
 		{
-			Title = "Points";
-			TabBarItem.Image = UIImage.FromBundle ("tabIconPoints");
-			TabBarItem.Title = "Points";
+            TabBarItem = new UITabBarItem("Points", UIImage.FromBundle("tabIconPoints"), 1);
 		}
 
 		#region Life cycle

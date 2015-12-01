@@ -27,8 +27,7 @@ namespace KinderChat.iOS
 		public FriendsViewContoller (IntPtr handle)
 			: base(handle)
 		{
-			TabBarItem.Image = UIImage.FromBundle ("tabIconBear");
-			TabBarItem.Title = Strings.Friends.TabBarTitle;
+            TabBarItem = new UITabBarItem(Strings.Friends.TabBarTitle, UIImage.FromBundle("tabIconBear"), 1);
 		}
 
 		#region Life cycle

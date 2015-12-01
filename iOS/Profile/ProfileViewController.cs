@@ -32,8 +32,7 @@ namespace KinderChat.iOS
 		public ProfileViewController (IntPtr handle)
 			: base (handle)
 		{
-			TabBarItem.Image = UIImage.FromBundle ("tabIconProfile");
-			TabBarItem.Title = Strings.Profile.TabBarTitle;
+            TabBarItem = new UITabBarItem(Strings.Profile.TabBarTitle, UIImage.FromBundle("tabIconProfile"), 1);
 
 			var icon = UIImage.FromBundle ("toolbarLinkIcon");
 			NavigationItem.RightBarButtonItem = new UIBarButtonItem (icon, UIBarButtonItemStyle.Plain, OnLinkToParentClicked);

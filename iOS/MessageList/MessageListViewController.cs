@@ -47,9 +47,8 @@ namespace KinderChat.iOS
 		public MessageListViewController (IntPtr handle)
 			: base (handle)
 		{
-			TabBarItem.Image = UIImage.FromBundle ("tabIconMessages");
-			TabBarItem.Title = Strings.Messages.TabBarTitle;
-		}
+            TabBarItem = new UITabBarItem(Strings.Messages.TabBarTitle, UIImage.FromBundle("tabIconMessages"), 1);
+        }
 
 		#region Life cycle
 
@@ -66,7 +65,6 @@ namespace KinderChat.iOS
 //			debugGesture = new TapGestureAttacher (View, 3, Theme.SetNextTheme);
 			#endif
 
-			Title = Strings.Chats.Title;
 			//remove for now because we do on new friends list
 			NavigationItem.BackBarButtonItem = new UIBarButtonItem (Strings.Chats.BackButtonTitle, UIBarButtonItemStyle.Plain, null, null);
 			//NavigationItem.RightBarButtonItem.Clicked += OnFindNewPersonClicked;

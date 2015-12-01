@@ -29,18 +29,18 @@ namespace KinderChat
 
 		public static class Chats
 		{
-			public static readonly string Title = "Kinder Chats";
+			public static readonly string Title = "Chats";
 			public static readonly string BackButtonTitle = "Chats";
 		}
 
 		public static class Messages
 		{
-			public static readonly string TabBarTitle = "Messages";
+			public static readonly string TabBarTitle = "Chats";
 		}
 
 		public static class Friends
 		{
-			public static readonly string TabBarTitle = "Friends";
+			public static readonly string TabBarTitle = "Contacts";
 		}
 
 		public static class Profile
