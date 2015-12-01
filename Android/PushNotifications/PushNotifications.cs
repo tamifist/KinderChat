@@ -121,8 +121,7 @@ namespace KinderChat
 				notificationIntent = new Intent (this, typeof(ConversationActivity));
 				notificationIntent.PutExtra (ConversationActivity.RecipientId, (long)id);
 			}
-
-
+            
 			notificationIntent.AddFlags(ActivityFlags.ClearTop | ActivityFlags.NewTask); 
 			var pendingIntent = PendingIntent.GetActivity(this, 0, notificationIntent, PendingIntentFlags.UpdateCurrent);
 
