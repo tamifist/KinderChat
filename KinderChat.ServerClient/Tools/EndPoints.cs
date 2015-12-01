@@ -5,7 +5,7 @@ namespace KinderChat.ServerClient
     {
         public const int DefaultTimeoutInMilliseconds = 60000;
 
-        public const string BaseUrl = "http://inner6.azurewebsites.net";
+        public const string BaseUrl = "https://inner6.azurewebsites.net";
 
         #region Authentication
 
