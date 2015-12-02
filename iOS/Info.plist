@@ -40,5 +40,7 @@
 		<string>ComicNeue-Regular.otf</string>
 		<string>VarelaRound-Regular.ttf</string>
 	</array>
+	<key>XSAppIconAssets</key>
+	<string>Resources/Images.xcassets/AppIcon.appiconset</string>
 </dict>
 </plist>
