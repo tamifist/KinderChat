@@ -1,5 +1,5 @@
 ﻿using System;
-
+using CoreAnimation;
 using UIKit;
 using CoreGraphics;
 using MonoTouch.Dialog.Utilities;
@@ -53,7 +53,21 @@ namespace KinderChat.iOS
 			return updater.Img;
 		}
 
-		public static void SetImage (UIImageView imgView, string url, Predicate<string> needToUpdate)
+	    public static UIImage GetGradientImage(CGColor startColor, CGColor endColor, CGSize size)
+	    {
+            UIGraphics.BeginImageContext(size);
+            var context = UIGraphics.GetCurrentContext();
+            var gradientLayer = new CAGradientLayer();
+            gradientLayer.Frame = new CGRect(0, 0, size.Width, size.Height);
+            gradientLayer.Colors = new CGColor[] { startColor, endColor };
+            gradientLayer.RenderInContext(context);
+            UIImage gradientImage = UIGraphics.GetImageFromCurrentImageContext();
+            UIGraphics.EndImageContext();
+
+	        return gradientImage;
+	    }
+
+	    public static void SetImage (UIImageView imgView, string url, Predicate<string> needToUpdate)
 		{
 			// GC will not collect updater because it will be referenced by ImageLoader
 			var updater = new ImageUpdater (imgView, url, needToUpdate);

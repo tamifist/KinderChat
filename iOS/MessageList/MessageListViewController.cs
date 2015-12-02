@@ -87,6 +87,8 @@ namespace KinderChat.iOS
 		{
 			base.ViewWillAppear (animated);
 
+		    Title = Strings.Messages.TabBarTitle;
+
 			friendId = 0;
 			ApplyCurrentTheme ();
 
@@ -134,7 +136,7 @@ namespace KinderChat.iOS
 
 		void ApplyCurrentTheme()
 		{
-			View.BackgroundColor = Theme.Current.BackgroundColor;
+		    View.BackgroundColor = Theme.Current.BackgroundColor;
 			RefresherControl.ApplyCurrentTheme (refresher);
 		}
 

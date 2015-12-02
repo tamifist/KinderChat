@@ -7,7 +7,14 @@ namespace KinderChat.iOS
 {
 	public class Theme : IColorTheme, IFontTheme, IImagesTheme
 	{
-		public static event EventHandler ThemeChanged;
+        private IColorTheme colorTheme;
+        private IFontTheme fontTheme;
+        private IImagesTheme imgTheme;
+
+        private UIColor mainGradientStartColor;
+        private UIColor mainGradientEndColor;
+
+        public static event EventHandler ThemeChanged;
 
 		public static List<Theme> AvailableThemes;
 
@@ -21,16 +28,19 @@ namespace KinderChat.iOS
 				RaiseThemeChanged (null);
 			}
 		}
+        
+        public bool IsDirty { get; private set; }
 
-		IColorTheme colorTheme;
-		IFontTheme fontTheme;
-		IImagesTheme imgTheme;
+        #region IColorTheme implementation
 
-		public bool IsDirty { get; private set; }
+        public UIColor MainGradientStartColor {
+            get { return mainGradientStartColor; }
+        }
+        public UIColor MainGradientEndColor {
+            get { return mainGradientEndColor; }
+        }
 
-		#region IColorTheme implementation
-
-		UIStatusBarStyle statusBarStyle;
+        UIStatusBarStyle statusBarStyle;
 		public UIStatusBarStyle StatusBarStyle {
 			get {
 				return statusBarStyle;
@@ -53,20 +63,8 @@ namespace KinderChat.iOS
 				RaiseThemeChanged (this);
 			}
 		}
-
-		UIColor mainColor;
-		public UIColor MainColor {
-			get {
-				return mainColor;
-			}
-			set {
-				mainColor = value;
-				IsDirty = true;
-				RaiseThemeChanged (this);
-			}
-		}
-
-		UIColor mainSaturatedColor;
+        
+        UIColor mainSaturatedColor;
 		public UIColor MainSaturatedColor {
 			get {
 				return mainSaturatedColor;
@@ -401,12 +399,21 @@ namespace KinderChat.iOS
 			ResetToDefaults ();
 		}
 
-		public void ResetToDefaults()
+        public void SetMainGradientColor(UIColor startColor, UIColor endColor)
+        {
+            mainGradientStartColor = startColor;
+            mainGradientEndColor = endColor;
+            IsDirty = true;
+            RaiseThemeChanged(this);
+        }
+
+        public void ResetToDefaults()
 		{
 			statusBarStyle = colorTheme.StatusBarStyle;
 			screenTitleColor = colorTheme.ScreenTitleColor;
 
-			mainColor = colorTheme.MainColor;
+			mainGradientStartColor = colorTheme.MainGradientStartColor;
+			mainGradientEndColor = colorTheme.MainGradientEndColor;
 			mainSaturatedColor = colorTheme.MainSaturatedColor;
 
 			disabledButtonColor = colorTheme.DisabledButtonColor;

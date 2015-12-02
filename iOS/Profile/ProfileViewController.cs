@@ -32,7 +32,7 @@ namespace KinderChat.iOS
 		public ProfileViewController (IntPtr handle)
 			: base (handle)
 		{
-            TabBarItem = new UITabBarItem(Strings.Profile.TabBarTitle, UIImage.FromBundle("tabIconProfile"), 1);
+            TabBarItem = new UITabBarItem(Strings.Profile.TabBarTitle, UIImage.FromBundle("tabIconProfile"), 3);
 
 			var icon = UIImage.FromBundle ("toolbarLinkIcon");
 			NavigationItem.RightBarButtonItem = new UIBarButtonItem (icon, UIBarButtonItemStyle.Plain, OnLinkToParentClicked);
@@ -56,6 +56,8 @@ namespace KinderChat.iOS
 		public async override void ViewWillAppear (bool animated)
 		{
 			base.ViewWillAppear (animated);
+
+		    Title = Strings.Profile.TabBarTitle;
 
 			BindNicName ();
 			BindAvatar ();
@@ -140,7 +142,7 @@ namespace KinderChat.iOS
 		void ApplyCurrentTheme ()
 		{
 			View.BackgroundColor = Theme.Current.BackgroundColor;
-			BlendNavBarView.BackgroundColor = Theme.Current.MainColor;
+            BlendNavBarView.BackgroundColor = Theme.Current.MainGradientEndColor;
 
 			nickNameLbl.TextColor = Theme.Current.ScreenTitleColor;
 		}

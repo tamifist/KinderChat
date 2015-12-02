@@ -136,7 +136,10 @@ namespace KinderChat.iOS
 
 		void ApplyCurrentTheme()
 		{
-			NavBarBlendView.BackgroundColor = Theme.Current.MainColor;
+            CGSize gradientImageSize = new CGSize(NavBarBlendView.Frame.Size.Width, NavBarBlendView.Frame.Size.Height);
+            UIImage gradientImage = ImageUtils.GetGradientImage(
+                Theme.Current.MainGradientStartColor.CGColor, Theme.Current.MainGradientEndColor.CGColor, gradientImageSize);
+            NavBarBlendView.BackgroundColor = UIColor.FromPatternImage(gradientImage);
 
 			ThemeUtils.ApplyCurrentFont (Input);
 			ThemeUtils.ApplyCurrentFont (NickName);
@@ -353,7 +356,7 @@ namespace KinderChat.iOS
 			if (Theme.Current.IsDirty)
 				Theme.Current.ResetToDefaults ();
 			else
-				Theme.Current.MainColor = UIColor.Green; // actual theme change
+                Theme.Current.SetMainGradientColor(UIColor.Green, UIColor.Green);
 		}
 	}
 }

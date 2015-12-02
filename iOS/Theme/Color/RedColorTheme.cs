@@ -3,23 +3,17 @@ using UIKit;
 
 namespace KinderChat.iOS
 {
-	public class BlackColorTheme : IColorTheme
+	public class RedColorTheme : IColorTheme
 	{
-		public static BlackColorTheme Instance { get; private set; }
+		public static RedColorTheme Instance { get; private set; }
 
-		private BlackColorTheme()
+		private RedColorTheme()
 		{
 		}
 
-		static BlackColorTheme()
+		static RedColorTheme()
 		{
-			Instance = new BlackColorTheme ();
-		}
-
-		public UIColor ScreenTitleColor {
-			get {
-				return UIColor.White;
-			}
+			Instance = new RedColorTheme();
 		}
 
 		public UIStatusBarStyle StatusBarStyle {
@@ -28,15 +22,31 @@ namespace KinderChat.iOS
 			}
 		}
 
-		public UIColor MainColor {
+		public UIColor ScreenTitleColor {
 			get {
-				return AppColors.FromHex (0x000000);
+				return UIColor.White;
 			}
 		}
 
-		public UIColor MainSaturatedColor {
+        public UIColor MainGradientStartColor
+        {
+            get
+            {
+                return UIColor.FromRGB(228, 37, 41);
+            }
+        }
+
+        public UIColor MainGradientEndColor
+        {
+            get
+            {
+                return UIColor.FromRGB(148, 46, 135);
+            }
+        }
+
+        public UIColor MainSaturatedColor {
 			get {
-				return AppColors.FromHex (0x000000);
+				return AppColors.FromHex (0xED21A4);
 			}
 		}
 
@@ -48,7 +58,7 @@ namespace KinderChat.iOS
 
 		public UIColor NavigationBarButtonColor {
 			get {
-				return AppColors.FromHex (0x999999);
+				return AppColors.FromHex (0x000000);
 			}
 		}
 
@@ -92,7 +102,7 @@ namespace KinderChat.iOS
 
 		public UIColor ConversationSelectedCellColor {
 			get {
-				return AppColors.FromHex (0x999999).ColorWithAlpha(0.1f);
+				return MainGradientStartColor.ColorWithAlpha(0.1f);
 			}
 		}
 

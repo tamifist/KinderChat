@@ -1,5 +1,6 @@
 ﻿using System;
-
+using CoreAnimation;
+using CoreGraphics;
 using UIKit;
 using Foundation;
 
@@ -51,8 +52,12 @@ namespace KinderChat.iOS
 
 		void ApplyCurrentTheme()
 		{
-			// For background color
-			NavigationBar.BarTintColor = Theme.Current.MainColor;
+            // Set gradient color for the navigation bar's background
+		    CGSize gradientImageSize = new CGSize(NavigationBar.Frame.Size.Width, NavigationBar.Frame.Size.Height + 20.0f);
+		    UIImage gradientImage = ImageUtils.GetGradientImage(
+                Theme.Current.MainGradientStartColor.CGColor, Theme.Current.MainGradientEndColor.CGColor, gradientImageSize);
+            NavigationBar.BarTintColor = UIColor.FromPatternImage(gradientImage); //Theme.Current.MainColor;
+		    NavigationBar.TintColor = UIColor.White;
 		}
 	}
 }

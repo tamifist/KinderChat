@@ -18,25 +18,34 @@ namespace KinderChat.iOS
 
 		public UIStatusBarStyle StatusBarStyle {
 			get {
-				return UIStatusBarStyle.Default;
+				return UIStatusBarStyle.LightContent;
 			}
 		}
 
 		public UIColor ScreenTitleColor {
 			get {
-				return UIColor.Black;
+				return UIColor.White;
 			}
 		}
 
-		public UIColor MainColor {
+	    public UIColor MainGradientStartColor
+        {
 			get {
-				return AppColors.FromHex (0xA0CEFF);
+				return UIColor.FromRGB(1, 167, 222);
 			}
 		}
 
-		public UIColor MainSaturatedColor {
+        public UIColor MainGradientEndColor
+        {
+            get
+            {
+                return UIColor.FromRGB(76, 64, 154);
+            }
+        }
+
+        public UIColor MainSaturatedColor {
 			get {
-				return AppColors.FromHex (0x2185ED);
+				return MainGradientStartColor;
 			}
 		}
 
@@ -92,7 +101,7 @@ namespace KinderChat.iOS
 
 		public UIColor ConversationSelectedCellColor {
 			get {
-				return MainColor.ColorWithAlpha(0.1f);
+				return MainGradientStartColor.ColorWithAlpha(0.1f);
 			}
 		}
 

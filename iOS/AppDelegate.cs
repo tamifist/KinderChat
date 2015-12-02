@@ -69,7 +69,7 @@ namespace KinderChat.iOS
 		{
 			Theme.AvailableThemes.Add (BlueTheme = CreateBlueTheme ());
 			Theme.AvailableThemes.Add (BlackTheme = CreateBlackTheme ());
-			Theme.AvailableThemes.Add (PinkTheme = CreatePinkTheme ());
+			Theme.AvailableThemes.Add (PinkTheme = CreateRedTheme ());
 
 			switch (Settings.AppTheme) {
 			case AppTheme.Blue:
@@ -108,9 +108,9 @@ namespace KinderChat.iOS
 			return new Theme (colorTheme, fontTheme, imgTheme);
 		}
 
-		Theme CreatePinkTheme ()
+		Theme CreateRedTheme ()
 		{
-			IColorTheme colorTheme = PinkColorTheme.Instance;
+			IColorTheme colorTheme = RedColorTheme.Instance;
 			IFontTheme fontTheme = PinkFontTheme.Instance;
 			IImagesTheme imgTheme = PinkImagesTheme.Instance;
 
@@ -126,9 +126,9 @@ namespace KinderChat.iOS
 				Font = Theme.Current.ScreenTitleFont
 			};
 			// Set back button chevron color
-			UINavigationBar.Appearance.TintColor = Theme.Current.ScreenTitleColor;
-
-			UIBarButtonItem.Appearance.SetTitleTextAttributes (new UITextAttributes {
+		    UINavigationBar.Appearance.TintColor = Theme.Current.ScreenTitleColor;
+            
+            UIBarButtonItem.Appearance.SetTitleTextAttributes (new UITextAttributes {
 				TextColor = Theme.Current.ScreenTitleColor,
 				Font = Theme.Current.NavigationButtonTitleFont
 			}, UIControlState.Normal);

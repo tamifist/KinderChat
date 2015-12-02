@@ -107,7 +107,6 @@ namespace KinderChat.iOS
 		{
 			selectionCircle = new UIView {
 				TranslatesAutoresizingMaskIntoConstraints = false,
-				BackgroundColor = Theme.Current.MainColor,
 				Hidden = true,
 			};
 			iconContainer.AddSubview (selectionCircle);
@@ -117,7 +116,12 @@ namespace KinderChat.iOS
 			selectionCircle.Height (2 * SelectionRadius);
 			selectionCircle.Width (2 * SelectionRadius);
 			selectionCircle.Layer.CornerRadius = SelectionRadius;
-		}
+
+            CGSize gradientImageSize = new CGSize(selectionCircle.Frame.Size.Width, selectionCircle.Frame.Size.Height);
+            UIImage gradientImage = ImageUtils.GetGradientImage(
+                Theme.Current.MainGradientStartColor.CGColor, Theme.Current.MainGradientEndColor.CGColor, gradientImageSize);
+            selectionCircle.BackgroundColor = UIColor.FromPatternImage(gradientImage);
+        }
 
 		public void AnimateIconAppearance ()
 		{

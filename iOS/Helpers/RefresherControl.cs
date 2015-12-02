@@ -7,7 +7,7 @@ namespace KinderChat.iOS
 	{
 		public static void ApplyCurrentTheme(UIControl refresher)
 		{
-			refresher.BackgroundColor = Theme.Current.MainColor;
+			//refresher.BackgroundColor = Theme.Current.MainGradientStartColor;
 			refresher.TintColor = UIColor.White;
 		}
 	}

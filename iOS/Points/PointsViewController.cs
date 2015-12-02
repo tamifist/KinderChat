@@ -20,7 +20,7 @@ namespace KinderChat.iOS
 		public PointsViewController (IntPtr handle)
 			: base(handle)
 		{
-            TabBarItem = new UITabBarItem("Points", UIImage.FromBundle("tabIconPoints"), 1);
+            TabBarItem = new UITabBarItem("Points", UIImage.FromBundle("tabIconPoints"), 4);
 		}
 
 		#region Life cycle
@@ -68,8 +68,8 @@ namespace KinderChat.iOS
 
 		public void ApplyCurrentTheme ()
 		{
-			BlendNavBarView.BackgroundColor = Theme.Current.MainColor;
-
+            BlendNavBarView.BackgroundColor = Theme.Current.MainGradientEndColor;
+            
 			LeftBadgeDescriptionLbl.TextColor = Theme.Current.BadgeTitleColor;
 			LeftBadgeDescriptionLbl.Font = Theme.Current.TextTitleFont;
 

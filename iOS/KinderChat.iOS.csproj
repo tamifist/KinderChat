@@ -128,9 +128,9 @@
     <Compile Include="NavigationControllerBase.cs" />
     <Compile Include="Chat\ChatViewController.cs" />
     <None Include="Properties\_SettingsStarted.txt" />
-    <Compile Include="Theme\Color\1BlueColorTheme.cs" />
-    <Compile Include="Theme\Color\2BlackColorTheme.cs" />
-    <Compile Include="Theme\Color\3PinkColorTheme.cs" />
+    <Compile Include="Theme\Color\BlueColorTheme.cs" />
+    <Compile Include="Theme\Color\BlackColorTheme.cs" />
+    <Compile Include="Theme\Color\RedColorTheme.cs" />
     <Compile Include="Theme\Color\AppColors.cs" />
     <Compile Include="Theme\Font\AppFonts.cs" />
     <Compile Include="Theme\Theme.cs" />

@@ -8,7 +8,8 @@ namespace KinderChat.iOS
 		UIStatusBarStyle StatusBarStyle { get; }
 		UIColor ScreenTitleColor { get; }
 
-		UIColor MainColor { get; }
+		UIColor MainGradientStartColor { get; }
+		UIColor MainGradientEndColor { get; }
 		UIColor MainSaturatedColor { get; }
 		UIColor DisabledButtonColor { get; }
 
@@ -39,7 +40,7 @@ namespace KinderChat.iOS
 
 		UIColor BadgeTitleColor { get; }
 
-		#endregion
+        #endregion
 	}
 }
 

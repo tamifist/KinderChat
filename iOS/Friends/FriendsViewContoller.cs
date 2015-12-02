@@ -27,7 +27,7 @@ namespace KinderChat.iOS
 		public FriendsViewContoller (IntPtr handle)
 			: base(handle)
 		{
-            TabBarItem = new UITabBarItem(Strings.Friends.TabBarTitle, UIImage.FromBundle("tabIconBear"), 1);
+            TabBarItem = new UITabBarItem(Strings.Friends.TabBarTitle, UIImage.FromBundle("tabIconBear"), 2);
 		}
 
 		#region Life cycle
@@ -103,7 +103,7 @@ namespace KinderChat.iOS
 		{
 			base.ViewWillAppear (animated);
 
-			Title = "Friends";
+			Title = Strings.Friends.TabBarTitle;
 			selectedFriend = null;
 
 			ApplyCurrentTheme ();

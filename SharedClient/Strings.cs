@@ -40,7 +40,7 @@ namespace KinderChat
 
 		public static class Friends
 		{
-			public static readonly string TabBarTitle = "Contacts";
+			public static readonly string TabBarTitle = "Friends";
 		}
 
 		public static class Profile
