@@ -27,7 +27,7 @@ namespace KinderChat.iOS
 		public FriendsViewContoller (IntPtr handle)
 			: base(handle)
 		{
-            TabBarItem = new UITabBarItem(Strings.Friends.TabBarTitle, UIImage.FromBundle("tabIconBear"), 2);
+            TabBarItem = new UITabBarItem(Strings.Friends.TabBarTitle, UIImage.FromBundle("tabIconFriend"), 2);
 		}
 
 		public override void AwakeFromNib ()
@@ -35,7 +35,7 @@ namespace KinderChat.iOS
 			base.AwakeFromNib ();
 
 			Title = Strings.Friends.TabBarTitle;
-			TabBarItem = new UITabBarItem(Strings.Friends.TabBarTitle, UIImage.FromBundle("tabIconBear"), 2);
+			TabBarItem = new UITabBarItem(Strings.Friends.TabBarTitle, UIImage.FromBundle("tabIconFriend"), 2);
 		}
 
 		#region Life cycle
