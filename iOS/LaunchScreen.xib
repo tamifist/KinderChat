@@ -14,7 +14,6 @@
                     <rect key="frame" x="135" y="119" width="211" height="243"/>
                 </imageView>
             </subviews>
-            <color key="backgroundColor" red="0.62745098039215685" green="0.80784313725490198" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="centerX" secondItem="CRh-Y0-CtX" secondAttribute="centerX" id="Fn3-om-23R"/>
                 <constraint firstAttribute="centerY" secondItem="CRh-Y0-CtX" secondAttribute="centerY" id="ssp-Hq-6uh"/>
@@ -22,9 +21,33 @@
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="548" y="455"/>
+            <color key="backgroundColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
         </view>
     </objects>
     <resources>
         <image name="splashLogo" width="211" height="243"/>
+        <image name="toolbarSettingsIcon" width="18" height="18"/>
+        <image name="tabIconFriend" width="27" height="26"/>
+        <image name="SignUpBubble" width="110" height="93"/>
+        <image name="Disclosure" width="6" height="10"/>
+        <image name="bubble_stroked" width="56" height="35"/>
+        <image name="bubble_regular" width="56" height="35"/>
+        <image name="newMessageIcon" width="18" height="18"/>
+        <image name="bearIcon" width="93" height="107"/>
+        <image name="bearIconWithBook" width="91" height="127"/>
+        <image name="editNickName" width="18" height="17"/>
+        <image name="avatarSelectionMask" width="74" height="74"/>
+        <image name="tabIconBear" width="27" height="26"/>
+        <image name="tabIconProfile" width="24" height="24"/>
+        <image name="toolbarLinkIcon" width="17" height="18"/>
+        <image name="tabIconMessages" width="25" height="26"/>
+        <image name="taskIconBrocolli" width="75" height="76"/>
+        <image name="taskIconFinishedHomework" width="95" height="62"/>
+        <image name="taskIconToothbrush" width="84" height="87"/>
+        <image name="taskIconVacuumCleaner" width="60" height="81"/>
+        <image name="tabIconPoints" width="24" height="24"/>
+        <image name="bubble_regular_mirror" width="56" height="35"/>
+        <image name="bubble_stroked_mirror" width="56" height="35"/>
+        <image name="VarelaRound-Regular.ttf" width="0" height="0"/>
     </resources>
 </document>
