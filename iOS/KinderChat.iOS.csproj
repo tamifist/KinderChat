@@ -176,6 +176,12 @@
     <Compile Include="Common\EventArgs\MoveEventArgs.cs" />
     <Compile Include="Common\InteractiveDebugger.cs" />
     <Compile Include="Helpers\ConstraintExtensions.cs" />
+    <None Include="Resources\Images.xcassets\toolbarSettingsIcon.imageset\toolbarSettingsIcon.png" />
+    <None Include="Resources\Images.xcassets\toolbarSettingsIcon.imageset\toolbarSettingsIcon%402.png" />
+    <None Include="Resources\Images.xcassets\toolbarSettingsIcon.imageset\toolbarSettingsIcon%403.png" />
+    <None Include="Resources\Images.xcassets\tabIconFriends.imageset\friendsTabIcon%402.png" />
+    <None Include="Resources\Images.xcassets\tabIconFriends.imageset\friendsTabIcon%403.png" />
+    <None Include="Resources\Images.xcassets\tabIconFriends.imageset\tabFriendsIcon.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main\TabOrder.cs" />
@@ -277,11 +283,6 @@
       <Project>{302ACDE4-76E7-47A0-9291-A7D75E263E7B}</Project>
       <Name>KinderChat.ServerClient</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\Images.xcassets\bubble_regular_mirror.imageset\" />
-    <Folder Include="Resources\Images.xcassets\bubble_stroked_mirror.imageset\" />
-    <Folder Include="Resources\Images.xcassets\MessageBubble.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\Contents.json">
