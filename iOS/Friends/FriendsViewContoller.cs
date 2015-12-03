@@ -30,6 +30,14 @@ namespace KinderChat.iOS
             TabBarItem = new UITabBarItem(Strings.Friends.TabBarTitle, UIImage.FromBundle("tabIconBear"), 2);
 		}
 
+		public override void AwakeFromNib ()
+		{
+			base.AwakeFromNib ();
+
+			Title = Strings.Friends.TabBarTitle;
+			TabBarItem = new UITabBarItem(Strings.Friends.TabBarTitle, UIImage.FromBundle("tabIconBear"), 2);
+		}
+
 		#region Life cycle
 
 		public override void ViewDidLoad ()

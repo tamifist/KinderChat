@@ -4,6 +4,7 @@ using UIKit;
 using Foundation;
 
 using MonoTouch.Dialog.Utilities;
+using CoreGraphics;
 
 namespace KinderChat.iOS
 {
@@ -61,6 +62,13 @@ namespace KinderChat.iOS
 			}
 		}
 
+		public override void Draw (CGRect rect)
+		{
+			base.Draw (rect);
+
+			SetSelectedBackgroundColor ();
+		}
+
 		public override void AwakeFromNib ()
 		{
 			base.AwakeFromNib ();
@@ -105,8 +113,17 @@ namespace KinderChat.iOS
 
 			DateLbl.Font = Theme.Current.DateMessageLabelFont;
 			DateLbl.TextColor = Theme.Current.DateMessageLabelColor;
+			SetSelectedBackgroundColor ();
+		}
 
-			SelectedBackgroundView.BackgroundColor = Theme.Current.ConversationSelectedCellColor;
+		private void SetSelectedBackgroundColor() 
+		{
+			CGSize gradientImageSize = new CGSize(SelectedBackgroundView.Frame.Size.Width, SelectedBackgroundView.Frame.Size.Height);
+			UIImage gradientImage = ImageUtils.GetGradientImage(
+				Theme.Current.MainGradientStartColor.CGColor, Theme.Current.MainGradientEndColor.CGColor, gradientImageSize);
+			if (gradientImage != null) {
+				SelectedBackgroundView.BackgroundColor = UIColor.FromPatternImage(gradientImage);
+			}
 		}
 	}
 }

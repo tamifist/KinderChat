@@ -102,7 +102,7 @@ namespace KinderChat.iOS
 
 		public UIColor ConversationSelectedCellColor {
 			get {
-				return MainGradientStartColor.ColorWithAlpha(0.1f);
+				return MainGradientStartColor;
 			}
 		}
 

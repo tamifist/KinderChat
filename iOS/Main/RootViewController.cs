@@ -2,6 +2,7 @@
 using System.Drawing;
 using Foundation;
 using UIKit;
+using CoreGraphics;
 
 namespace KinderChat.iOS
 {
@@ -62,7 +63,10 @@ namespace KinderChat.iOS
 
 		void ApplyCurrentTheme()
 		{
-			TabBar.TintColor = Theme.Current.MainSaturatedColor;
+			CGSize gradientImageSize = new CGSize(TabBar.Frame.Size.Width, TabBar.Frame.Size.Height);
+			UIImage gradientImage = ImageUtils.GetGradientImage(
+				Theme.Current.MainGradientStartColor.CGColor, Theme.Current.MainGradientEndColor.CGColor, gradientImageSize);
+			TabBar.TintColor = UIColor.FromPatternImage(gradientImage);
 		}
 
 		void OnThemeChanged (object sender, EventArgs e)

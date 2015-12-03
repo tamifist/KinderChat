@@ -50,6 +50,14 @@ namespace KinderChat.iOS
             TabBarItem = new UITabBarItem(Strings.Messages.TabBarTitle, UIImage.FromBundle("tabIconMessages"), 1);
         }
 
+		public override void AwakeFromNib ()
+		{
+			base.AwakeFromNib ();
+
+			Title = Strings.Messages.TabBarTitle;
+			TabBarItem = new UITabBarItem(Strings.Messages.TabBarTitle, UIImage.FromBundle("tabIconMessages"), 1);
+		}
+
 		#region Life cycle
 
 		public override void ViewDidLoad ()
@@ -67,7 +75,7 @@ namespace KinderChat.iOS
 
 			//remove for now because we do on new friends list
 			NavigationItem.BackBarButtonItem = new UIBarButtonItem (Strings.Chats.BackButtonTitle, UIBarButtonItemStyle.Plain, null, null);
-			//NavigationItem.RightBarButtonItem.Clicked += OnFindNewPersonClicked;
+			//NavigationItem.rfr.Clicked += OnFindNewPersonClicked;
 			NavigationItem.RightBarButtonItem = null;
 
 			viewModel = App.ConversationsViewModel;

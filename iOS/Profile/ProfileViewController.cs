@@ -38,6 +38,14 @@ namespace KinderChat.iOS
 			NavigationItem.RightBarButtonItem = new UIBarButtonItem (icon, UIBarButtonItemStyle.Plain, OnLinkToParentClicked);
 		}
 
+		public override void AwakeFromNib ()
+		{
+			base.AwakeFromNib ();
+
+			Title = Strings.Profile.TabBarTitle;
+			TabBarItem = new UITabBarItem(Strings.Profile.TabBarTitle, UIImage.FromBundle("tabIconProfile"), 3);
+		}
+
 		#region Life cycle
 
 		public override void ViewDidLoad ()

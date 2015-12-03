@@ -56,8 +56,7 @@ namespace KinderChat.iOS
 		    CGSize gradientImageSize = new CGSize(NavigationBar.Frame.Size.Width, NavigationBar.Frame.Size.Height + 20.0f);
 		    UIImage gradientImage = ImageUtils.GetGradientImage(
                 Theme.Current.MainGradientStartColor.CGColor, Theme.Current.MainGradientEndColor.CGColor, gradientImageSize);
-            NavigationBar.BarTintColor = UIColor.FromPatternImage(gradientImage); //Theme.Current.MainColor;
-		    NavigationBar.TintColor = UIColor.White;
+            NavigationBar.BarTintColor = UIColor.FromPatternImage(gradientImage);
 		}
 	}
 }

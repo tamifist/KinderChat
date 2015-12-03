@@ -23,6 +23,14 @@ namespace KinderChat.iOS
             TabBarItem = new UITabBarItem("Points", UIImage.FromBundle("tabIconPoints"), 4);
 		}
 
+		public override void AwakeFromNib ()
+		{
+			base.AwakeFromNib ();
+
+			Title = "Points";
+			TabBarItem = new UITabBarItem("Points", UIImage.FromBundle("tabIconPoints"), 4);
+		}
+
 		#region Life cycle
 
 		public override void ViewDidLoad ()

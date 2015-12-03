@@ -92,6 +92,16 @@ namespace KinderChat.iOS
 			SetupSelectedView ();
 		}
 
+		public override void Draw (CGRect rect)
+		{
+			base.Draw (rect);
+
+			CGSize gradientImageSize = new CGSize(selectionCircle.Frame.Size.Width, selectionCircle.Frame.Size.Height);
+			UIImage gradientImage = ImageUtils.GetGradientImage(
+				Theme.Current.MainGradientStartColor.CGColor, Theme.Current.MainGradientEndColor.CGColor, gradientImageSize);
+			selectionCircle.BackgroundColor = UIColor.FromPatternImage(gradientImage);
+		}
+
 		public void SetCellSize (CGSize size)
 		{
 			taskNameLbl.PreferredMaxLayoutWidth = size.Width - 20;
@@ -116,11 +126,6 @@ namespace KinderChat.iOS
 			selectionCircle.Height (2 * SelectionRadius);
 			selectionCircle.Width (2 * SelectionRadius);
 			selectionCircle.Layer.CornerRadius = SelectionRadius;
-
-            CGSize gradientImageSize = new CGSize(selectionCircle.Frame.Size.Width, selectionCircle.Frame.Size.Height);
-            UIImage gradientImage = ImageUtils.GetGradientImage(
-                Theme.Current.MainGradientStartColor.CGColor, Theme.Current.MainGradientEndColor.CGColor, gradientImageSize);
-            selectionCircle.BackgroundColor = UIColor.FromPatternImage(gradientImage);
         }
 
 		public void AnimateIconAppearance ()

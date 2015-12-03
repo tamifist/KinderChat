@@ -57,14 +57,18 @@ namespace KinderChat.iOS
 	    {
             UIGraphics.BeginImageContext(size);
             var context = UIGraphics.GetCurrentContext();
-            var gradientLayer = new CAGradientLayer();
-            gradientLayer.Frame = new CGRect(0, 0, size.Width, size.Height);
-            gradientLayer.Colors = new CGColor[] { startColor, endColor };
-            gradientLayer.RenderInContext(context);
-            UIImage gradientImage = UIGraphics.GetImageFromCurrentImageContext();
-            UIGraphics.EndImageContext();
+			if (context != null) {
+				var gradientLayer = new CAGradientLayer();
+				gradientLayer.Frame = new CGRect(0, 0, size.Width, size.Height);
+				gradientLayer.Colors = new CGColor[] { startColor, endColor };
+				gradientLayer.RenderInContext(context);
+				UIImage gradientImage = UIGraphics.GetImageFromCurrentImageContext();
+				UIGraphics.EndImageContext();
 
-	        return gradientImage;
+				return gradientImage;
+			}
+
+			return null;
 	    }
 
 	    public static void SetImage (UIImageView imgView, string url, Predicate<string> needToUpdate)
