@@ -4,17 +4,17 @@ using UIKit;
 
 namespace KinderChat.iOS
 {
-	public class PinkFontTheme : IFontTheme
+	public class RedFontTheme : IFontTheme
 	{
-		public static PinkFontTheme Instance { get; private set; }
+		public static RedFontTheme Instance { get; private set; }
 
-		private PinkFontTheme()
+		private RedFontTheme()
 		{
 		}
 
-		static PinkFontTheme()
+		static RedFontTheme()
 		{
-			Instance = new PinkFontTheme ();
+			Instance = new RedFontTheme ();
 		}
 
 		public UIFont ScreenTitleFont {

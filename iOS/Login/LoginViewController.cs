@@ -84,8 +84,8 @@ namespace KinderChat.iOS
 			SausageButtons.UpdateBackgoundColor(AppDelegate.BlueTheme, BoyButton);
 
 			SausageButtons.SetUp (GirlButton);
-			SausageButtons.ApplyTheme(AppDelegate.PinkTheme, GirlButton);
-			SausageButtons.UpdateBackgoundColor(AppDelegate.PinkTheme, GirlButton);
+			SausageButtons.ApplyTheme(AppDelegate.RedTheme, GirlButton);
+			SausageButtons.UpdateBackgoundColor(AppDelegate.RedTheme, GirlButton);
 			#endregion
 
 			UpdateText ();
@@ -343,7 +343,7 @@ namespace KinderChat.iOS
 
 		void GirlThemeSelected (object sender, EventArgs e)
 		{
-			SetTheme (AppTheme.Pink, AppDelegate.PinkTheme);
+			SetTheme (AppTheme.Red, AppDelegate.RedTheme);
 		}
 
 		void SetTheme(AppTheme themeType, Theme theme)

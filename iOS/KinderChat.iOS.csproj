@@ -142,7 +142,6 @@
     <Compile Include="Theme\Images\IImagesTheme.cs" />
     <Compile Include="Theme\Images\1BlueImagesTheme.cs" />
     <Compile Include="Theme\Images\2BlackImagesTheme.cs" />
-    <Compile Include="Theme\Images\3PinkImagesTheme.cs" />
     <Compile Include="Profile\ProfileViewController.cs" />
     <Compile Include="Profile\ProfileViewController.designer.cs">
       <DependentUpon>ProfileViewController.cs</DependentUpon>
@@ -176,6 +175,7 @@
     <Compile Include="Common\EventArgs\MoveEventArgs.cs" />
     <Compile Include="Common\InteractiveDebugger.cs" />
     <Compile Include="Helpers\ConstraintExtensions.cs" />
+    <Compile Include="Theme\Images\3RedImagesTheme.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main\TabOrder.cs" />
@@ -185,12 +185,6 @@
     <Compile Include="Helpers\Layout.cs" />
     <Compile Include="Friends\UICollectionViewFriendCell.cs" />
     <Compile Include="Profile\AvatarCollectionViewCell.cs" />
-    <Compile Include="Points\PointsViewController.cs" />
-    <Compile Include="Points\PointsViewController.designer.cs">
-      <DependentUpon>PointsViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Points\TaskCell.cs" />
-    <Compile Include="Points\TaskCollectionViewSource.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard.storyboard" />
@@ -345,30 +339,6 @@
     <ImageAsset Include="Resources\Images.xcassets\newMessageIcon.imageset\newMessageIcon%403.png">
       <InProject>false</InProject>
     </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\bearIcon.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\bearIcon.imageset\bearIcon.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\bearIcon.imageset\bearIcon%402.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\bearIcon.imageset\bearIcon%403.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\bearIconWithBook.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\bearIconWithBook.imageset\bearIconWithBook.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\bearIconWithBook.imageset\bearIconWithBook%402.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\bearIconWithBook.imageset\bearIconWithBook%403.png">
-      <InProject>false</InProject>
-    </ImageAsset>
     <ImageAsset Include="Resources\Images.xcassets\editNickName.imageset\Contents.json">
       <InProject>false</InProject>
     </ImageAsset>
@@ -391,18 +361,6 @@
       <InProject>false</InProject>
     </ImageAsset>
     <ImageAsset Include="Resources\Images.xcassets\avatarSelectionMask.imageset\avatarSelectionMask%403.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\tabIconBear.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\tabIconBear.imageset\bearTabIcon.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\tabIconBear.imageset\bearTabIcon%402.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\tabIconBear.imageset\bearTabIcon%403.png">
       <InProject>false</InProject>
     </ImageAsset>
     <ImageAsset Include="Resources\Images.xcassets\tabIconProfile.imageset\Contents.json">
@@ -465,18 +423,6 @@
     <ImageAsset Include="Resources\Images.xcassets\AppIcon.appiconset\144x144.png">
       <InProject>false</InProject>
     </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\toolbarLinkIcon.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\toolbarLinkIcon.imageset\linkToolbarIcon.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\toolbarLinkIcon.imageset\linkToolbarIcon%402x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\toolbarLinkIcon.imageset\linkToolbarIcon%403x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
     <ImageAsset Include="Resources\Images.xcassets\tabIconMessages.imageset\tabIconMessages.png">
       <InProject>false</InProject>
     </ImageAsset>
@@ -502,66 +448,6 @@
       <InProject>false</InProject>
     </ImageAsset>
     <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\2208x1242.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\taskIconBrocolli.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\taskIconBrocolli.imageset\brocolli.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\taskIconBrocolli.imageset\brocolli%402x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\taskIconBrocolli.imageset\brocolli%403x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\taskIconFinishedHomework.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\taskIconFinishedHomework.imageset\finishedHomework.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\taskIconFinishedHomework.imageset\finishedHomework%402x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\taskIconFinishedHomework.imageset\finishedHomework%403x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\taskIconToothbrush.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\taskIconToothbrush.imageset\toothbrush.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\taskIconToothbrush.imageset\toothbrush%402x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\taskIconToothbrush.imageset\toothbrush%403x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\taskIconVacuumCleaner.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\taskIconVacuumCleaner.imageset\vacuumCleaner.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\taskIconVacuumCleaner.imageset\vacuumCleaner%402x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\taskIconVacuumCleaner.imageset\vacuumCleaner%403x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\tabIconPoints.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\tabIconPoints.imageset\points.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\tabIconPoints.imageset\points%402x.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\tabIconPoints.imageset\points%403x.png">
       <InProject>false</InProject>
     </ImageAsset>
     <ImageAsset Include="Resources\Images.xcassets\MessageBubble.imageset\Contents.json">

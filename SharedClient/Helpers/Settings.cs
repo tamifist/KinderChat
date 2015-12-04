@@ -10,7 +10,7 @@ namespace KinderChat
 	public enum AppTheme
 	{
 		Blue,
-		Pink,
+		Red,
 		Black
 	}
 	/// <summary>

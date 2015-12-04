@@ -264,11 +264,6 @@ namespace KinderChat.iOS
 
 		#endregion
 
-		partial void UpdateTheme (NSObject sender)
-		{
-			Theme.SetNextTheme ();  // actual theme change
-		}
-
 		void ChangeThemeProps ()
 		{
 			if (Theme.Current.IsDirty) {

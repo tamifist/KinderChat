@@ -14,9 +14,6 @@ namespace KinderChat.iOS
 	[Register ("MessageListViewController")]
 	partial class MessageListViewController
 	{
-		[Action ("UpdateTheme:")]
-		partial void UpdateTheme (Foundation.NSObject sender);
-
 		void ReleaseDesignerOutlets ()
 		{
 		}

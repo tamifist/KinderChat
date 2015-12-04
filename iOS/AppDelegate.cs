@@ -14,7 +14,7 @@ namespace KinderChat.iOS
 
 		public Theme BlueTheme { get; private set; }
 
-		public Theme PinkTheme { get; private set; }
+		public Theme RedTheme { get; private set; }
 
 		public Theme BlackTheme { get; private set; }
 
@@ -68,16 +68,16 @@ namespace KinderChat.iOS
 		void SetupCurrentTheme ()
 		{
 			Theme.AvailableThemes.Add (BlueTheme = CreateBlueTheme ());
-			Theme.AvailableThemes.Add (BlackTheme = CreateBlackTheme ());
-			Theme.AvailableThemes.Add (PinkTheme = CreateRedTheme ());
+			//Theme.AvailableThemes.Add (BlackTheme = CreateBlackTheme ());
+			Theme.AvailableThemes.Add (RedTheme = CreateRedTheme ());
 
 			switch (Settings.AppTheme) {
 			case AppTheme.Blue:
 				Theme.Current = BlueTheme;
 				break;
 
-			case AppTheme.Pink:
-				Theme.Current = PinkTheme;
+			case AppTheme.Red:
+				Theme.Current = RedTheme;
 				break;
 
 			case AppTheme.Black:
@@ -111,8 +111,8 @@ namespace KinderChat.iOS
 		Theme CreateRedTheme ()
 		{
 			IColorTheme colorTheme = RedColorTheme.Instance;
-			IFontTheme fontTheme = PinkFontTheme.Instance;
-			IImagesTheme imgTheme = PinkImagesTheme.Instance;
+			IFontTheme fontTheme = RedFontTheme.Instance;
+			IImagesTheme imgTheme = RedImagesTheme.Instance;
 
 			return new Theme (colorTheme, fontTheme, imgTheme);
 		}

@@ -4,18 +4,17 @@ using UIKit;
 
 namespace KinderChat.iOS
 {
-	public class PinkImagesTheme : IImagesTheme
+	public class RedImagesTheme : IImagesTheme
 	{
-		public static PinkImagesTheme Instance { get; private set; }
+		public static RedImagesTheme Instance { get; private set; }
 
-		static PinkImagesTheme()
+		static RedImagesTheme()
 		{
-			Instance = new PinkImagesTheme ();
+			Instance = new RedImagesTheme ();
 		}
 
-		private PinkImagesTheme()
+		private RedImagesTheme()
 		{
-
 		}
 
 		public UIImage SignUpIcon {

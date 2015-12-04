@@ -23,7 +23,7 @@ namespace KinderChat.iOS
 
 		public UIImage SignUpIcon {
 			get {
-				return UIImage.FromBundle ("bearIconWithBook");
+				return UIImage.FromBundle ("inner6Icon");
 			}
 		}
 

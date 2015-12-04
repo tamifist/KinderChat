@@ -172,8 +172,6 @@ namespace KinderChat.iOS
 			});
 		}
 
-
-
 		public override async void PressedSendButton (UIButton button, string text, string senderId, string senderDisplayName, NSDate date)
 		{
 			SystemSoundPlayer.PlayMessageSentSound ();
