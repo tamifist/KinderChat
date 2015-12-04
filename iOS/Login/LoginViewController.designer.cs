@@ -1,11 +1,13 @@
-﻿// WARNING
+// WARNING
 //
-// This file has been generated automatically by Xamarin Studio to store outlets and
-// actions made in the UI designer. If it is removed, they will be lost.
-// Manual changes to this file may not be handled correctly.
+// This file has been generated automatically by Xamarin Studio from the outlets and
+// actions declared in your storyboard file.
+// Manual changes to this file will not be maintained.
 //
 using Foundation;
+using System;
 using System.CodeDom.Compiler;
+using UIKit;
 
 namespace KinderChat.iOS
 {
@@ -44,62 +46,52 @@ namespace KinderChat.iOS
 
 		[Outlet]
 		UIKit.UIView ThemeSelectorContainerView { get; set; }
-		
+
 		void ReleaseDesignerOutlets ()
 		{
-			if (BubbleImg != null) {
-				BubbleImg.Dispose ();
-				BubbleImg = null;
-			}
-
-			if (BubbleImgTopOffset != null) {
-				BubbleImgTopOffset.Dispose ();
-				BubbleImgTopOffset = null;
-			}
-
-			if (ContinueBtn != null) {
-				ContinueBtn.Dispose ();
-				ContinueBtn = null;
-			}
-
-			if (Input != null) {
-				Input.Dispose ();
-				Input = null;
-			}
-
-			if (NavBarBlendView != null) {
-				NavBarBlendView.Dispose ();
-				NavBarBlendView = null;
-			}
-
-			if (NavBarBlendViewHeightConstraint != null) {
-				NavBarBlendViewHeightConstraint.Dispose ();
-				NavBarBlendViewHeightConstraint = null;
-			}
-
-			if (NickName != null) {
-				NickName.Dispose ();
-				NickName = null;
-			}
-
-			if (SwitchSignUpType != null) {
-				SwitchSignUpType.Dispose ();
-				SwitchSignUpType = null;
-			}
-
-			if (ThemeSelectorContainerView != null) {
-				ThemeSelectorContainerView.Dispose ();
-				ThemeSelectorContainerView = null;
-			}
-
 			if (BoyButton != null) {
 				BoyButton.Dispose ();
 				BoyButton = null;
 			}
-
+			if (BubbleImg != null) {
+				BubbleImg.Dispose ();
+				BubbleImg = null;
+			}
+			if (BubbleImgTopOffset != null) {
+				BubbleImgTopOffset.Dispose ();
+				BubbleImgTopOffset = null;
+			}
+			if (ContinueBtn != null) {
+				ContinueBtn.Dispose ();
+				ContinueBtn = null;
+			}
 			if (GirlButton != null) {
 				GirlButton.Dispose ();
 				GirlButton = null;
+			}
+			if (Input != null) {
+				Input.Dispose ();
+				Input = null;
+			}
+			if (NavBarBlendView != null) {
+				NavBarBlendView.Dispose ();
+				NavBarBlendView = null;
+			}
+			if (NavBarBlendViewHeightConstraint != null) {
+				NavBarBlendViewHeightConstraint.Dispose ();
+				NavBarBlendViewHeightConstraint = null;
+			}
+			if (NickName != null) {
+				NickName.Dispose ();
+				NickName = null;
+			}
+			if (SwitchSignUpType != null) {
+				SwitchSignUpType.Dispose ();
+				SwitchSignUpType = null;
+			}
+			if (ThemeSelectorContainerView != null) {
+				ThemeSelectorContainerView.Dispose ();
+				ThemeSelectorContainerView = null;
 			}
 		}
 	}

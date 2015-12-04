@@ -33,6 +33,7 @@ namespace KinderChat.iOS
 			saturationFilter.Contrast = 1f;
 			saturationFilter.Saturation = 0;
 			saturationFilter.Image = image.CGImage;
+
 			var img = new UIImage (saturationFilter.OutputImage, image.CurrentScale, image.Orientation);
 
 			return img;

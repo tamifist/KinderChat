@@ -49,5 +49,7 @@
         <image name="bubble_regular_mirror" width="56" height="35"/>
         <image name="bubble_stroked_mirror" width="56" height="35"/>
         <image name="VarelaRound-Regular.ttf" width="0" height="0"/>
+        <image name="inner6Logo" width="211" height="243"/>
+        <image name="inner6Icon" width="279" height="107"/>
     </resources>
 </document>

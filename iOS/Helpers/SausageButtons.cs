@@ -1,5 +1,6 @@
 ﻿using System;
 using UIKit;
+using CoreGraphics;
 
 namespace KinderChat.iOS
 {
@@ -30,7 +31,16 @@ namespace KinderChat.iOS
 
 		public static void UpdateBackgoundColor(Theme theme, UIButton button)
 		{
-			button.BackgroundColor = button.Enabled ? theme.MainSaturatedColor : theme.DisabledButtonColor;
+			if (button.Enabled) {
+				CGSize gradientImageSize = new CGSize(button.Bounds.Width, button.Bounds.Height + 2);
+				UIImage gradientImage = ImageUtils.GetGradientImage(
+					theme.MainGradientStartColor.CGColor, theme.MainGradientEndColor.CGColor, gradientImageSize);
+				button.BackgroundColor = UIColor.FromPatternImage(gradientImage);
+			} else {
+				button.BackgroundColor = theme.DisabledButtonColor;
+			}
+
+
 		}
 	}
 }

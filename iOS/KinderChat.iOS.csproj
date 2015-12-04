@@ -176,9 +176,6 @@
     <Compile Include="Common\EventArgs\MoveEventArgs.cs" />
     <Compile Include="Common\InteractiveDebugger.cs" />
     <Compile Include="Helpers\ConstraintExtensions.cs" />
-    <None Include="Resources\Images.xcassets\inner6Icon.imageset\inner6Icon.png" />
-    <None Include="Resources\Images.xcassets\inner6Icon.imageset\inner6Icon%402.png" />
-    <None Include="Resources\Images.xcassets\inner6Icon.imageset\inner6Icon%403.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main\TabOrder.cs" />
@@ -507,18 +504,6 @@
     <ImageAsset Include="Resources\Images.xcassets\LaunchImage.launchimage\2208x1242.png">
       <InProject>false</InProject>
     </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\splashLogo.imageset\Contents.json">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\splashLogo.imageset\splashLogo.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\splashLogo.imageset\splashLogo%402.png">
-      <InProject>false</InProject>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\splashLogo.imageset\splashLogo%403.png">
-      <InProject>false</InProject>
-    </ImageAsset>
     <ImageAsset Include="Resources\Images.xcassets\taskIconBrocolli.imageset\Contents.json">
       <InProject>false</InProject>
     </ImageAsset>
@@ -618,6 +603,13 @@
     <ImageAsset Include="Resources\Images.xcassets\tabIconFriend.imageset\tabIconFriend.png" />
     <ImageAsset Include="Resources\Images.xcassets\tabIconFriend.imageset\Contents.json" />
     <ImageAsset Include="Resources\Images.xcassets\inner6Icon.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\inner6Icon.imageset\inner6Icon.png" />
+    <ImageAsset Include="Resources\Images.xcassets\inner6Icon.imageset\inner6Icon%402.png" />
+    <ImageAsset Include="Resources\Images.xcassets\inner6Icon.imageset\inner6Icon%403.png" />
+    <ImageAsset Include="Resources\Images.xcassets\splashLogo.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\splashLogo.imageset\splashLogo.png" />
+    <ImageAsset Include="Resources\Images.xcassets\splashLogo.imageset\splashLogo%402.png" />
+    <ImageAsset Include="Resources\Images.xcassets\splashLogo.imageset\splashLogo%403.png" />
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="gcdiscreetnotification">

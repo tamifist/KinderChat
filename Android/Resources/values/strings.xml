@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Inner6</string>
-    <string name="welcome_to_kinderchat">Welcome to Kinder Chat</string>
+    <string name="app_name">Inner 6</string>
+    <string name="welcome_to_kinderchat">Welcome to Inner 6</string>
    	<string name="get_started_welcome">Get started by setting up your profile and staring a conversation with some friends.</string>
     <!--Login Screen-->
     <string name="welcome">Welcome</string>
@@ -17,7 +17,7 @@
     <string name="link_to_parent">Link To Parent</string>
     <string name="nickname">Nick name</string>
     <string name="blue">blue</string>
-    <string name="pink">pink</string>
+    <string name="pink">red</string>
     <string name="take_photo">Take Photo</string>
     <string name="have_pin">I already have a pin</string>
     <!-- Friends -->

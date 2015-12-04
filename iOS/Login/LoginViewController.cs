@@ -5,6 +5,7 @@ using Foundation;
 using CoreGraphics;
 using BigTed;
 using System.ComponentModel;
+using CoreAnimation;
 
 namespace KinderChat.iOS
 {
@@ -71,7 +72,7 @@ namespace KinderChat.iOS
 			#region Theme switcher
 
 			BoyButton.SetTitle("Blue", UIControlState.Normal);
-			GirlButton.SetTitle("Pink", UIControlState.Normal);
+			GirlButton.SetTitle("Red", UIControlState.Normal);
 
 			BoyButton.TouchUpInside += BlueThemeSelected;
 			GirlButton.TouchUpInside += GirlThemeSelected;
@@ -136,10 +137,7 @@ namespace KinderChat.iOS
 
 		void ApplyCurrentTheme()
 		{
-            CGSize gradientImageSize = new CGSize(NavBarBlendView.Frame.Size.Width, NavBarBlendView.Frame.Size.Height);
-            UIImage gradientImage = ImageUtils.GetGradientImage(
-                Theme.Current.MainGradientStartColor.CGColor, Theme.Current.MainGradientEndColor.CGColor, gradientImageSize);
-            NavBarBlendView.BackgroundColor = UIColor.FromPatternImage(gradientImage);
+			NavBarBlendView.BackgroundColor = Theme.Current.BackgroundColor;
 
 			ThemeUtils.ApplyCurrentFont (Input);
 			ThemeUtils.ApplyCurrentFont (NickName);
@@ -147,11 +145,15 @@ namespace KinderChat.iOS
 			SausageButtons.ApplyCurrentTheme (ContinueBtn);
 			SausageButtons.UpdateBackgoundColor (ContinueBtn);
 
-			SwitchSignUpType.SetTitleColor (Theme.Current.MainSaturatedColor, UIControlState.Normal);
 			SwitchSignUpType.Font = Theme.Current.SausageSwitchIdentityButtonFont;
-			SwitchSignUpType.Layer.BorderColor = Theme.Current.MainSaturatedColor.CGColor;
+			UIColor switchSignUpTypeColor = UIColor.FromPatternImage (ImageUtils.GetGradientImage (
+				Theme.Current.MainGradientStartColor.CGColor, Theme.Current.MainGradientEndColor.CGColor, SwitchSignUpType.Bounds.Size));
+			SwitchSignUpType.SetTitleColor (switchSignUpTypeColor, UIControlState.Normal);
+			SwitchSignUpType.Layer.BorderColor = switchSignUpTypeColor.CGColor;
 
-			BubbleImg.Image = Theme.Current.ApplyEffects(Theme.Current.SignUpIcon);
+			BubbleImg.Image = Theme.Current.SignUpIcon.ImageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate);
+			BubbleImg.TintColor = UIColor.FromPatternImage(ImageUtils.GetGradientImage (
+				Theme.Current.MainGradientStartColor.CGColor, Theme.Current.MainGradientEndColor.CGColor, BubbleImg.Image.Size));
 		}
 
 		async void ContinueHandler (object sender, EventArgs e)
