@@ -480,22 +480,54 @@
     <ImageAsset Include="Resources\Images.xcassets\bubble_stroked_mirror.imageset\bubble_stroked%403x.png">
       <InProject>false</InProject>
     </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\toolbarSettingsIcon.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\toolbarSettingsIcon.imageset\toolbarSettingsIcon.png" />
-    <ImageAsset Include="Resources\Images.xcassets\toolbarSettingsIcon.imageset\toolbarSettingsIcon%402.png" />
-    <ImageAsset Include="Resources\Images.xcassets\toolbarSettingsIcon.imageset\toolbarSettingsIcon%403.png" />
-    <ImageAsset Include="Resources\Images.xcassets\tabIconFriend.imageset\tabIconFriend%402.png" />
-    <ImageAsset Include="Resources\Images.xcassets\tabIconFriend.imageset\tabIconFriend%403.png" />
-    <ImageAsset Include="Resources\Images.xcassets\tabIconFriend.imageset\tabIconFriend.png" />
-    <ImageAsset Include="Resources\Images.xcassets\tabIconFriend.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\inner6Icon.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\inner6Icon.imageset\inner6Icon.png" />
-    <ImageAsset Include="Resources\Images.xcassets\inner6Icon.imageset\inner6Icon%402.png" />
-    <ImageAsset Include="Resources\Images.xcassets\inner6Icon.imageset\inner6Icon%403.png" />
-    <ImageAsset Include="Resources\Images.xcassets\splashLogo.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Images.xcassets\splashLogo.imageset\splashLogo.png" />
-    <ImageAsset Include="Resources\Images.xcassets\splashLogo.imageset\splashLogo%402.png" />
-    <ImageAsset Include="Resources\Images.xcassets\splashLogo.imageset\splashLogo%403.png" />
+    <ImageAsset Include="Resources\Images.xcassets\toolbarSettingsIcon.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\toolbarSettingsIcon.imageset\toolbarSettingsIcon.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\toolbarSettingsIcon.imageset\toolbarSettingsIcon%402.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\toolbarSettingsIcon.imageset\toolbarSettingsIcon%403.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\tabIconFriend.imageset\tabIconFriend%402.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\tabIconFriend.imageset\tabIconFriend%403.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\tabIconFriend.imageset\tabIconFriend.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\tabIconFriend.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\inner6Icon.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\inner6Icon.imageset\inner6Icon.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\inner6Icon.imageset\inner6Icon%402.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\inner6Icon.imageset\inner6Icon%403.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\splashLogo.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\splashLogo.imageset\splashLogo.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\splashLogo.imageset\splashLogo%402.png">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\splashLogo.imageset\splashLogo%403.png">
+      <InProject>false</InProject>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="gcdiscreetnotification">
