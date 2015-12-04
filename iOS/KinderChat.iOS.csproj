@@ -176,6 +176,9 @@
     <Compile Include="Common\EventArgs\MoveEventArgs.cs" />
     <Compile Include="Common\InteractiveDebugger.cs" />
     <Compile Include="Helpers\ConstraintExtensions.cs" />
+    <None Include="Resources\Images.xcassets\inner6Icon.imageset\inner6Icon.png" />
+    <None Include="Resources\Images.xcassets\inner6Icon.imageset\inner6Icon%402.png" />
+    <None Include="Resources\Images.xcassets\inner6Icon.imageset\inner6Icon%403.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main\TabOrder.cs" />
