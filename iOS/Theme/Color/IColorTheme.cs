@@ -33,6 +33,7 @@ namespace KinderChat.iOS
 		UIColor IncomingBubbleStroke { get; }
 		UIColor IncomingTextColor { get; }
 		UIColor OutgoingTextColor { get; }
+		UIColor OutgoingBubbleColor { get; }
 
 		#endregion
 

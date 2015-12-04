@@ -34,8 +34,8 @@ namespace KinderChat.iOS
 		{
             TabBarItem = new UITabBarItem(Strings.Profile.TabBarTitle, UIImage.FromBundle("tabIconProfile"), 3);
 
-			var icon = UIImage.FromBundle ("toolbarLinkIcon");
-			NavigationItem.RightBarButtonItem = new UIBarButtonItem (icon, UIBarButtonItemStyle.Plain, OnLinkToParentClicked);
+			var icon = UIImage.FromBundle ("toolbarSettingsIcon");
+			NavigationItem.RightBarButtonItem = new UIBarButtonItem (icon, UIBarButtonItemStyle.Plain, OnSettingsClicked);
 		}
 
 		public override void AwakeFromNib ()
@@ -240,9 +240,9 @@ namespace KinderChat.iOS
 			viewModel.ExecuteSaveProfileCommand ();
 		}
 
-		void OnLinkToParentClicked(object sender, EventArgs e)
+		void OnSettingsClicked(object sender, EventArgs e)
 		{
-			viewModel.ExecuteLinkToParentCommand ();
+			Theme.SetNextTheme ();
 		}
 
 		#region Nick Name

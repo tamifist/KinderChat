@@ -221,6 +221,18 @@ namespace KinderChat.iOS
 			}
 		}
 
+		UIColor outgoingBubbleColor;
+		public UIColor OutgoingBubbleColor {
+			get {
+				return outgoingBubbleColor;
+			}
+			set {
+				outgoingBubbleColor = value;
+				IsDirty = true;
+				RaiseThemeChanged (this);
+			}
+		}
+
 		UIColor badgeTitleColor;
 		public UIColor BadgeTitleColor {
 			get {
@@ -428,6 +440,7 @@ namespace KinderChat.iOS
 			incomingBubbleStroke = colorTheme.IncomingBubbleStroke;
 			incomingTextColor = colorTheme.IncomingTextColor;
 			outgoingTextColor = colorTheme.OutgoingTextColor;
+			outgoingBubbleColor = colorTheme.OutgoingBubbleColor;
 			badgeTitleColor = colorTheme.BadgeTitleColor;
 
 			screenTitleFont = fontTheme.ScreenTitleFont;

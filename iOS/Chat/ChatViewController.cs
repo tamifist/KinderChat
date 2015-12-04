@@ -32,7 +32,7 @@ namespace KinderChat.iOS
 			var bubbleFactory = new MessagesBubbleImageFactory ();
 
 			incomingBubbleImageData = bubbleFactory.CreateIncomingMessagesBubbleImage (Theme.Current.BackgroundColor);
-			outgoingBubbleImageData = bubbleFactory.CreateOutgoingMessagesBubbleImage (Theme.Current.MainSaturatedColor);
+			outgoingBubbleImageData = bubbleFactory.CreateOutgoingMessagesBubbleImage (Theme.Current.OutgoingBubbleColor);
 
 			var border = UIImage.FromBundle ("bubble_stroked");
 			var bubble = UIImage.FromBundle ("bubble_regular");
@@ -215,9 +215,9 @@ namespace KinderChat.iOS
 
 		public override IMessageData GetMessageData (MessagesCollectionView collectionView, NSIndexPath indexPath)
 		{
-			var msg = viewModel.Messages [indexPath.Row];
-		    var msgAsText = msg as TextMessageViewModel;
-		    var msgAsImage = msg as ImageMessageViewModel;
+			MessageViewModel msg = viewModel.Messages [indexPath.Row];
+		    TextMessageViewModel msgAsText = msg as TextMessageViewModel;
+		    ImageMessageViewModel msgAsImage = msg as ImageMessageViewModel;
 
 			string senderId = msg.IsIncoming ? viewModel.Friend.FriendId.ToString () : SenderId;
             string senderName = msg.IsIncoming ? viewModel.Friend.Name : SenderDisplayName;

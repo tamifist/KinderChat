@@ -26,9 +26,9 @@ namespace KinderChat.iOS
 				Right = (float)26.5
 			};
 
-			normalBubbleImage = CreateColoredImage (Theme.Current.MainSaturatedColor, mask).CreateResizableImage (cap);
+			normalBubbleImage = CreateColoredImage (Theme.Current.OutgoingBubbleColor, mask).CreateResizableImage (cap);
 
-			var highlightedColor = UIColor.FromRGB (32, 96, 200);
+			var highlightedColor = Theme.Current.OutgoingBubbleColor;
 			highlightedBubbleImage = CreateColoredImage (highlightedColor, mask).CreateResizableImage (cap);
 		}
 
