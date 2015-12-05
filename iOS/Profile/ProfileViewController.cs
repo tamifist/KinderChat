@@ -150,7 +150,7 @@ namespace KinderChat.iOS
 		void ApplyCurrentTheme ()
 		{
 			View.BackgroundColor = Theme.Current.BackgroundColor;
-            BlendNavBarView.BackgroundColor = Theme.Current.MainGradientEndColor;
+			BlendNavBarView.BackgroundColor = Theme.Current.BackgroundColor;
 
 			nickNameLbl.TextColor = Theme.Current.ScreenTitleColor;
 		}
