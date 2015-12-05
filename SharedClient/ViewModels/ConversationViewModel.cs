@@ -156,7 +156,6 @@ namespace KinderChat
 		    try
 			{
                 currentUserTypingController.HandleOutgoingMessage();
-				Settings.KinderPoints = Settings.KinderPoints + 1;
 
                 await messageLoadTaskCompletionSource.Task;
 				App.ConversationsViewModel.IsDirty = true;

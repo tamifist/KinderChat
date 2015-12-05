@@ -145,7 +145,6 @@
     <Compile Include="Controls\SquareImageView.cs" />
     <Compile Include="Fragments\BaseFragment.cs" />
     <Compile Include="PushNotifications\PushNotifications.cs" />
-    <Compile Include="Fragments\MainSections\KinderPointsFragment.cs" />
     <Compile Include="Adapters\ItemAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -214,7 +213,6 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_action_content_link.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_action_content_link.png" />
     <AndroidResource Include="Resources\values-sw600dp\integers.xml" />
-    <AndroidResource Include="Resources\layout\fragment_kinderpoints.axml" />
     <AndroidResource Include="Resources\layout\item_task.axml" />
     <AndroidResource Include="Resources\drawable-hdpi\ic_brocolli.png" />
     <AndroidResource Include="Resources\drawable-mdpi\ic_brocolli.png" />
@@ -286,6 +284,10 @@
     <AndroidResource Include="Resources\drawable-xhdpi\ic_stat_social_reply.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_stat_social_reply.png" />
     <AndroidResource Include="Resources\values\attrs.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_profile_save.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_profile_save.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_profile_save.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_profile_save.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="packages\SQLitePCL.raw_basic.0.7.1\build\MonoAndroid\SQLitePCL.raw_basic.targets" Condition="Exists('packages\SQLitePCL.raw_basic.0.7.1\build\MonoAndroid\SQLitePCL.raw_basic.targets')" />

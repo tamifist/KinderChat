@@ -20,6 +20,14 @@ namespace KinderChat
 		{
 			base.OnCreate (bundle);
 
+            var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
+            if (toolbar != null)
+            {
+                SetSupportActionBar(toolbar);
+                SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+                SupportActionBar.SetHomeButtonEnabled(true);
+            }
+
             ServiceContainer.Register<IUIThreadDispacher>(() => new UIThreadDispacher());
             ServiceContainer.Register<ILiveConnection>(() => new WebSocketConnection());
 			App.Init ();

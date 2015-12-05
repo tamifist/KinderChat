@@ -211,7 +211,7 @@ namespace KinderChat
 						App.Logger.Track ("PickTheme", new Dictionary<string, string> {
 							{ "nickname", Settings.NickName },
 							{ "avatar", user.Avatar.Location },
-							{ "theme", Settings.AppTheme == AppTheme.Blue ? "blue" : "pink" }
+							{ "theme", Settings.AppTheme == AppTheme.Blue ? "blue" : "red" }
 						});
 						CanProgress = true;
 					} catch (Exception ex) {

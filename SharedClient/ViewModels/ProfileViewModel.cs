@@ -187,11 +187,9 @@ namespace KinderChat
 					RaiseNotification("Unable to link to parent, please enter valid email.");
 					return;
 				}
-
-				Settings.LinkedToParent = true;
+                
 				Settings.ParentEmail = email;
 				RaiseNotification ("Linked to Parent!");
-				Settings.KinderPoints = Settings.KinderPoints + 1000;
 			});
 		}
 
@@ -284,8 +282,6 @@ namespace KinderChat
 						App.Logger.Track ("AvatarUploaded");
 						OnPropertyChanged (AvatarUrlName);
 						refreshAvatars = true;
-
-						Settings.KinderPoints = Settings.KinderPoints + 50;
 					} catch (Exception ex) {
 						App.Logger.Report (ex);
 						RaiseError ("Avatar upload failed. Please try again.");

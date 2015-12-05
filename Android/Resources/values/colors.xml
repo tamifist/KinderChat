@@ -17,5 +17,5 @@
   <!-- Tabs -->
   <color name="selected_tab">#FFFFFF</color>
   <color name="unselected_tab">#77FFFFFF</color>
-  <color name="unselected_tab_pink">#FFFFFF</color>
+  <color name="unselected_tab_red">#FFFFFF</color>
 </resources>

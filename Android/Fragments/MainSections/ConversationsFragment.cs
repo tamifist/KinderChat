@@ -27,8 +27,6 @@ namespace KinderChat
 
 		readonly ConversationsViewModel viewModel = App.ConversationsViewModel;
 		SwipeRefreshLayout refresher;
-		View selectFriend;
-		FloatingActionButton fab;
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
 			var root = inflater.Inflate(Resource.Layout.fragment_conversations, container, false);
@@ -36,40 +34,13 @@ namespace KinderChat
             list.ItemClick += OnConversationClick;
 			list.Adapter = new ConverstationAdapter(Activity, viewModel);
 
-			var friendGrid = root.FindViewById<GridView> (Resource.Id.grid);
-			friendGrid.ItemClick += FriendClicked;
-			friendGrid.Adapter = new FriendAdapter (Activity, viewModel);
-
-			selectFriend = root.FindViewById<LinearLayout> (Resource.Id.new_conversation);
-
-			var cancelFriends = root.FindViewById<Button> (Resource.Id.cancel);
-			cancelFriends.Click += (sender, e) => {
-				fab.Show ();
-				selectFriend.Visibility = ViewStates.Gone;
-			};
-
-            fab = root.FindViewById<FloatingActionButton>(Resource.Id.fab);
-            fab.Click += OnStartNewConversationClick;
-            fab.AttachToListView(list);
-
 			refresher = root.FindViewById<SwipeRefreshLayout> (Resource.Id.refresher);
 			refresher.Refresh += (sender, e) => viewModel.ExecuteLoadConversationsCommand ();
 
 
             return root;
         }
-
-        void FriendClicked (object sender, AdapterView.ItemClickEventArgs e)
-		{
-			var friend = viewModel.Friends [e.Position];
-			selectFriend.Visibility = ViewStates.Gone;
-			fab.Show ();
-			var intent = new Intent (Activity, typeof(ConversationActivity));
-			intent.PutExtra (ConversationActivity.RecipientId, friend.FriendId);
-			Activity.StartActivity(intent);
-        }
-			
-
+		
         void OnConversationClick(object sender, AdapterView.ItemClickEventArgs e)
 		{
 			
@@ -84,19 +55,7 @@ namespace KinderChat
 			intent.PutExtra (ConversationActivity.RecipientId, id);
 			Activity.StartActivity(intent);
         }
-
-        void OnStartNewConversationClick(object sender, EventArgs e)
-        {
-
-			selectFriend.Visibility = ViewStates.Visible;
-			fab.Hide ();
-			if (viewModel.Friends.Count == 0)
-				viewModel.ExecuteLoadFriendsCommand (false);
-			
-		}
-
-	
-
+        
 		void ViewModelPropertyChanged (object sender, System.ComponentModel.PropertyChangedEventArgs e)
 		{
 			Activity.RunOnUiThread (() => {
@@ -117,7 +76,6 @@ namespace KinderChat
 		{
 			base.OnResume ();
 			viewModel.PropertyChanged += ViewModelPropertyChanged;
-			fab.Show ();
 			Init ();
 		}
 

@@ -40,7 +40,15 @@ namespace KinderChat
         {
 			base.OnCreate(bundle);
 
-			var id = Intent.GetLongExtra (RecipientId, 0);
+            var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
+            if (toolbar != null)
+            {
+                SetSupportActionBar(toolbar);
+                SupportActionBar.SetDisplayHomeAsUpEnabled(true);
+                SupportActionBar.SetHomeButtonEnabled(true);
+            }
+
+            var id = Intent.GetLongExtra (RecipientId, 0);
 			viewModel = new ConversationViewModel (id);
            
             messagesListView = FindViewById<ListView>(Resource.Id.messages_list_view);

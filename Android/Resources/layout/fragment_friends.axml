@@ -32,7 +32,7 @@
         android:layout_gravity="bottom|right"
         android:layout_margin="@dimen/keyline_margin"
         android:src="@drawable/ic_content_add"
-        fab:fab_colorNormal="?attr/colorPrimary"
+        fab:fab_colorNormal="?attr/colorPrimaryDark"
         fab:fab_colorPressed="?attr/colorPrimaryDark"
         fab:fab_colorRipple="?attr/colorPrimary" />
 </FrameLayout>

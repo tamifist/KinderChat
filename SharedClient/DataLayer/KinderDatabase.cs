@@ -31,8 +31,7 @@ namespace KinderChat
 				database.CreateTableAsync<Message> (),
 				database.CreateTableAsync<Friend> (),
 				database.CreateTableAsync<AvatarItem> (),
-				database.CreateTableAsync<DeviceInfo> (),
-				database.CreateTableAsync<KinderTask> ()
+				database.CreateTableAsync<DeviceInfo> ()
 			);
 		}
 

@@ -1,6 +1,7 @@
 ﻿using Android.OS;
 using Android.Views;
 using Android.Widget;
+using com.refractored.fab;
 using KinderChat.ServerClient.Ws.Proxy;
 
 namespace KinderChat
@@ -42,7 +43,13 @@ namespace KinderChat
 
 
 			nickName = root.FindViewById<EditText> (Resource.Id.nickname);
-			avatar = root.FindViewById<ImageView> (Resource.Id.avatar);
+            nickName.Text = viewModel.NickName;
+            nickName.TextChanged += (sender, e) =>
+            {
+                viewModel.NickName = nickName.Text;
+            };
+
+            avatar = root.FindViewById<ImageView> (Resource.Id.avatar);
 			avatar.Clickable = true;
 			avatar.Click += (sender, e) => App.MessageDialog.SelectOption ("New Avatar", new[] {
 				"Pick Photo from Gallery",
@@ -53,14 +60,14 @@ namespace KinderChat
 				else if(which == 1)
 					viewModel.TakePhoto ();
 			});
+            
+            var fab = root.FindViewById<FloatingActionButton>(Resource.Id.fabSaveProfile);
+            fab.AttachToListView(avatarGrid);
+            fab.Click += (sender, e) => {
+                viewModel.ExecuteSaveProfileCommand();
+            };
 
-			nickName.Text = viewModel.NickName;
-			nickName.TextChanged += (sender, e) => 
-			{
-				viewModel.NickName = nickName.Text;
-			};
-
-			Koush.UrlImageViewHelper.SetUrlDrawable (avatar, viewModel.AvatarUrl, Resource.Drawable.ic_launcher);
+            Koush.UrlImageViewHelper.SetUrlDrawable (avatar, viewModel.AvatarUrl, Resource.Drawable.ic_launcher);
 			viewModel.PropertyChanged += ViewModelPropertyChanged;
             return root;
         }
@@ -97,33 +104,7 @@ namespace KinderChat
 				viewModel.ExecuteLoadAvatarsCommand ();
 			}
 		}
-
-
-		public override bool OnOptionsItemSelected (IMenuItem item)
-		{
-			switch (item.ItemId) {
-			case Resource.Id.action_link_to_parent:
-				viewModel.ExecuteLinkToParentCommand ();
-				break;
-			case Resource.Id.action_save:
-				viewModel.ExecuteSaveProfileCommand ();
-				break;
-			case Resource.Id.action_logout:
-				App.MessageDialog.SendConfirmation ("Are you sure you want to logout?", "Logout?", (logoff) => {
-					if(logoff)
-					{
-						Settings.Logout();
-                        ServiceContainer.Resolve<ConnectionManager>().ForceClose();
-						Activity.StartActivity(typeof(WelcomeActivity));
-						Activity.Finish();
-					}
-				});
-				break;
-			}
-			return base.OnOptionsItemSelected (item);
-		}
-       
-
+        
 		void ViewModelPropertyChanged (object sender, System.ComponentModel.PropertyChangedEventArgs e)
 		{
 			Activity.RunOnUiThread (() => {

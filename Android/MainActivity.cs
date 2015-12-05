@@ -24,30 +24,30 @@ namespace KinderChat
 
 		protected override void OnCreate (Bundle bundle)
 		{
-			base.OnCreate (bundle);
-			adapter = new MyPagerAdapter (this, SupportFragmentManager);
-			pager = FindViewById<ViewPager> (Resource.Id.pager);
-			tabs = FindViewById<PagerSlidingTabStrip> (Resource.Id.tabs);
-			pager.Adapter = adapter;
-			tabs.SetViewPager (pager);
-			tabs.OnPageChangeListener = this;
-			var pageMargin = (int)TypedValue.ApplyDimension (ComplexUnitType.Dip, 4, Resources.DisplayMetrics);
-			pager.PageMargin = pageMargin;
-			pager.OffscreenPageLimit = 4;
-			if (Settings.FirstRun) {
-				pager.CurrentItem = 2;
-				App.MessageDialog.SendMessage (Resources.GetString(Resource.String.get_started_welcome), Resources.GetString(Resource.String.welcome_to_kinderchat));
-			} else {
-				pager.CurrentItem = 0;
-			}
+            base.OnCreate(bundle);
+            adapter = new MyPagerAdapter(this, SupportFragmentManager);
+            pager = FindViewById<ViewPager>(Resource.Id.pager);
+            tabs = FindViewById<PagerSlidingTabStrip>(Resource.Id.tabs);
+            pager.Adapter = adapter;
+            tabs.SetViewPager(pager);
+            tabs.OnPageChangeListener = this;
+            var pageMargin = (int)TypedValue.ApplyDimension(ComplexUnitType.Dip, 4, Resources.DisplayMetrics);
+            pager.PageMargin = pageMargin;
+            pager.OffscreenPageLimit = 4;
+            if (Settings.FirstRun)
+            {
+                pager.CurrentItem = 2;
+                App.MessageDialog.SendMessage(Resources.GetString(Resource.String.get_started_welcome),
+                    Resources.GetString(Resource.String.welcome_to_kinderchat));
+            }
+            else
+            {
+                pager.CurrentItem = 0;
+            }
 
-			SupportActionBar.SetDisplayHomeAsUpEnabled (false);
-			SupportActionBar.SetHomeButtonEnabled (false);
-
-		
-			// Register for GCM
-			KinderGcmService.Register (this);
-		}
+            // Register for GCM
+            KinderGcmService.Register(this);
+        }
 
 		public void OnPageScrollStateChanged (int state)
 		{
@@ -103,10 +103,7 @@ namespace KinderChat
 				case 2:
 					var frag3 = ProfileFragment.NewInstance ();
 					return frag3;
-				case 3:
-					var frag4 = KinderPointsFragment.NewInstance ();
-					return frag4;
-				}
+                }
 
 				return null;
 			}

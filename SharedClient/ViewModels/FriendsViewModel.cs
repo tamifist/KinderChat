@@ -60,8 +60,6 @@ namespace KinderChat
 						try {
 							var firstFlag = flagList [which];
 							await userManager.FlagUser ((int)friendId, firstFlag.Id);
-
-							Settings.KinderPoints = Settings.KinderPoints + 10;
 							RaiseNotification ("User has been flagged for administrative review.");
 						} catch (Exception ex) {
 							App.Logger.Report (ex);
@@ -232,8 +230,6 @@ namespace KinderChat
 							await userManager.SendUserInvite (search);
 							RaiseNotification ("Your friend hasn't signed up for Kinder Chat yet. We have sent them an invite!", "Friend Request Sent");
 							App.Logger.Track ("FriendRequestSent");
-
-							Settings.KinderPoints = Settings.KinderPoints + 60;
 							return;
 						}
 
@@ -275,7 +271,6 @@ namespace KinderChat
 
 								RaiseNotification ("Friend added!");
 								App.Logger.Track ("FriendAdded");
-								Settings.KinderPoints = Settings.KinderPoints + 30;
 							});
 					} catch (Exception ex) {
 						App.Logger.Report (ex);

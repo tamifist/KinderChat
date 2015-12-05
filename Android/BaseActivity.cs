@@ -10,25 +10,13 @@ namespace KinderChat
 	{
 
 		public static Activity CurrentActivity {get;set;}
-		public Toolbar Toolbar {
-			get;
-			set;
-		}
 
 		protected override void OnCreate (Bundle savedInstanceState)
 		{
-			
 			CurrentActivity = this;
 			SetTheme (Settings.AppTheme == AppTheme.Blue ? Resource.Style.MyTheme : Resource.Style.MyThemeRed);
 			base.OnCreate (savedInstanceState);
 			SetContentView (LayoutResource);
-			Toolbar = FindViewById<Toolbar> (Resource.Id.toolbar);
-			if (Toolbar != null) {
-				SetSupportActionBar (Toolbar);
-				SupportActionBar.SetDisplayHomeAsUpEnabled (true);
-				SupportActionBar.SetHomeButtonEnabled (true);
-
-			}
 		}
 
 		protected override void OnPause ()
@@ -54,10 +42,6 @@ namespace KinderChat
 
 		protected abstract int LayoutResource {
 			get;
-		}
-
-		protected int ActionBarIcon {
-			set { Toolbar.SetNavigationIcon (value); }
 		}
 	}
 

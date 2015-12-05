@@ -40,6 +40,7 @@
     <Compile Include="Converters\TimestampConverter.cs" />
     <Compile Include="Converters\ValueConverter.cs" />
     <Compile Include="Helpers\DisposableAction.cs" />
+    <Compile Include="Models\KinderTask.cs" />
     <Compile Include="Models\MessageStatus.cs" />
     <Compile Include="Models\MessageType.cs" />
     <Compile Include="Services\Images\IPhotoGallery.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="ViewModels\Messages\MessageViewModel.cs" />
     <Compile Include="ViewModels\Messages\MessageViewModelFactory.cs" />
     <Compile Include="ViewModels\Messages\TextMessageViewModel.cs" />
+    <Compile Include="ViewModels\PointsViewModel.cs" />
     <Compile Include="ViewModels\SignUpViewModel.cs" />
     <Compile Include="App.cs" />
     <Compile Include="ViewModels\ConversationsViewModel.cs" />
@@ -93,8 +95,6 @@
     <Compile Include="Common\ListExtension.cs" />
     <Compile Include="Services\Messages\EventArgs\MessageStatusEventArgs.cs" />
     <Compile Include="Services\Messages\EventArgs\MessageEventArgs.cs" />
-    <Compile Include="ViewModels\PointsViewModel.cs" />
-    <Compile Include="Models\KinderTask.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Validation, Version=2.0.0.0, Culture=neutral, PublicKeyToken=2fc06f0d701809a7">
