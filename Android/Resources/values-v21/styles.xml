@@ -12,7 +12,7 @@
     <item name="android:windowSharedElementExitTransition">@android:transition/move</item>
   </style>
 
-  <style name="MyThemePink" parent="MyTheme.Base.Pink">
+  <style name="MyThemeRed" parent="MyTheme.Base.Red">
    <item name="android:windowContentTransitions">true</item>
     <item name="android:windowAllowEnterTransitionOverlap">true</item>
     <item name="android:windowAllowReturnTransitionOverlap">true</item>

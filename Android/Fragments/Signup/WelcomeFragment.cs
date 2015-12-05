@@ -28,7 +28,7 @@ namespace KinderChat
 			var buttonSignup = root.FindViewById<Button> (Resource.Id.signup);
 			blue = root.FindViewById<RadioButton> (Resource.Id.blue);
 			buttonSignup.Click += (sender, e) => {
-				Settings.AppTheme = blue.Checked ? AppTheme.Blue : AppTheme.Pink;
+				Settings.AppTheme = blue.Checked ? AppTheme.Blue : AppTheme.Red;
 				((WelcomeActivity)Activity).GoToGetStarted ();
 			};
 			return root;

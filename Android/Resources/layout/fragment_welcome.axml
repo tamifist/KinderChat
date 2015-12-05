@@ -41,19 +41,19 @@
         android:layout_height="wrap_content"
         android:id="@+id/radioGroup1"
         android:layout_gravity="center_horizontal">
+      <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/red"
+            android:textColor="@color/primaryRed"
+            android:id="@+id/pink" />
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="true"
             android:text="@string/blue"
-            android:textColor="@color/accent"
+            android:textColor="@color/primary"
             android:id="@+id/blue" />
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/pink"
-            android:textColor="@color/accentPink"
-            android:id="@+id/pink" />
     </RadioGroup>
     <Space
         android:layout_width="fill_parent"

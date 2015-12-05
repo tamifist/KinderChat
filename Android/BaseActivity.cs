@@ -19,7 +19,7 @@ namespace KinderChat
 		{
 			
 			CurrentActivity = this;
-			SetTheme (Settings.AppTheme == AppTheme.Blue ? Resource.Style.MyTheme : Resource.Style.MyThemePink);
+			SetTheme (Settings.AppTheme == AppTheme.Blue ? Resource.Style.MyTheme : Resource.Style.MyThemeRed);
 			base.OnCreate (savedInstanceState);
 			SetContentView (LayoutResource);
 			Toolbar = FindViewById<Toolbar> (Resource.Id.toolbar);

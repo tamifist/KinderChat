@@ -1,0 +1,5 @@
+﻿<resources>
+  <declare-styleable name="MyTheme">
+    <attr name="gradientAccent" format="reference" />
+  </declare-styleable>
+</resources>

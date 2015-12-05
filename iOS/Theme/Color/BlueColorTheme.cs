@@ -31,7 +31,7 @@ namespace KinderChat.iOS
 	    public UIColor MainGradientStartColor
         {
 			get {
-				return UIColor.FromRGB(1, 167, 222);
+				return UIColor.FromRGB(0, 168, 223);
 			}
 		}
 
@@ -39,7 +39,7 @@ namespace KinderChat.iOS
         {
             get
             {
-                return UIColor.FromRGB(76, 64, 154);
+                return UIColor.FromRGB(77, 63, 153);
             }
         }
 

@@ -153,7 +153,9 @@
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
-    <AndroidResource Include="Resources\layout\toolbar.axml" />
+    <AndroidResource Include="Resources\layout\toolbar.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
     <AndroidResource Include="Resources\layout\fragment_welcome.axml" />
     <AndroidResource Include="Resources\layout\fragment_get_started.axml" />
     <AndroidResource Include="Resources\layout\fragment_confirmation.axml" />
@@ -239,6 +241,12 @@
     <AndroidResource Include="Resources\drawable-xhdpi\ic_notification.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_notification.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_notification.png" />
+    <AndroidResource Include="Resources\drawable\red_gradient.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\drawable\blue_gradient.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\strings.xml" />
@@ -277,6 +285,7 @@
     <AndroidResource Include="Resources\drawable-mdpi\ic_stat_social_reply.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\ic_stat_social_reply.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_stat_social_reply.png" />
+    <AndroidResource Include="Resources\values\attrs.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="packages\SQLitePCL.raw_basic.0.7.1\build\MonoAndroid\SQLitePCL.raw_basic.targets" Condition="Exists('packages\SQLitePCL.raw_basic.0.7.1\build\MonoAndroid\SQLitePCL.raw_basic.targets')" />

@@ -578,6 +578,9 @@ namespace KinderChat
 			// aapt resource value: 0x7f010049
 			public const int goIcon = 2130772041;
 			
+			// aapt resource value: 0x7f0100f8
+			public const int gradientAccent = 2130772216;
+			
 			// aapt resource value: 0x7f01000f
 			public const int height = 2130771983;
 			
@@ -1000,29 +1003,29 @@ namespace KinderChat
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f050052
-			public const int abc_background_cache_hint_selector_material_dark = 2131034194;
+			// aapt resource value: 0x7f050050
+			public const int abc_background_cache_hint_selector_material_dark = 2131034192;
 			
-			// aapt resource value: 0x7f050053
-			public const int abc_background_cache_hint_selector_material_light = 2131034195;
+			// aapt resource value: 0x7f050051
+			public const int abc_background_cache_hint_selector_material_light = 2131034193;
 			
 			// aapt resource value: 0x7f05000e
 			public const int abc_input_method_navigation_guard = 2131034126;
 			
+			// aapt resource value: 0x7f050052
+			public const int abc_primary_text_disable_only_material_dark = 2131034194;
+			
+			// aapt resource value: 0x7f050053
+			public const int abc_primary_text_disable_only_material_light = 2131034195;
+			
 			// aapt resource value: 0x7f050054
-			public const int abc_primary_text_disable_only_material_dark = 2131034196;
+			public const int abc_primary_text_material_dark = 2131034196;
 			
 			// aapt resource value: 0x7f050055
-			public const int abc_primary_text_disable_only_material_light = 2131034197;
+			public const int abc_primary_text_material_light = 2131034197;
 			
 			// aapt resource value: 0x7f050056
-			public const int abc_primary_text_material_dark = 2131034198;
-			
-			// aapt resource value: 0x7f050057
-			public const int abc_primary_text_material_light = 2131034199;
-			
-			// aapt resource value: 0x7f050058
-			public const int abc_search_url_text = 2131034200;
+			public const int abc_search_url_text = 2131034198;
 			
 			// aapt resource value: 0x7f05000f
 			public const int abc_search_url_text_normal = 2131034127;
@@ -1033,17 +1036,11 @@ namespace KinderChat
 			// aapt resource value: 0x7f050011
 			public const int abc_search_url_text_selected = 2131034129;
 			
-			// aapt resource value: 0x7f050059
-			public const int abc_secondary_text_material_dark = 2131034201;
+			// aapt resource value: 0x7f050057
+			public const int abc_secondary_text_material_dark = 2131034199;
 			
-			// aapt resource value: 0x7f05005a
-			public const int abc_secondary_text_material_light = 2131034202;
-			
-			// aapt resource value: 0x7f050045
-			public const int accent = 2131034181;
-			
-			// aapt resource value: 0x7f05004e
-			public const int accentPink = 2131034190;
+			// aapt resource value: 0x7f050058
+			public const int abc_secondary_text_material_light = 2131034200;
 			
 			// aapt resource value: 0x7f050012
 			public const int accent_material_dark = 2131034130;
@@ -1051,8 +1048,8 @@ namespace KinderChat
 			// aapt resource value: 0x7f050013
 			public const int accent_material_light = 2131034131;
 			
-			// aapt resource value: 0x7f05004b
-			public const int activated_color = 2131034187;
+			// aapt resource value: 0x7f05004a
+			public const int activated_color = 2131034186;
 			
 			// aapt resource value: 0x7f050014
 			public const int background_floating_material_dark = 2131034132;
@@ -1132,11 +1129,11 @@ namespace KinderChat
 			// aapt resource value: 0x7f050005
 			public const int common_signin_btn_light_text_pressed = 2131034117;
 			
-			// aapt resource value: 0x7f05005b
-			public const int common_signin_btn_text_dark = 2131034203;
+			// aapt resource value: 0x7f050059
+			public const int common_signin_btn_text_dark = 2131034201;
 			
-			// aapt resource value: 0x7f05005c
-			public const int common_signin_btn_text_light = 2131034204;
+			// aapt resource value: 0x7f05005a
+			public const int common_signin_btn_text_light = 2131034202;
 			
 			// aapt resource value: 0x7f050020
 			public const int dim_foreground_disabled_material_dark = 2131034144;
@@ -1150,8 +1147,8 @@ namespace KinderChat
 			// aapt resource value: 0x7f050023
 			public const int dim_foreground_material_light = 2131034147;
 			
-			// aapt resource value: 0x7f05004a
-			public const int divider = 2131034186;
+			// aapt resource value: 0x7f050049
+			public const int divider = 2131034185;
 			
 			// aapt resource value: 0x7f050042
 			public const int fab_material_blue_500 = 2131034178;
@@ -1168,8 +1165,8 @@ namespace KinderChat
 			// aapt resource value: 0x7f050027
 			public const int hint_foreground_material_light = 2131034151;
 			
-			// aapt resource value: 0x7f050046
-			public const int lightPrimary = 2131034182;
+			// aapt resource value: 0x7f050045
+			public const int lightPrimary = 2131034181;
 			
 			// aapt resource value: 0x7f050028
 			public const int link_text_material_dark = 2131034152;
@@ -1198,14 +1195,14 @@ namespace KinderChat
 			// aapt resource value: 0x7f050044
 			public const int primaryDark = 2131034180;
 			
-			// aapt resource value: 0x7f05004d
-			public const int primaryDarkPink = 2131034189;
-			
 			// aapt resource value: 0x7f05004c
-			public const int primaryPink = 2131034188;
+			public const int primaryDarkRed = 2131034188;
 			
-			// aapt resource value: 0x7f050048
-			public const int primaryText = 2131034184;
+			// aapt resource value: 0x7f05004b
+			public const int primaryRed = 2131034187;
+			
+			// aapt resource value: 0x7f050047
+			public const int primaryText = 2131034183;
 			
 			// aapt resource value: 0x7f05002f
 			public const int primary_dark_material_dark = 2131034159;
@@ -1240,8 +1237,8 @@ namespace KinderChat
 			// aapt resource value: 0x7f050038
 			public const int ripple_material_light = 2131034168;
 			
-			// aapt resource value: 0x7f050049
-			public const int secondaryText = 2131034185;
+			// aapt resource value: 0x7f050048
+			public const int secondaryText = 2131034184;
 			
 			// aapt resource value: 0x7f050039
 			public const int secondary_text_default_material_dark = 2131034169;
@@ -1255,8 +1252,8 @@ namespace KinderChat
 			// aapt resource value: 0x7f05003c
 			public const int secondary_text_disabled_material_light = 2131034172;
 			
-			// aapt resource value: 0x7f05004f
-			public const int selected_tab = 2131034191;
+			// aapt resource value: 0x7f05004d
+			public const int selected_tab = 2131034189;
 			
 			// aapt resource value: 0x7f05003d
 			public const int switch_thumb_disabled_material_dark = 2131034173;
@@ -1264,11 +1261,11 @@ namespace KinderChat
 			// aapt resource value: 0x7f05003e
 			public const int switch_thumb_disabled_material_light = 2131034174;
 			
-			// aapt resource value: 0x7f05005d
-			public const int switch_thumb_material_dark = 2131034205;
+			// aapt resource value: 0x7f05005b
+			public const int switch_thumb_material_dark = 2131034203;
 			
-			// aapt resource value: 0x7f05005e
-			public const int switch_thumb_material_light = 2131034206;
+			// aapt resource value: 0x7f05005c
+			public const int switch_thumb_material_light = 2131034204;
 			
 			// aapt resource value: 0x7f05003f
 			public const int switch_thumb_normal_material_dark = 2131034175;
@@ -1276,14 +1273,14 @@ namespace KinderChat
 			// aapt resource value: 0x7f050040
 			public const int switch_thumb_normal_material_light = 2131034176;
 			
-			// aapt resource value: 0x7f050047
-			public const int textIcon = 2131034183;
+			// aapt resource value: 0x7f050046
+			public const int textIcon = 2131034182;
 			
-			// aapt resource value: 0x7f050050
-			public const int unselected_tab = 2131034192;
+			// aapt resource value: 0x7f05004e
+			public const int unselected_tab = 2131034190;
 			
-			// aapt resource value: 0x7f050051
-			public const int unselected_tab_pink = 2131034193;
+			// aapt resource value: 0x7f05004f
+			public const int unselected_tab_pink = 2131034191;
 			
 			static Color()
 			{
@@ -1723,175 +1720,181 @@ namespace KinderChat
 			public const int abc_textfield_search_material = 2130837562;
 			
 			// aapt resource value: 0x7f02003b
-			public const int common_full_open_on_phone = 2130837563;
+			public const int blue_gradient = 2130837563;
 			
 			// aapt resource value: 0x7f02003c
-			public const int common_ic_googleplayservices = 2130837564;
+			public const int common_full_open_on_phone = 2130837564;
 			
 			// aapt resource value: 0x7f02003d
-			public const int common_signin_btn_icon_dark = 2130837565;
+			public const int common_ic_googleplayservices = 2130837565;
 			
 			// aapt resource value: 0x7f02003e
-			public const int common_signin_btn_icon_disabled_dark = 2130837566;
+			public const int common_signin_btn_icon_dark = 2130837566;
 			
 			// aapt resource value: 0x7f02003f
-			public const int common_signin_btn_icon_disabled_focus_dark = 2130837567;
+			public const int common_signin_btn_icon_disabled_dark = 2130837567;
 			
 			// aapt resource value: 0x7f020040
-			public const int common_signin_btn_icon_disabled_focus_light = 2130837568;
+			public const int common_signin_btn_icon_disabled_focus_dark = 2130837568;
 			
 			// aapt resource value: 0x7f020041
-			public const int common_signin_btn_icon_disabled_light = 2130837569;
+			public const int common_signin_btn_icon_disabled_focus_light = 2130837569;
 			
 			// aapt resource value: 0x7f020042
-			public const int common_signin_btn_icon_focus_dark = 2130837570;
+			public const int common_signin_btn_icon_disabled_light = 2130837570;
 			
 			// aapt resource value: 0x7f020043
-			public const int common_signin_btn_icon_focus_light = 2130837571;
+			public const int common_signin_btn_icon_focus_dark = 2130837571;
 			
 			// aapt resource value: 0x7f020044
-			public const int common_signin_btn_icon_light = 2130837572;
+			public const int common_signin_btn_icon_focus_light = 2130837572;
 			
 			// aapt resource value: 0x7f020045
-			public const int common_signin_btn_icon_normal_dark = 2130837573;
+			public const int common_signin_btn_icon_light = 2130837573;
 			
 			// aapt resource value: 0x7f020046
-			public const int common_signin_btn_icon_normal_light = 2130837574;
+			public const int common_signin_btn_icon_normal_dark = 2130837574;
 			
 			// aapt resource value: 0x7f020047
-			public const int common_signin_btn_icon_pressed_dark = 2130837575;
+			public const int common_signin_btn_icon_normal_light = 2130837575;
 			
 			// aapt resource value: 0x7f020048
-			public const int common_signin_btn_icon_pressed_light = 2130837576;
+			public const int common_signin_btn_icon_pressed_dark = 2130837576;
 			
 			// aapt resource value: 0x7f020049
-			public const int common_signin_btn_text_dark = 2130837577;
+			public const int common_signin_btn_icon_pressed_light = 2130837577;
 			
 			// aapt resource value: 0x7f02004a
-			public const int common_signin_btn_text_disabled_dark = 2130837578;
+			public const int common_signin_btn_text_dark = 2130837578;
 			
 			// aapt resource value: 0x7f02004b
-			public const int common_signin_btn_text_disabled_focus_dark = 2130837579;
+			public const int common_signin_btn_text_disabled_dark = 2130837579;
 			
 			// aapt resource value: 0x7f02004c
-			public const int common_signin_btn_text_disabled_focus_light = 2130837580;
+			public const int common_signin_btn_text_disabled_focus_dark = 2130837580;
 			
 			// aapt resource value: 0x7f02004d
-			public const int common_signin_btn_text_disabled_light = 2130837581;
+			public const int common_signin_btn_text_disabled_focus_light = 2130837581;
 			
 			// aapt resource value: 0x7f02004e
-			public const int common_signin_btn_text_focus_dark = 2130837582;
+			public const int common_signin_btn_text_disabled_light = 2130837582;
 			
 			// aapt resource value: 0x7f02004f
-			public const int common_signin_btn_text_focus_light = 2130837583;
+			public const int common_signin_btn_text_focus_dark = 2130837583;
 			
 			// aapt resource value: 0x7f020050
-			public const int common_signin_btn_text_light = 2130837584;
+			public const int common_signin_btn_text_focus_light = 2130837584;
 			
 			// aapt resource value: 0x7f020051
-			public const int common_signin_btn_text_normal_dark = 2130837585;
+			public const int common_signin_btn_text_light = 2130837585;
 			
 			// aapt resource value: 0x7f020052
-			public const int common_signin_btn_text_normal_light = 2130837586;
+			public const int common_signin_btn_text_normal_dark = 2130837586;
 			
 			// aapt resource value: 0x7f020053
-			public const int common_signin_btn_text_pressed_dark = 2130837587;
+			public const int common_signin_btn_text_normal_light = 2130837587;
 			
 			// aapt resource value: 0x7f020054
-			public const int common_signin_btn_text_pressed_light = 2130837588;
+			public const int common_signin_btn_text_pressed_dark = 2130837588;
 			
 			// aapt resource value: 0x7f020055
-			public const int default_photo = 2130837589;
+			public const int common_signin_btn_text_pressed_light = 2130837589;
 			
 			// aapt resource value: 0x7f020056
-			public const int fab_shadow = 2130837590;
+			public const int default_photo = 2130837590;
 			
 			// aapt resource value: 0x7f020057
-			public const int fab_shadow_mini = 2130837591;
+			public const int fab_shadow = 2130837591;
 			
 			// aapt resource value: 0x7f020058
-			public const int ic_action_camera = 2130837592;
+			public const int fab_shadow_mini = 2130837592;
 			
 			// aapt resource value: 0x7f020059
-			public const int ic_action_content_link = 2130837593;
+			public const int ic_action_camera = 2130837593;
 			
 			// aapt resource value: 0x7f02005a
-			public const int ic_action_content_save = 2130837594;
+			public const int ic_action_content_link = 2130837594;
 			
 			// aapt resource value: 0x7f02005b
-			public const int ic_action_content_send = 2130837595;
+			public const int ic_action_content_save = 2130837595;
 			
 			// aapt resource value: 0x7f02005c
-			public const int ic_brocolli = 2130837596;
+			public const int ic_action_content_send = 2130837596;
 			
 			// aapt resource value: 0x7f02005d
-			public const int ic_cleanedroom = 2130837597;
+			public const int ic_brocolli = 2130837597;
 			
 			// aapt resource value: 0x7f02005e
-			public const int ic_content_add = 2130837598;
+			public const int ic_cleanedroom = 2130837598;
 			
 			// aapt resource value: 0x7f02005f
-			public const int ic_editor_attach_file = 2130837599;
+			public const int ic_content_add = 2130837599;
 			
 			// aapt resource value: 0x7f020060
-			public const int ic_errorstatus = 2130837600;
+			public const int ic_editor_attach_file = 2130837600;
 			
 			// aapt resource value: 0x7f020061
-			public const int ic_homework = 2130837601;
+			public const int ic_errorstatus = 2130837601;
 			
 			// aapt resource value: 0x7f020062
-			public const int ic_launcher = 2130837602;
+			public const int ic_homework = 2130837602;
 			
 			// aapt resource value: 0x7f020063
-			public const int ic_notification = 2130837603;
+			public const int ic_launcher = 2130837603;
 			
 			// aapt resource value: 0x7f020064
-			public const int ic_plusone_medium_off_client = 2130837604;
+			public const int ic_notification = 2130837604;
 			
 			// aapt resource value: 0x7f020065
-			public const int ic_plusone_small_off_client = 2130837605;
+			public const int ic_plusone_medium_off_client = 2130837605;
 			
 			// aapt resource value: 0x7f020066
-			public const int ic_plusone_standard_off_client = 2130837606;
+			public const int ic_plusone_small_off_client = 2130837606;
 			
 			// aapt resource value: 0x7f020067
-			public const int ic_plusone_tall_off_client = 2130837607;
+			public const int ic_plusone_standard_off_client = 2130837607;
 			
 			// aapt resource value: 0x7f020068
-			public const int ic_stat_social_reply = 2130837608;
+			public const int ic_plusone_tall_off_client = 2130837608;
 			
 			// aapt resource value: 0x7f020069
-			public const int ic_successstatus = 2130837609;
+			public const int ic_stat_social_reply = 2130837609;
 			
 			// aapt resource value: 0x7f02006a
-			public const int ic_toothbrush = 2130837610;
+			public const int ic_successstatus = 2130837610;
 			
 			// aapt resource value: 0x7f02006b
-			public const int msg_incoming = 2130837611;
+			public const int ic_toothbrush = 2130837611;
 			
 			// aapt resource value: 0x7f02006c
-			public const int msg_outgoing = 2130837612;
+			public const int msg_incoming = 2130837612;
 			
 			// aapt resource value: 0x7f02006d
-			public const int msg_status_delivered = 2130837613;
+			public const int msg_outgoing = 2130837613;
 			
 			// aapt resource value: 0x7f02006e
-			public const int msg_status_seen = 2130837614;
+			public const int msg_status_delivered = 2130837614;
 			
 			// aapt resource value: 0x7f02006f
-			public const int msg_status_sending = 2130837615;
+			public const int msg_status_seen = 2130837615;
 			
 			// aapt resource value: 0x7f020070
-			public const int msg_status_sent = 2130837616;
+			public const int msg_status_sending = 2130837616;
 			
 			// aapt resource value: 0x7f020071
-			public const int psts_background_tab = 2130837617;
+			public const int msg_status_sent = 2130837617;
 			
 			// aapt resource value: 0x7f020072
-			public const int roundedbg = 2130837618;
+			public const int psts_background_tab = 2130837618;
 			
 			// aapt resource value: 0x7f020073
-			public const int roundedbgdark = 2130837619;
+			public const int red_gradient = 2130837619;
+			
+			// aapt resource value: 0x7f020074
+			public const int roundedbg = 2130837620;
+			
+			// aapt resource value: 0x7f020075
+			public const int roundedbgdark = 2130837621;
 			
 			static Drawable()
 			{
@@ -1981,8 +1984,8 @@ namespace KinderChat
 			// aapt resource value: 0x7f0b0015
 			public const int beginning = 2131427349;
 			
-			// aapt resource value: 0x7f0b0074
-			public const int blue = 2131427444;
+			// aapt resource value: 0x7f0b0075
+			public const int blue = 2131427445;
 			
 			// aapt resource value: 0x7f0b0025
 			public const int bold = 2131427365;
@@ -2170,8 +2173,8 @@ namespace KinderChat
 			// aapt resource value: 0x7f0b0063
 			public const int pin = 2131427427;
 			
-			// aapt resource value: 0x7f0b0075
-			public const int pink = 2131427445;
+			// aapt resource value: 0x7f0b0074
+			public const int pink = 2131427444;
 			
 			// aapt resource value: 0x7f0b0005
 			public const int progress_circular = 2131427333;
@@ -2772,7 +2775,7 @@ namespace KinderChat
 			public const int pick_contact = 2131099720;
 			
 			// aapt resource value: 0x7f060043
-			public const int pink = 2131099715;
+			public const int red = 2131099715;
 			
 			// aapt resource value: 0x7f06003f
 			public const int save = 2131099711;
@@ -3223,10 +3226,13 @@ namespace KinderChat
 			public const int MyTheme_Base = 2131296545;
 			
 			// aapt resource value: 0x7f090120
-			public const int MyTheme_Base_Pink = 2131296544;
+			public const int MyTheme_Base_Red = 2131296544;
+			
+			// aapt resource value: 0x7f090123
+			public const int MyTheme_Toolbar_Title = 2131296547;
 			
 			// aapt resource value: 0x7f09011f
-			public const int MyThemePink = 2131296543;
+			public const int MyThemeRed = 2131296543;
 			
 			// aapt resource value: 0x7f090081
 			public const int Platform_AppCompat = 2131296385;
@@ -4205,6 +4211,12 @@ namespace KinderChat
 			
 			// aapt resource value: 7
 			public const int MenuView_preserveIconSpacing = 7;
+			
+			public static int[] MyTheme = new int[] {
+					2130772216};
+			
+			// aapt resource value: 0
+			public const int MyTheme_gradientAccent = 0;
 			
 			public static int[] PagerSlidingTabStrip = new int[] {
 					2130772181,

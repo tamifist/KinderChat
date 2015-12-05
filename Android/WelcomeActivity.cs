@@ -43,7 +43,7 @@ namespace KinderChat
 			SupportActionBar.SetDisplayHomeAsUpEnabled (false);
 			SupportActionBar.SetHomeButtonEnabled (false);
 
-			viewModel = App.SignUpViewModel;
+            viewModel = App.SignUpViewModel;
 			viewModel.PropertyChanged += ViewModelPropertyChanged;
 		}
 
