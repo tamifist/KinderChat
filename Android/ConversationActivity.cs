@@ -60,13 +60,11 @@ namespace KinderChat
             adapter.AssignListView(messagesListView);
 
             sendButton = FindViewById<ImageButton>(Resource.Id.send_button);
-            attachButton = FindViewById<ImageButton>(Resource.Id.attach_button);
             typingText = FindViewById<TextView>(Resource.Id.typing_text);
             inputText = FindViewById<EditText>(Resource.Id.input_text);
             inputText.AfterTextChanged += InputTextChanged;
 
             sendButton.Click += OnSendClick;
-            attachButton.Click += OnAttachClick;
 			viewModel.PropertyChanged += ViewModel_PropertyChanged;
 			viewModel.ExecuteLoadMessagesCommand ();
         }

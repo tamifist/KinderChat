@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
@@ -6,8 +6,8 @@
     <kinderchat.CircleImageView
         android:layout_marginLeft="@dimen/keyline_margin"
         android:id="@+id/msg_photo"
-        android:layout_width="36dp"
-        android:layout_height="36dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:src="@drawable/default_photo"
         android:scaleType="fitCenter" />
     <RelativeLayout
@@ -23,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#000000"
-            android:textSize="20sp"
+            android:textSize="16sp"
             android:paddingBottom="4dp"
             android:text="Hello world!" />
         <TextView
@@ -33,7 +33,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#ff6a6a6a"
-            android:textSize="14sp"
+            android:textSize="12sp"
+            android:fontFamily="sans-serif-light"
             android:text="2:22 AM" />
     </RelativeLayout>
 </LinearLayout>

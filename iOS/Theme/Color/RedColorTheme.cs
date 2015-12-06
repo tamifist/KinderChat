@@ -130,8 +130,8 @@ namespace KinderChat.iOS
 
 		public UIColor OutgoingBubbleColor {
 			get {
-				return UIColor.FromRGB(32, 150, 253);
-			}
+				return UIColor.FromRGB(34, 151, 253);//#2297fd
+            }
 		}
 
 		#endregion

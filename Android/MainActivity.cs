@@ -7,6 +7,8 @@ using Android.Support.V4.View;
 using Android.Support.V4.App;
 using Android.Util;
 using Android.Content.PM;
+using Android.Views;
+using Android.Widget;
 
 namespace KinderChat
 {
@@ -64,11 +66,18 @@ namespace KinderChat
 				frag.Init ();	
 		}
 
-		public class MyPagerAdapter : FragmentPagerAdapter
-		{
+		public class MyPagerAdapter : FragmentStatePagerAdapter, ICustomTabProvider
+        {
 			private string[] Titles;
 
-			public MyPagerAdapter (Context context, Android.Support.V4.App.FragmentManager fm)
+            private readonly int[] icons =
+            {
+                Resource.Drawable.ic_tab_chats,
+                Resource.Drawable.ic_tab_contacts,
+                Resource.Drawable.ic_tab_profile
+            };
+
+            public MyPagerAdapter (Context context, Android.Support.V4.App.FragmentManager fm)
 				: base (fm)
 			{
 				Titles = context.Resources.GetStringArray (Resource.Array.sections);
@@ -83,7 +92,7 @@ namespace KinderChat
 
 			public override int Count {
 				get {
-					return Titles.Length;
+					return icons.Length;
 				}
 			}
 
@@ -108,8 +117,21 @@ namespace KinderChat
 				return null;
 			}
 
-			#endregion
-		}
+            #endregion
+
+            public View GetCustomTabView(ViewGroup parent, int position)
+            {
+                var tablayout =
+                    (LinearLayout)
+                        LayoutInflater.From(Application.Context).Inflate(Resource.Layout.tab_layout, parent, false);
+
+                var tabImage = tablayout.FindViewById<ImageView>(Resource.Id.tabImage);
+
+                tabImage.SetImageResource(icons[position]);
+
+                return tablayout;
+            }
+        }
 	}
 }
 
