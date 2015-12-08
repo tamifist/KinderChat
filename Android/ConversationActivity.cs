@@ -138,7 +138,7 @@ namespace KinderChat
             {
                 return !msg.IsIncoming ? Resource.Layout.item_conversation_msg_image_outgoing : Resource.Layout.item_conversation_msg_image_icoming;
             }
-            return !msg.IsIncoming ? Resource.Layout.item_conversation_msg_outgoing : Resource.Layout.item_conversation_msg_icoming;
+            return !msg.IsIncoming ? Resource.Layout.item_conversation_msg_outgoing : Resource.Layout.item_conversation_msg_incoming;
         }
 
         //TODO: use RecycleView

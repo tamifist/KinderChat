@@ -38,12 +38,12 @@ namespace KinderChat
 			friendGrid.Adapter = new FriendAdapter (Activity, viewModel);
 
 			friendGrid.LongClickable = true;
-			friendGrid.ItemLongClick += (sender, e) => 
+			/*friendGrid.ItemLongClick += (sender, e) => 
 			{
 
 				var friend = viewModel.Friends[e.Position];
 				viewModel.ExecuteFlagFriendCommand(friend.FriendId, friend.Name);
-			};
+			};*/
 
 			var fab = root.FindViewById<FloatingActionButton> (Resource.Id.fab);
 			fab.AttachToListView (friendGrid);

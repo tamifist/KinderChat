@@ -175,7 +175,7 @@
     <AndroidResource Include="Resources\layout\fragment_conversations.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\item_conversation_msg_icoming.axml">
+    <AndroidResource Include="Resources\layout\item_conversation_msg_incoming.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\item_conversation_msg_outgoing.axml">
@@ -285,10 +285,6 @@
     <AndroidResource Include="Resources\drawable\tile_bg.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\drawable\ic_action_content_send.png" />
-    <AndroidResource Include="Resources\drawable\ic_tab_chats.png" />
-    <AndroidResource Include="Resources\drawable\ic_tab_contacts.png" />
-    <AndroidResource Include="Resources\drawable\ic_tab_profile.png" />
     <AndroidResource Include="Resources\drawable-hdpi\msg_incoming.9.png" />
     <AndroidResource Include="Resources\drawable-hdpi\msg_outgoing.9.png" />
     <AndroidResource Include="Resources\drawable-mdpi\msg_incoming.9.png" />
@@ -317,6 +313,23 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\msg_status_delivered.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\msg_status_delivered.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\msg_status_seen.png" />
+    <AndroidResource Include="Resources\drawable\contact_photo_background.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_action_content_send.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_action_content_send.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_action_content_send.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_action_content_send.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_tab_chats.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_tab_chats.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_tab_chats.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_tab_chats.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_tab_contacts.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_tab_contacts.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_tab_contacts.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_tab_contacts.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_tab_profile.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_tab_profile.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_tab_profile.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_tab_profile.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="packages\SQLitePCL.raw_basic.0.7.1\build\MonoAndroid\SQLitePCL.raw_basic.targets" Condition="Exists('packages\SQLitePCL.raw_basic.0.7.1\build\MonoAndroid\SQLitePCL.raw_basic.targets')" />
