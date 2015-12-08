@@ -15,7 +15,7 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:paddingTop="12dp"
-        android:background="#f8f8f8">
+        android:background="#EEEEEE">
         <ListView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -49,7 +49,7 @@
     <View
         android:id="@+id/send_message_bar_separator"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_height="1px"
         android:background="#d7d7d7" />
     <LinearLayout
         android:id="@+id/input_panel"

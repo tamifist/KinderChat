@@ -259,8 +259,6 @@
     <AndroidResource Include="Resources\values\arrays.xml" />
     <AndroidResource Include="Resources\values-v21\styles.xml" />
     <Content Include="Properties\_SettingsStarted.txt" />
-    <AndroidResource Include="Resources\drawable\msg_incoming.9.png" />
-    <AndroidResource Include="Resources\drawable\msg_outgoing.9.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_content_add.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\ic_content_add.png" />
     <AndroidResource Include="Resources\drawable-mdpi\ic_content_add.png" />
@@ -274,10 +272,6 @@
     <AndroidResource Include="Resources\layout\item_conversation_msg_image_outgoing.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\drawable\msg_status_delivered.png" />
-    <AndroidResource Include="Resources\drawable\msg_status_seen.png" />
-    <AndroidResource Include="Resources\drawable\msg_status_sending.png" />
-    <AndroidResource Include="Resources\drawable\msg_status_sent.png" />
     <AndroidResource Include="Resources\drawable-hdpi\ic_stat_social_reply.png" />
     <AndroidResource Include="Resources\drawable-mdpi\ic_stat_social_reply.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\ic_stat_social_reply.png" />
@@ -295,6 +289,34 @@
     <AndroidResource Include="Resources\drawable\ic_tab_chats.png" />
     <AndroidResource Include="Resources\drawable\ic_tab_contacts.png" />
     <AndroidResource Include="Resources\drawable\ic_tab_profile.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\msg_incoming.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\msg_outgoing.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\msg_incoming.9.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\msg_outgoing.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\msg_incoming.9.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\msg_outgoing.9.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\msg_incoming.9.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\msg_outgoing.9.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\msg_status_sent.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\msg_status_sent.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\msg_status_sent.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\msg_status_seen.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\msg_status_seen.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\msg_status_seen.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\msg_status_seen.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\msg_status_sending.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\msg_status_sending.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\msg_status_sending.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\msg_status_sending.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\msg_status_sending.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\msg_status_sent.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\msg_status_sent.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\msg_status_delivered.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\msg_status_delivered.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\msg_status_delivered.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\msg_status_delivered.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\msg_status_delivered.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\msg_status_seen.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="packages\SQLitePCL.raw_basic.0.7.1\build\MonoAndroid\SQLitePCL.raw_basic.targets" Condition="Exists('packages\SQLitePCL.raw_basic.0.7.1\build\MonoAndroid\SQLitePCL.raw_basic.targets')" />

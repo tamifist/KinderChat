@@ -1951,11 +1951,11 @@ namespace KinderChat
 			// aapt resource value: 0x7f0b0046
 			public const int action_context_bar = 2131427398;
 			
-			// aapt resource value: 0x7f0b0087
-			public const int action_link_to_parent = 2131427463;
+			// aapt resource value: 0x7f0b0088
+			public const int action_link_to_parent = 2131427464;
 			
-			// aapt resource value: 0x7f0b0089
-			public const int action_logout = 2131427465;
+			// aapt resource value: 0x7f0b008a
+			public const int action_logout = 2131427466;
 			
 			// aapt resource value: 0x7f0b0002
 			public const int action_menu_divider = 2131427330;
@@ -1972,11 +1972,11 @@ namespace KinderChat
 			// aapt resource value: 0x7f0b002a
 			public const int action_mode_close_button = 2131427370;
 			
-			// aapt resource value: 0x7f0b0088
-			public const int action_save = 2131427464;
+			// aapt resource value: 0x7f0b0089
+			public const int action_save = 2131427465;
 			
-			// aapt resource value: 0x7f0b0086
-			public const int action_search = 2131427462;
+			// aapt resource value: 0x7f0b0087
+			public const int action_search = 2131427463;
 			
 			// aapt resource value: 0x7f0b002b
 			public const int activity_chooser_view_content = 2131427371;
@@ -2001,6 +2001,9 @@ namespace KinderChat
 			
 			// aapt resource value: 0x7f0b0072
 			public const int blue = 2131427442;
+			
+			// aapt resource value: 0x7f0b007e
+			public const int body_bubble = 2131427454;
 			
 			// aapt resource value: 0x7f0b0025
 			public const int bold = 2131427365;
@@ -2116,14 +2119,14 @@ namespace KinderChat
 			// aapt resource value: 0x7f0b005e
 			public const int loading = 2131427422;
 			
-			// aapt resource value: 0x7f0b0082
-			public const int loadingImage = 2131427458;
-			
-			// aapt resource value: 0x7f0b0080
-			public const int loadingProgressBar = 2131427456;
-			
 			// aapt resource value: 0x7f0b0083
-			public const int loadingProgressWheel = 2131427459;
+			public const int loadingImage = 2131427459;
+			
+			// aapt resource value: 0x7f0b0081
+			public const int loadingProgressBar = 2131427457;
+			
+			// aapt resource value: 0x7f0b0084
+			public const int loadingProgressWheel = 2131427460;
 			
 			// aapt resource value: 0x7f0b005b
 			public const int main_content = 2131427419;
@@ -2185,8 +2188,8 @@ namespace KinderChat
 			// aapt resource value: 0x7f0b0006
 			public const int progress_horizontal = 2131427334;
 			
-			// aapt resource value: 0x7f0b0084
-			public const int psts_tab_title = 2131427460;
+			// aapt resource value: 0x7f0b0085
+			public const int psts_tab_title = 2131427461;
 			
 			// aapt resource value: 0x7f0b003f
 			public const int radio = 2131427391;
@@ -2281,8 +2284,8 @@ namespace KinderChat
 			// aapt resource value: 0x7f0b006b
 			public const int switch_identity = 2131427435;
 			
-			// aapt resource value: 0x7f0b0085
-			public const int tabImage = 2131427461;
+			// aapt resource value: 0x7f0b0086
+			public const int tabImage = 2131427462;
 			
 			// aapt resource value: 0x7f0b000e
 			public const int tabMode = 2131427342;
@@ -2290,11 +2293,11 @@ namespace KinderChat
 			// aapt resource value: 0x7f0b005c
 			public const int tabs = 2131427420;
 			
-			// aapt resource value: 0x7f0b007f
-			public const int task_name = 2131427455;
+			// aapt resource value: 0x7f0b0080
+			public const int task_name = 2131427456;
 			
-			// aapt resource value: 0x7f0b007e
-			public const int task_photo = 2131427454;
+			// aapt resource value: 0x7f0b007f
+			public const int task_photo = 2131427455;
 			
 			// aapt resource value: 0x7f0b0060
 			public const int text = 2131427424;
@@ -2302,8 +2305,8 @@ namespace KinderChat
 			// aapt resource value: 0x7f0b0038
 			public const int textSpacerNoButtons = 2131427384;
 			
-			// aapt resource value: 0x7f0b0081
-			public const int textViewStatus = 2131427457;
+			// aapt resource value: 0x7f0b0082
+			public const int textViewStatus = 2131427458;
 			
 			// aapt resource value: 0x7f0b0062
 			public const int text_bottom = 2131427426;
