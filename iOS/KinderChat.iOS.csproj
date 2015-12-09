@@ -176,6 +176,9 @@
     <Compile Include="Common\InteractiveDebugger.cs" />
     <Compile Include="Helpers\ConstraintExtensions.cs" />
     <Compile Include="Theme\Images\3RedImagesTheme.cs" />
+    <None Include="Resources\Images.xcassets\sendTextIcon.imageset\sendTextIcon.png" />
+    <None Include="Resources\Images.xcassets\sendTextIcon.imageset\sendTextIcon%403.png" />
+    <None Include="Resources\Images.xcassets\sendTextIcon.imageset\sendTextIcon%402.png" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main\TabOrder.cs" />
