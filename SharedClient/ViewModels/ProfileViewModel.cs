@@ -323,7 +323,7 @@ namespace KinderChat
 			return file;
 		}
 
-		public async Task<MediaFile> TakePhoto ()
+		public async Task<MediaFile> TakePhoto (Func<string, Stream> resizeAndRotateFunc = null)
 		{
 			if (IsBusy)
 				return null;
@@ -344,8 +344,20 @@ namespace KinderChat
 				if (file == null)
 					return null;
 
-				await UploadPhoto(file);
-			} catch (Exception ex) {
+                // workaround for Android - Photo being saved in landscape not portrait
+			    if (resizeAndRotateFunc != null)
+			    {
+			        var adjustedPhoto = new MediaFile(null, () =>
+			        {
+			            return resizeAndRotateFunc(file.Path);
+			        });
+			        await UploadPhoto(adjustedPhoto);
+			    }
+			    else
+			    {
+                    await UploadPhoto(file);
+                }
+            } catch (Exception ex) {
 				App.Logger.Report (ex);
 			}
 

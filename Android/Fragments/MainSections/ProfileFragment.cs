@@ -1,10 +1,9 @@
-﻿using Android.Graphics;
-using Android.Graphics.Drawables;
+﻿using System;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
-using com.refractored.fab;
-using KinderChat.ServerClient.Ws.Proxy;
+using System.IO;
+using Android.Graphics;
 
 namespace KinderChat
 {
@@ -55,7 +54,19 @@ namespace KinderChat
                 ? Resource.Drawable.ic_blue_circle
                 : Resource.Drawable.ic_red_circle);
 
-            btn_take_photo = root.FindViewById<ImageView> (Resource.Id.btn_take_photo);
+            Func<string, Stream> resizeAndRotateFunc = fileName =>
+            {
+                Bitmap bitmap = fileName.LoadAndResizeBitmap(640, 480);
+                byte[] bitmapData;
+                using (var stream = new MemoryStream())
+                {
+                    bitmap.Compress(Bitmap.CompressFormat.Png, 0, stream);
+                    bitmapData = stream.ToArray();
+                }
+
+                return new MemoryStream(bitmapData);
+            };
+                btn_take_photo = root.FindViewById<ImageView> (Resource.Id.btn_take_photo);
             btn_take_photo.Clickable = true;
             btn_take_photo.Click += (sender, args) => App.MessageDialog.SelectOption("New Avatar", new[] {
                 "Pick Photo from Gallery",
@@ -64,7 +75,7 @@ namespace KinderChat
                 if (which == 0)
                     viewModel.PickPhoto();
                 else if (which == 1)
-                    viewModel.TakePhoto();
+                    viewModel.TakePhoto(resizeAndRotateFunc);
             });
 
             avatar = root.FindViewById<ImageView> (Resource.Id.avatar);
@@ -76,7 +87,7 @@ namespace KinderChat
 				if (which == 0)
 					viewModel.PickPhoto ();
 				else if(which == 1)
-					viewModel.TakePhoto ();
+					viewModel.TakePhoto (resizeAndRotateFunc);
 			});
 
             edit_profile_button = root.FindViewById<ImageButton>(Resource.Id.edit_profile_button);
