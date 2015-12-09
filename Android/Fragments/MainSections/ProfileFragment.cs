@@ -56,7 +56,7 @@ namespace KinderChat
 
             Func<string, Stream> resizeAndRotateFunc = fileName =>
             {
-                Bitmap bitmap = fileName.LoadAndResizeBitmap(640, 480);
+                Bitmap bitmap = fileName.LoadAndResizeBitmap(1280, 720);
                 byte[] bitmapData;
                 using (var stream = new MemoryStream())
                 {
