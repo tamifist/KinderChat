@@ -59,7 +59,7 @@ namespace KinderChat
 			if (Identity == SignUpIdentity.Email)
 				RegisterEnabled = identifier.IsValidEmail () && nickName.Length > 0;
 			else
-				RegisterEnabled = identifier.IsValidPhoneNumber() && nickName.Length > 0;
+				RegisterEnabled = !string.IsNullOrWhiteSpace(identifier) && nickName.Length > 0;
 		}
 
 		string pin = string.Empty;

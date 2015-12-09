@@ -36,9 +36,9 @@ namespace KinderChatServer.Controllers
     public class UsersController : ApiController
     {
         private readonly ApplicationDbContext _db = new ApplicationDbContext();
-        private const string AccountSid = "ACbfaf4f4fdd9ed0e2480495491daef678";
-        private const string AuthToken = "d1802b9c1efbb080cba8e58dbd75175b";
-        private const string FromNumber = "+14155992671";
+        private const string AccountSid = "ACe0fd908d885ac00aa003a20920517b12";
+        private const string AuthToken = "c30f10c97d4ef09e51a9427dedef3787";
+        private const string FromNumber = "+12565105453";
         private ApplicationUserManager _userManager;
         public ApplicationUserManager UserManager
         {
