@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using KinderChat.ServerClient;
 using KinderChat.ServerClient.Managers;
 using System.Collections.Generic;
+using KinderChat.ServerClient.Entities;
 using KinderChat.ServerClient.Ws.Proxy;
 
 namespace KinderChat
@@ -124,9 +125,20 @@ namespace KinderChat
 			using (BusyContext ()) {
 				using (App.Logger.TrackTimeContext ("RegisterUser")) {
 					try {
-						CanProgress = await authenticationService.GetTokenEmail (Identifier);
-						if (CanProgress) {
-							Settings.Email = Identifier;
+                        CanProgress = Identity == SignUpIdentity.Email 
+                            ? await authenticationService.GetTokenEmail(Identifier)
+                            : await authenticationService.GetTokenSms(Identifier);
+
+                        if (CanProgress) {
+                            if (Identity == SignUpIdentity.Email)
+                            {
+                                Settings.Email = Identifier;
+                            }
+                            else
+                            {
+                                Settings.PhoneNumber = Identifier;
+                            }
+                            
 							Settings.NickName = NickName;
 						}
 					} catch (Exception ex) {
@@ -163,7 +175,9 @@ namespace KinderChat
 						App.CryptoService.GenerateKeys ();
 
 						var pk = Convert.ToBase64String (App.CryptoService.PublicKey);
-						var token = await authenticationService.CreateUserDeviceViaEmail (Settings.Email, Pin, pk, nickName);
+                        
+						var token = await authenticationService.CreateUserDevice (
+                            !string.IsNullOrWhiteSpace(Settings.Email) ? Settings.Email : Settings.PhoneNumber, Pin, pk, nickName);
 						if (token == null || token.AccessToken == null || token.DeviceId == null) {
 							App.MessageDialog.SendToast ("Invalid PIN, please try again");
 							return;
@@ -189,7 +203,9 @@ namespace KinderChat
 						//need to store when to refresh
 
 						var userManager = new UserManager (Settings.AccessToken);
-						var user = await userManager.GetUser (Settings.Email);
+						User user = !string.IsNullOrWhiteSpace(Settings.Email) 
+                            ? await userManager.GetUserViaEmail (Settings.Email)
+                            : await userManager.GetUserViaPhone(Settings.PhoneNumber);
 
 						if (user == null || user.Devices == null) {
 							Settings.AccessToken = string.Empty;

@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Inner 6</string>
     <string name="welcome_to_kinderchat">Welcome to Inner 6</string>
-   	<string name="get_started_welcome">Get started by setting up your profile and staring a conversation with some friends.</string>
+   	<string name="get_started_welcome">Get started by setting up your profile and starting a conversation with some friends.</string>
     <!--Login Screen-->
     <string name="welcome">Welcome</string>
     <string name="signup">Sign Up</string>

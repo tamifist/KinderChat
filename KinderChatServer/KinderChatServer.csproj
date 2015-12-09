@@ -495,7 +495,11 @@
     <Content Include="Scripts\ww.jquery.js" />
     <Content Include="Scripts\ww.jquery.min.js" />
     <Content Include="Views\Templates\NewUser.cshtml" />
+    <None Include="Properties\PublishProfiles\inner6 - FTP %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\inner6 - FTP %283%29.pubxml" />
     <None Include="Properties\PublishProfiles\inner6 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\inner6 - Web Deploy %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\inner6 - Web Deploy %283%29.pubxml" />
     <None Include="Properties\PublishProfiles\inner6 - Web Deploy.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -26,16 +26,23 @@ namespace KinderChat.ServerClient.Managers
         {
         }
 
-        public async Task<User> GetUser(int id)
+        public async Task<User> GetUserViaEmail(int id)
         {
             var uri = new Uri(string.Format(EndPoints.GetUserViaId, id));
             var result = await _webManager.GetData(uri);
             return JsonConvert.DeserializeObject<User>(result.ResultJson);
         }
 
-        public async Task<User> GetUser(string email)
+        public async Task<User> GetUserViaEmail(string email)
         {
-            var uri = new Uri(string.Format(EndPoints.GetUserViaEmail, email));
+            var uri = new Uri(string.Format(EndPoints.GetUserViaEmail, Uri.EscapeDataString(email)));
+            var result = await _webManager.GetData(uri);
+            return JsonConvert.DeserializeObject<User>(result.ResultJson);
+        }
+
+        public async Task<User> GetUserViaPhone(string phone)
+        {
+            var uri = new Uri(string.Format(EndPoints.GetUserViaPhone, Uri.EscapeDataString(phone)));
             var result = await _webManager.GetData(uri);
             return JsonConvert.DeserializeObject<User>(result.ResultJson);
         }

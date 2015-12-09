@@ -14,7 +14,7 @@ namespace KinderChat.ServerClient
 
         Task<bool> GetTokenSms(string phone);
 
-        Task<AuthTokens> CreateUserDeviceViaEmail(string email, string confirmKey, string publicKey, string nickname);
+        Task<AuthTokens> CreateUserDevice(string email, string confirmKey, string publicKey, string nickname);
 
         Task<bool> CreateUserDeviceViaPhoneNumber(string phone, string confirmKey, string publicKey, string nickname);
 

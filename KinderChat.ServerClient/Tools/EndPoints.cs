@@ -14,7 +14,7 @@ namespace KinderChat.ServerClient
         public const string CreateUserPhone = BaseUrl + "/api/Users/CreateUserPhone?phone={0}";
 
         public const string CreateUserDeviceEmail =
-            BaseUrl + "/api/users/CreateUserDevice?email={0}&confirmKey={1}&publicKey={2}&nickname={3}";
+            BaseUrl + "/api/users/CreateUserDevice?emailOrPhone={0}&confirmKey={1}&publicKey={2}&nickname={3}";
 
         public const string PushMessage = BaseUrl + "/api/Notifications?toDeviceId={0}&fromUserId={1}&fromUserName={2}&message={3}&iconUrl={4}";
 

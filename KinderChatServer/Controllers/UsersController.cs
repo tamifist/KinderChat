@@ -120,9 +120,9 @@ namespace KinderChatServer.Controllers
 
             if (result.RestException != null)
             {
-                //an exception occurred making the REST call
-                string message = result.RestException.Message;
+                return BadRequest(result.RestException.Message);
             }
+
             return Ok();
         }
 
@@ -333,9 +333,9 @@ namespace KinderChatServer.Controllers
         }
 
         [HttpPost]
-        public async Task<IHttpActionResult> CreateUserDevice(string email, string confirmKey, string publicKey, string nickname)
+        public async Task<IHttpActionResult> CreateUserDevice(string emailOrPhone, string confirmKey, string publicKey, string nickname)
         {
-            var user = _db.Users.FirstOrDefault(node => node.Email == email);
+            var user = _db.Users.FirstOrDefault(node => node.Email == emailOrPhone || node.Sms == emailOrPhone);
             if (user == null)
             {
                 return BadRequest("User does not exist");
@@ -581,7 +581,7 @@ namespace KinderChatServer.Controllers
             }
             else if (!string.IsNullOrEmpty(phone))
             {
-                user = GetUserViaPhone(email);
+                user = GetUserViaPhone(phone);
             }
             else
             {

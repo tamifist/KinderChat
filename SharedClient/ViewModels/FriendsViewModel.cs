@@ -129,9 +129,9 @@ namespace KinderChat
             var userManager = new UserManager(Settings.AccessToken);  //should it be cached?
             User user = null;
             if (item.FriendId < 0)
-				user = await userManager.GetUser(item.Name).ConfigureAwait (false);
+				user = await userManager.GetUserViaEmail(item.Name).ConfigureAwait (false);
             else
-				user = await userManager.GetUser((int)item.FriendId).ConfigureAwait (false);
+				user = await userManager.GetUserViaEmail((int)item.FriendId).ConfigureAwait (false);
 
             if (user != null && user.Devices != null)
             {
@@ -171,7 +171,7 @@ namespace KinderChat
 	        if (result.Count < 1)
             {
                 var userManager = new UserManager(Settings.AccessToken);
-                var user = await userManager.GetUser(userId);
+                var user = await userManager.GetUserViaEmail(userId);
                 return await SaveUserDevices(user);
             }
 			return result;
@@ -212,7 +212,7 @@ namespace KinderChat
 
 						var userManager = new UserManager (Settings.AccessToken);
 
-						var result = await userManager.GetUser (search);
+						var result = await userManager.GetUserViaEmail (search);
 						IsBusy = false;
 
 						//did not find anyone
@@ -234,7 +234,8 @@ namespace KinderChat
 						}
 
 						//did you enter yourself?
-						if (result.Email.ToLowerInvariant () == Settings.Email.ToLowerInvariant ()) {
+						if (!string.IsNullOrWhiteSpace(Settings.Email) 
+                            && result.Email.ToLowerInvariant () == Settings.Email.ToLowerInvariant ()) {
 							RaiseNotification ("This is you!");
 							return;
 						}

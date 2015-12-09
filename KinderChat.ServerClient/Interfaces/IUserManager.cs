@@ -10,9 +10,9 @@ namespace KinderChat.ServerClient.Interfaces
 {
     public interface IUserManager
     {
-        Task<User> GetUser(int id);
+        Task<User> GetUserViaEmail(int id);
 
-        Task<User> GetUser(string email);
+        Task<User> GetUserViaEmail(string email);
 
         Task<UserFlag> FlagUser(int id, int flagid);
 

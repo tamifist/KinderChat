@@ -47,7 +47,7 @@ namespace KinderChat
 			havePin = root.FindViewById<Button> (Resource.Id.have_pin);
 			havePin.Click += (sender, e) => {
 				Settings.NickName = viewModel.NickName;
-				Settings.Email = viewModel.Identifier;
+				//Settings.Email = viewModel.Identifier;
 				((WelcomeActivity)Activity).GoToConfirmation ();
 			};
 			var identifier = root.FindViewById<EditText> (Resource.Id.identifier);

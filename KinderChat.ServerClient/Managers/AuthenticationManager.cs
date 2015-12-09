@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,14 +35,20 @@ namespace KinderChat.ServerClient
             return result.IsSuccess;
         }
 
-        public Task<bool> GetTokenSms(string phone)
+        public async Task<bool> GetTokenSms(string phone)
         {
-            throw new NotImplementedException();
+            var uri = new Uri(string.Format(EndPoints.CreateUserPhone, Uri.EscapeDataString(phone)));
+            var result = await _webManager.PostData(uri, null, null);
+            if (!result.IsSuccess)
+            {
+                throw new LoginFailedException("Failed to send token sms");
+            }
+            return result.IsSuccess;
         }
 
-        public async Task<AuthTokens> CreateUserDeviceViaEmail(string email, string confirmKey, string publicKey, string nickname)
+        public async Task<AuthTokens> CreateUserDevice(string emailOrPhoneNumber, string confirmKey, string publicKey, string nickname)
         {
-            var uri = new Uri(string.Format(EndPoints.CreateUserDeviceEmail, Uri.EscapeDataString(email), Uri.EscapeDataString(confirmKey), Uri.EscapeDataString(publicKey), Uri.EscapeDataString(nickname)));
+            var uri = new Uri(string.Format(EndPoints.CreateUserDeviceEmail, Uri.EscapeDataString(emailOrPhoneNumber), Uri.EscapeDataString(confirmKey), Uri.EscapeDataString(publicKey), Uri.EscapeDataString(nickname)));
             var result = await _webManager.PostData(uri, null, null);
             if (!result.IsSuccess)
             {
