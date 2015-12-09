@@ -25,7 +25,12 @@ namespace KinderChat
 
 		public override void SetImageDrawable(Drawable drawable)
 		{
-			var inputBitmap = Utils.DrawableToBitmap(drawable);
+		    if (drawable == null)
+		    {
+		        return;
+		    }
+
+		    var inputBitmap = Utils.DrawableToBitmap(drawable);
 			var drawable2 = new CircleDrawable(inputBitmap);
 			base.SetImageDrawable(drawable2);
 		}

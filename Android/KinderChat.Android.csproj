@@ -236,7 +236,7 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_notification.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_notification.png" />
     <AndroidResource Include="Resources\drawable\red_gradient.axml">
-      <SubType>AndroidResource</SubType>
+      <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\drawable\blue_gradient.axml">
       <SubType>AndroidResource</SubType>
@@ -330,6 +330,13 @@
     <AndroidResource Include="Resources\drawable-mdpi\ic_tab_profile.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\ic_tab_profile.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_tab_profile.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_action_edit.png" />
+    <AndroidResource Include="Resources\drawable\ic_red_circle.png" />
+    <AndroidResource Include="Resources\drawable\ic_blue_circle.png" />
+    <AndroidResource Include="Resources\drawable\ic_profile_take_photo.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\ic_action_edit.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_action_edit.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_action_edit.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="packages\SQLitePCL.raw_basic.0.7.1\build\MonoAndroid\SQLitePCL.raw_basic.targets" Condition="Exists('packages\SQLitePCL.raw_basic.0.7.1\build\MonoAndroid\SQLitePCL.raw_basic.targets')" />

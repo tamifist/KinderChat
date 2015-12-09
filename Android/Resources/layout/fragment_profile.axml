@@ -7,42 +7,59 @@
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="20dp"
     android:orientation="vertical"
     android:descendantFocusability="beforeDescendants"
     android:focusableInTouchMode="true">
     <FrameLayout
-        android:layout_width="fill_parent"
-        android:layout_height="125dp">
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:orientation="vertical">
-            <FrameLayout
-                android:layout_width="fill_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:background="@android:color/transparent" />
-            <FrameLayout
-                android:layout_width="fill_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1" />
-        </LinearLayout>
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center">
+      <ImageView
+        android:id="@+id/avatar_mask"
+          android:layout_width="200dp"
+          android:layout_height="200dp"
+          android:scaleType="fitCenter"/>
+      <ImageView
+        android:id="@+id/btn_take_photo"
+          android:layout_width="100dp"
+          android:layout_height="100dp"
+          android:layout_gravity="center"
+          android:scaleType="fitCenter"
+        android:src="@drawable/ic_profile_take_photo"/>
         <kinderchat.CircleImageView
-            android:padding="4dp"
-            android:layout_width="125dp"
-            android:layout_height="125dp"
+            android:layout_width="193dp"
+            android:layout_height="193dp"
             android:layout_gravity="center"
-            android:gravity="center"
             android:scaleType="fitCenter"
             android:id="@+id/avatar" />
     </FrameLayout>
-    <EditText
-        android:layout_width="match_parent"
+  <LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:layout_marginTop="10dp"
+    android:orientation="horizontal">
+    
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/nickname"
         android:hint="@string/nickname"
-        android:layout_marginLeft="@dimen/keyline_margin"
-        android:layout_marginRight="@dimen/keyline_margin" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="24sp"
+        android:textColor="#333333"
+        android:layout_gravity="center" />
+    <ImageButton
+            android:id="@+id/edit_profile_button"
+            android:src="@drawable/ic_action_edit"
+            android:background="?attr/selectableItemBackground"
+            android:scaleType="fitCenter"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+  </LinearLayout>
+    
     <GridView
         android:id="@+id/grid"
         android:layout_width="fill_parent"
@@ -60,14 +77,4 @@
         android:smoothScrollbar="true"
         android:scrollbarStyle="outsideOverlay" />
 </LinearLayout>
-  <com.refractored.fab.FloatingActionButton
-        android:id="@+id/fabSaveProfile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|right"
-        android:layout_margin="@dimen/keyline_margin"
-        android:src="@drawable/ic_profile_save"
-        local:fab_colorNormal="?attr/colorPrimaryDark"
-        local:fab_colorPressed="?attr/colorPrimaryDark"
-        local:fab_colorRipple="?attr/colorPrimary" />
 </FrameLayout>

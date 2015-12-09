@@ -65,7 +65,7 @@ namespace KinderChat
 		{
 
 			var builder = new Android.Support.V7.App.AlertDialog.Builder (BaseActivity.CurrentActivity);
-			builder.SetIcon (Resource.Drawable.ic_launcher);
+			//builder.SetIcon (Resource.Drawable.ic_launcher);
 			builder.SetTitle (title ?? string.Empty);
 			builder.SetMessage (message);
 			var view = View.Inflate (BaseActivity.CurrentActivity, Resource.Layout.dialog_ask_text, null);

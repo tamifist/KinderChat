@@ -25,6 +25,8 @@
     <string name="add_by_email">Add by Email</string>
     <string name="pick_contact">Pick Contact</string>
     <string name="enter_email">Enter your friend\'s email:</string>
+    <string name="edit_profile">Edit profile</string>
+    <string name="enter_name">Enter your name:</string>
 
     <string name="loading">Loading...</string>
 

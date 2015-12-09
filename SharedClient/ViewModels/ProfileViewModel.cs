@@ -72,7 +72,12 @@ namespace KinderChat
 		public string AvatarUrl {
 			get { return avatarUrl; }
 			set {
-				SetProperty (ref avatarUrl, value.StartsWith ("/", StringComparison.OrdinalIgnoreCase) ? (EndPoint + value) : value);
+			    if (string.IsNullOrWhiteSpace(value))
+			    {
+			        avatarUrl = null;
+                    return;
+			    }
+			    SetProperty (ref avatarUrl, value.StartsWith ("/", StringComparison.OrdinalIgnoreCase) ? (EndPoint + value) : value);
 			}
 		}
 
