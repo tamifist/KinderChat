@@ -45,10 +45,7 @@ namespace KinderChat.iOS
 
 
 			SendButton = new UIButton ();
-			SendButton.SetTitle ("Send", UIControlState.Normal);
-			SendButton.Font = ButtonFont;
-			SendButton.SetTitleColor (ButtonTextColorNormal, UIControlState.Normal);
-			SendButton.SetTitleColor (ButtonTextColorDisabled, UIControlState.Disabled);
+			SendButton.SetImage (UIImage.FromBundle ("sendTextIcon"), UIControlState.Normal);
 			SendButton.TranslatesAutoresizingMaskIntoConstraints = false;
 
 			AddSubviews (TextView, SendButton);
