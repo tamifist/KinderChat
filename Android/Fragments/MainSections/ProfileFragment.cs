@@ -122,7 +122,7 @@ namespace KinderChat
                 avatar.Visibility = ViewStates.Gone;
             }*/
 
-            Koush.UrlImageViewHelper.SetUrlDrawable(avatar, viewModel.AvatarUrl, null, 1);
+            Koush.UrlImageViewHelper.SetUrlDrawable(avatar, viewModel.AvatarUrl);
             viewModel.PropertyChanged += ViewModelPropertyChanged;
             return root;
         }
@@ -173,7 +173,7 @@ namespace KinderChat
 					break;
 				case ProfileViewModel.AvatarUrlName:
                         
-                        Koush.UrlImageViewHelper.SetUrlDrawable(avatar, viewModel.AvatarUrl, null, 1);
+                        Koush.UrlImageViewHelper.SetUrlDrawable(avatar, viewModel.AvatarUrl);
 
                         break;
 				}
