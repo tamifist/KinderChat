@@ -23,7 +23,7 @@ namespace KinderChat
 			nickName = Settings.NickName;
 	    }
 
-	    SignUpIdentity idenity = SignUpIdentity.Mobile;
+	    SignUpIdentity idenity = SignUpIdentity.Email;
 		public SignUpIdentity Identity
 		{
 			get { return idenity; }

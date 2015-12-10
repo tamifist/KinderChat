@@ -66,7 +66,7 @@ namespace KinderChat
 
                 return new MemoryStream(bitmapData);
             };
-                btn_take_photo = root.FindViewById<ImageView> (Resource.Id.btn_take_photo);
+                /*btn_take_photo = root.FindViewById<ImageView> (Resource.Id.btn_take_photo);
             btn_take_photo.Clickable = true;
             btn_take_photo.Click += (sender, args) => App.MessageDialog.SelectOption("New Avatar", new[] {
                 "Pick Photo from Gallery",
@@ -76,7 +76,7 @@ namespace KinderChat
                     viewModel.PickPhoto();
                 else if (which == 1)
                     viewModel.TakePhoto(resizeAndRotateFunc);
-            });
+            });*/
 
             avatar = root.FindViewById<ImageView> (Resource.Id.avatar);
 			avatar.Clickable = true;
@@ -107,7 +107,7 @@ namespace KinderChat
                     });
             };
 
-            if (viewModel.AvatarUrl.EndsWith("avatar-lion-1.png"))
+            /*if (viewModel.AvatarUrl.EndsWith("avatar-lion-1.png"))
             {
                 viewModel.AvatarUrl = null;
             }
@@ -120,7 +120,9 @@ namespace KinderChat
             else
             {
                 avatar.Visibility = ViewStates.Gone;
-            }
+            }*/
+
+            Koush.UrlImageViewHelper.SetUrlDrawable(avatar, viewModel.AvatarUrl, null, 1);
             viewModel.PropertyChanged += ViewModelPropertyChanged;
             return root;
         }
@@ -170,18 +172,10 @@ namespace KinderChat
 
 					break;
 				case ProfileViewModel.AvatarUrlName:
+                        
+                        Koush.UrlImageViewHelper.SetUrlDrawable(avatar, viewModel.AvatarUrl, null, 1);
 
-                        if (!string.IsNullOrWhiteSpace(viewModel.AvatarUrl))
-                        {
-                            avatar.Visibility = ViewStates.Visible;
-                            Koush.UrlImageViewHelper.SetUrlDrawable(avatar, viewModel.AvatarUrl);
-                        }
-                        else
-                        {
-                            avatar.Visibility = ViewStates.Gone;
-                        }
-
-					break;
+                        break;
 				}
 			});
 		}

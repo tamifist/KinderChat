@@ -20,13 +20,13 @@
           android:layout_width="200dp"
           android:layout_height="200dp"
           android:scaleType="fitCenter"/>
-      <ImageView
+      <!--<ImageView
         android:id="@+id/btn_take_photo"
           android:layout_width="100dp"
           android:layout_height="100dp"
           android:layout_gravity="center"
           android:scaleType="fitCenter"
-        android:src="@drawable/ic_profile_take_photo"/>
+        android:src="@drawable/ic_profile_take_photo"/>-->
         <kinderchat.CircleImageView
             android:layout_width="193dp"
             android:layout_height="193dp"

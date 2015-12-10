@@ -11,7 +11,6 @@ namespace KinderChat
 	public class GetStartedFragment : BaseFragment
 	{
 	    private string email;
-	    private string phone;
 
         public static GetStartedFragment NewInstance ()
 		{
@@ -41,12 +40,6 @@ namespace KinderChat
 			return string.Empty;
 		}
 
-        public string GetPhone()
-        {
-            TelephonyManager mTelephonyMgr = (TelephonyManager)Application.Context.GetSystemService("phone");
-            return mTelephonyMgr.Line1Number;
-        }
-
         readonly SignUpViewModel viewModel = App.SignUpViewModel;
 		Button buttonContinue, havePin;
 		public override Android.Views.View OnCreateView (Android.Views.LayoutInflater inflater, Android.Views.ViewGroup container, Bundle savedInstanceState)
@@ -62,10 +55,9 @@ namespace KinderChat
 			};
 
             email = GetEmail();
-		    phone = GetPhone();
 
             var identifier = root.FindViewById<EditText> (Resource.Id.identifier);
-            identifier.Text = phone;
+		    identifier.Text = email;
             identifier.TextChanged += (sender, e) => {
 				viewModel.Identifier = identifier.Text.Trim ();
 			};
@@ -82,7 +74,7 @@ namespace KinderChat
 					viewModel.Identity = SignUpIdentity.Mobile;
 					identifier.InputType = Android.Text.InputTypes.ClassPhone;
 					identifier.SetHint(Resource.String.input_mobile_placeholder);
-                    identifier.Text = phone;
+                    identifier.Text = "";
                     switchIdentity.SetText(Resource.String.use_email);
 				} else {
 					viewModel.Identity = SignUpIdentity.Email;
