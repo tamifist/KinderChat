@@ -174,7 +174,7 @@ namespace KinderChat
 				case ProfileViewModel.AvatarUrlName:
                         
                         Koush.UrlImageViewHelper.SetUrlDrawable(avatar, viewModel.AvatarUrl);
-
+                        viewModel.ExecuteSaveProfileCommand();
                         break;
 				}
 			});
