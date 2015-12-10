@@ -198,7 +198,7 @@ namespace KinderChat
 		    catch (Exception ex)
             {
 				App.Logger.Report (ex);
-                App.MessageDialog.SendMessage("Message wasn't sent", "Oops..");
+                //App.MessageDialog.SendMessage("Message wasn't sent", "Oops..");
 		    }
 		}
 
