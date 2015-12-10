@@ -15,10 +15,7 @@ namespace KinderChatServer.Controllers
     {
         public async Task<HttpResponseMessage> Post(string toDeviceId, string fromUserId, string fromUserName, string message, string iconUrl)
         {
-            var userTag = new string[2];
-
-            userTag[0] = "username:" + toDeviceId;
-            userTag[1] = "from:" + fromUserName;
+            var userTag = new string[] { "username:" + toDeviceId };
 
             var notification = new Dictionary<string, string>
             {
