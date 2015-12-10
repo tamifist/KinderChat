@@ -59,7 +59,7 @@ namespace KinderChat
 			Activity.RunOnUiThread (() => {
 				switch (e.PropertyName) {
 				case SignUpViewModel.ValidatePinEnabledPropertyName:
-					buttonContinue.Enabled = viewModel.RegisterEnabled;
+					buttonContinue.Enabled = viewModel.ValidatePinEnabled;
 					break;
 				case SignUpViewModel.CanProgressPropertyName:
 					if(viewModel.CanProgress)

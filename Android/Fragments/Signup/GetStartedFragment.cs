@@ -3,13 +3,17 @@ using Android.OS;
 using Android.Widget;
 using Android.Util;
 using Android.Accounts;
+using Android.App;
+using Android.Telephony;
 
 namespace KinderChat
 {
 	public class GetStartedFragment : BaseFragment
 	{
-		
-		public static GetStartedFragment NewInstance ()
+	    private string email;
+	    private string phone;
+
+        public static GetStartedFragment NewInstance ()
 		{
 			var f = new GetStartedFragment ();
 			var b = new Bundle ();
@@ -27,8 +31,8 @@ namespace KinderChat
 		public string GetEmail ()
 		{
 			var emailPattern = Patterns.EmailAddress; // API level 8+
-			var accounts = AccountManager.Get (Activity).GetAccounts ();
-			foreach (var account in accounts) {
+            Account[] accounts = AccountManager.Get(Activity).GetAccounts();
+            foreach (var account in accounts) {
 				if (emailPattern.Matcher (account.Name).Matches ()) {
 					return account.Name;
 				}
@@ -36,8 +40,14 @@ namespace KinderChat
 
 			return string.Empty;
 		}
-	
-		readonly SignUpViewModel viewModel = App.SignUpViewModel;
+
+        public string GetPhone()
+        {
+            TelephonyManager mTelephonyMgr = (TelephonyManager)Application.Context.GetSystemService("phone");
+            return mTelephonyMgr.Line1Number;
+        }
+
+        readonly SignUpViewModel viewModel = App.SignUpViewModel;
 		Button buttonContinue, havePin;
 		public override Android.Views.View OnCreateView (Android.Views.LayoutInflater inflater, Android.Views.ViewGroup container, Bundle savedInstanceState)
 		{
@@ -50,9 +60,13 @@ namespace KinderChat
 				//Settings.Email = viewModel.Identifier;
 				((WelcomeActivity)Activity).GoToConfirmation ();
 			};
-			var identifier = root.FindViewById<EditText> (Resource.Id.identifier);
-			identifier.Text = GetEmail ();
-			identifier.TextChanged += (sender, e) => {
+
+            email = GetEmail();
+		    phone = GetPhone();
+
+            var identifier = root.FindViewById<EditText> (Resource.Id.identifier);
+            identifier.Text = phone;
+            identifier.TextChanged += (sender, e) => {
 				viewModel.Identifier = identifier.Text.Trim ();
 			};
 
@@ -68,16 +82,15 @@ namespace KinderChat
 					viewModel.Identity = SignUpIdentity.Mobile;
 					identifier.InputType = Android.Text.InputTypes.ClassPhone;
 					identifier.SetHint(Resource.String.input_mobile_placeholder);
-					switchIdentity.SetText(Resource.String.use_email);
-					identifier.Text = string.Empty;
-
+                    identifier.Text = phone;
+                    switchIdentity.SetText(Resource.String.use_email);
 				} else {
 					viewModel.Identity = SignUpIdentity.Email;
 					identifier.InputType = Android.Text.InputTypes.TextVariationEmailAddress;
 					identifier.SetHint(Resource.String.input_email_placeholder);
-					switchIdentity.SetText(Resource.String.use_mobile);
-					identifier.Text = string.Empty;
-				}
+                    identifier.Text = email;
+                    switchIdentity.SetText(Resource.String.use_mobile);
+                }
 			};
 
 			buttonContinue = root.FindViewById<Button> (Resource.Id.continue_button);
