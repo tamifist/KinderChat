@@ -158,7 +158,6 @@
     <Compile Include="Controls\SquareImageView.cs" />
     <Compile Include="Fragments\BaseFragment.cs" />
     <Compile Include="PushNotifications\PushNotifications.cs" />
-    <Compile Include="Adapters\ItemAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -223,26 +222,6 @@
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_action_content_link.png" />
     <AndroidResource Include="Resources\values-sw600dp\integers.xml" />
     <AndroidResource Include="Resources\layout\item_task.axml" />
-    <AndroidResource Include="Resources\drawable-hdpi\ic_brocolli.png" />
-    <AndroidResource Include="Resources\drawable-mdpi\ic_brocolli.png" />
-    <AndroidResource Include="Resources\drawable-xhdpi\ic_brocolli.png" />
-    <AndroidResource Include="Resources\drawable-xxhdpi\ic_brocolli.png" />
-    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_brocolli.png" />
-    <AndroidResource Include="Resources\drawable-hdpi\ic_cleanedroom.png" />
-    <AndroidResource Include="Resources\drawable-mdpi\ic_cleanedroom.png" />
-    <AndroidResource Include="Resources\drawable-xhdpi\ic_cleanedroom.png" />
-    <AndroidResource Include="Resources\drawable-xxhdpi\ic_cleanedroom.png" />
-    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_cleanedroom.png" />
-    <AndroidResource Include="Resources\drawable-hdpi\ic_toothbrush.png" />
-    <AndroidResource Include="Resources\drawable-mdpi\ic_toothbrush.png" />
-    <AndroidResource Include="Resources\drawable-xhdpi\ic_toothbrush.png" />
-    <AndroidResource Include="Resources\drawable-xxhdpi\ic_toothbrush.png" />
-    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_toothbrush.png" />
-    <AndroidResource Include="Resources\drawable-hdpi\ic_homework.png" />
-    <AndroidResource Include="Resources\drawable-mdpi\ic_homework.png" />
-    <AndroidResource Include="Resources\drawable-xhdpi\ic_homework.png" />
-    <AndroidResource Include="Resources\drawable-xxhdpi\ic_homework.png" />
-    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_homework.png" />
     <AndroidResource Include="Resources\drawable-hdpi\ic_notification.png" />
     <AndroidResource Include="Resources\drawable-mdpi\ic_notification.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\ic_notification.png" />

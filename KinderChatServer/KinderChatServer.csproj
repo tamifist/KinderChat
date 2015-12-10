@@ -449,6 +449,7 @@
     <Content Include="Images\Avatars\avatar1.jpg" />
     <Content Include="Images\Avatars\avatar2.jpg" />
     <Content Include="Images\Avatars\avatar3.jpg" />
+    <Content Include="Images\Avatars\avatar4.jpg" />
     <Content Include="robots.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
