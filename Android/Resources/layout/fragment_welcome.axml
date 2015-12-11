@@ -40,13 +40,13 @@
             android:layout_height="wrap_content"
             android:checked="true"
             android:text="@string/red"
-            android:textColor="@color/primaryRed"
+            android:textColor="#FF0000"
             android:id="@+id/red" />
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/blue"
-            android:textColor="@color/primaryDark"
+            android:textColor="#0000FF"
             android:id="@+id/blue" />
     </RadioGroup>
     <Space

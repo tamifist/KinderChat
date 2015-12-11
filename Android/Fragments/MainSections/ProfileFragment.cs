@@ -20,8 +20,8 @@ namespace KinderChat
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-			RetainInstance = true;
-			HasOptionsMenu = true;
+			//RetainInstance = true;
+			//HasOptionsMenu = true;
         }
 
 
@@ -44,9 +44,9 @@ namespace KinderChat
 				var selected = viewModel.Avatars[e.Position];
 				viewModel.Avatar = selected.Location;
 			};
-
-
-			nickName = root.FindViewById<TextView> (Resource.Id.nickname);
+            viewModel.ExecuteLoadAvatarsCommand();
+            
+            nickName = root.FindViewById<TextView> (Resource.Id.nickname);
             nickName.Text = viewModel.NickName;
 
             avatar_mask = root.FindViewById<ImageView>(Resource.Id.avatar_mask);
@@ -126,12 +126,6 @@ namespace KinderChat
             viewModel.PropertyChanged += ViewModelPropertyChanged;
             return root;
         }
-
-		public override void OnCreateOptionsMenu (IMenu menu, MenuInflater inflater)
-		{
-			inflater.Inflate (Resource.Menu.profile, menu);
-			base.OnCreateOptionsMenu (menu, inflater);
-		}
 
 		public override void OnResume ()
 		{

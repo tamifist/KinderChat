@@ -23,7 +23,7 @@ namespace KinderChat
 		public override void OnCreate (Bundle savedInstanceState)
 		{
 			base.OnCreate (savedInstanceState);
-			RetainInstance = true;
+			//RetainInstance = true;
 		}
 
 
@@ -101,8 +101,12 @@ namespace KinderChat
 					buttonContinue.Enabled = havePin.Enabled = viewModel.RegisterEnabled;
 					break;
 				case SignUpViewModel.CanProgressPropertyName:
-					if(viewModel.CanProgress)
-						((WelcomeActivity)Activity).GoToConfirmation ();
+				        if (viewModel.CanProgress)
+				        {
+				            Settings.IsPinSent = true;
+                            ((WelcomeActivity)Activity).GoToConfirmation();
+                        }
+                        
 					break;	
 				}
 			});

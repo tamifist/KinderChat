@@ -23,7 +23,7 @@
     <item name="colorPrimaryDark">@color/primaryDarkRed</item>
     <!-- colorAccent is used as the default value for colorControlActivated
          which is used to tint widgets -->
-    <item name="colorAccent">@color/primaryRed</item>
+    <item name="colorAccent">@color/primaryBlack</item>
     
     <!-- Option to hide the drop shadow here-->
     
@@ -45,7 +45,7 @@
     <item name="colorPrimaryDark">@color/primaryDark</item>
     <!-- colorAccent is used as the default value for colorControlActivated
          which is used to tint widgets -->
-    <item name="colorAccent">@color/primaryDark</item>
+    <item name="colorAccent">@color/primaryBlack</item>
     
     <!-- Option to hide the drop shadow here-->
     

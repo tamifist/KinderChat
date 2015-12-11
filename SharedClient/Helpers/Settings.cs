@@ -106,8 +106,11 @@ namespace KinderChat
 
 		const string NewFriendIdKey = "new_friend_id_key";
 		public const int NewFriendIdDefault = -1;
-		#endregion
-		public static int GetNotificationId()
+
+        const string IsPinSentKey = "is_pin_sent";
+        static readonly bool IsPinSentDefault = false;
+        #endregion
+        public static int GetNotificationId()
 		{
 			var id = GetValueOrDefault ("notification_id", 0);
 			var newId = id + 1;
@@ -269,7 +272,19 @@ namespace KinderChat
 			}
 		}
 
-		public static long KeyValidUntil
+        public static bool IsPinSent
+        {
+            get
+            {
+                return GetValueOrDefault(IsPinSentKey, IsPinSentDefault);
+            }
+            set
+            {
+                AddOrUpdateValue(IsPinSentKey, value);
+            }
+        }
+
+        public static long KeyValidUntil
 		{
 			get
 			{

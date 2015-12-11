@@ -17,7 +17,7 @@ namespace KinderChat
 		public override void OnCreate (Bundle savedInstanceState)
 		{
 			base.OnCreate (savedInstanceState);
-			RetainInstance = true;
+			//RetainInstance = true;
 		}
 
 		readonly SignUpViewModel viewModel = App.SignUpViewModel;
@@ -45,7 +45,7 @@ namespace KinderChat
 		public override void OnResume ()
 		{
 			base.OnResume ();
-			((WelcomeActivity)Activity).SupportActionBar.Title = viewModel.Identifier;
+			((WelcomeActivity)Activity).SupportActionBar.Title = !string.IsNullOrWhiteSpace(Settings.Email) ? Settings.Email : Settings.PhoneNumber;
 			viewModel.PropertyChanged += ViewModelPropertyChanged;
 		}
 		public override void OnStop ()

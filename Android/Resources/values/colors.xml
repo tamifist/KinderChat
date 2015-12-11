@@ -9,6 +9,7 @@
   <color name="secondaryText">#666666</color>
   <color name="divider">#B6B6B6</color>
   <color name="activated_color">#E8E8E8</color>
+  <color name="primaryBlack">#000000</color>
 
   <!-- Red Theme -->
   <color name="primaryRed">#e42529</color>

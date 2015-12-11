@@ -22,7 +22,7 @@ namespace KinderChat
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-			RetainInstance = true;
+			//RetainInstance = true;
         }
 
 		readonly ConversationsViewModel viewModel = App.ConversationsViewModel;
@@ -34,7 +34,9 @@ namespace KinderChat
             list.ItemClick += OnConversationClick;
 			list.Adapter = new ConverstationAdapter(Activity, viewModel);
 
-			refresher = root.FindViewById<SwipeRefreshLayout> (Resource.Id.refresher);
+            viewModel.ExecuteLoadConversationsCommand();
+
+            refresher = root.FindViewById<SwipeRefreshLayout> (Resource.Id.refresher);
 			refresher.Refresh += (sender, e) => viewModel.ExecuteLoadConversationsCommand ();
 
 

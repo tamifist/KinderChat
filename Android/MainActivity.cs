@@ -47,16 +47,19 @@ namespace KinderChat
                 pager.CurrentItem = 0;
             }
 
+            IntentFilter connectivityIntentFilter = new IntentFilter();
+            connectivityIntentFilter.AddAction(Android.Net.ConnectivityManager.ConnectivityAction);
+            RegisterReceiver(new NetworkChangeReceiver(), connectivityIntentFilter);
+
             // Register for GCM
             KinderGcmService.Register(this);
         }
 
-		public void OnPageScrollStateChanged (int state)
+	    public void OnPageScrollStateChanged (int state)
 		{
 		}
 		public void OnPageScrolled (int position, float positionOffset, int positionOffsetPixels)
 		{
-			
 		}
 		public void OnPageSelected (int position)
 		{

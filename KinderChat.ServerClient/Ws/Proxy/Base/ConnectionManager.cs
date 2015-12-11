@@ -26,7 +26,7 @@ namespace KinderChat.ServerClient.Ws.Proxy
 
             connection.Closed += OnConnectionClosed;
             connection.Error += OnConnectionError;
-            OnTick();
+            //OnTick();
         }
 
         public event Action<PushedEvent> EventPushed = delegate { };

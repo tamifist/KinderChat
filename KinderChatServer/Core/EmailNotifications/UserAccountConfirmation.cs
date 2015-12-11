@@ -19,9 +19,9 @@ namespace KinderChatServer.Core.EmailNotifications
         }
         internal override void GenerateMessage()
         {
-            MailAddress[] list = { new MailAddress(User.Email, "Inner 6 User") };
+            MailAddress[] list = { new MailAddress(User.Email, "Inner 6") };
             Message.To = list;
-            Message.Subject = "Confirm your Inner 6 Chat Account!";
+            Message.Subject = "Confirm your Inner 6 Account!";
             // TODO: Make a better email message.
             Message.Html = ViewRenderer.RenderView("~/views/templates/NewUser.cshtml", User);
         }

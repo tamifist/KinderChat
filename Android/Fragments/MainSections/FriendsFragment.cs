@@ -22,7 +22,7 @@ namespace KinderChat
 		public override void OnCreate (Bundle savedInstanceState)
 		{
 			base.OnCreate (savedInstanceState);
-			RetainInstance = true;
+			//RetainInstance = true;
 		}
 
 		readonly FriendsViewModel viewModel = App.FriendsViewModel;
@@ -37,7 +37,9 @@ namespace KinderChat
 			friendGrid.ItemClick += FriendClicked;
 			friendGrid.Adapter = new FriendAdapter (Activity, viewModel);
 
-			friendGrid.LongClickable = true;
+            viewModel.ExecuteLoadFriendsCommand(false);
+
+            //friendGrid.LongClickable = true;
 			/*friendGrid.ItemLongClick += (sender, e) => 
 			{
 

@@ -42,15 +42,27 @@ namespace KinderChat
 			var fts = SupportFragmentManager.BeginTransaction();
 			fts.SetCustomAnimations(Resource.Animation.enter, Resource.Animation.exit, Resource.Animation.pop_enter, Resource.Animation.pop_exit);
 
-			// Replace the content of the container
-			fts.Replace(Android.Resource.Id.Content, WelcomeFragment.NewInstance()); 
-			// Commit the changes
-			fts.Commit();
+		    if (Settings.IsPinSent)
+		    {
+                fts.Replace(Android.Resource.Id.Content, ConfirmationFragment.NewInstance());
+                fts.Commit();
+                
+                SupportActionBar.Title = !string.IsNullOrWhiteSpace(Settings.Email) ? Settings.Email : Settings.PhoneNumber;
+                SupportActionBar.SetDisplayHomeAsUpEnabled(false);
+                SupportActionBar.SetHomeButtonEnabled(false);
+            }
+		    else
+		    {
+                // Replace the content of the container
+                fts.Replace(Android.Resource.Id.Content, WelcomeFragment.NewInstance());
+                // Commit the changes
+                fts.Commit();
 
-			SupportActionBar.Title = "Welcome";
-			SupportActionBar.SetDisplayHomeAsUpEnabled (false);
-			SupportActionBar.SetHomeButtonEnabled (false);
-
+                SupportActionBar.Title = "Welcome";
+                SupportActionBar.SetDisplayHomeAsUpEnabled(false);
+                SupportActionBar.SetHomeButtonEnabled(false);
+            }
+		    
             viewModel = App.SignUpViewModel;
 			viewModel.PropertyChanged += ViewModelPropertyChanged;
 		}
