@@ -179,6 +179,7 @@
     <None Include="Resources\Images.xcassets\sendTextIcon.imageset\sendTextIcon.png" />
     <None Include="Resources\Images.xcassets\sendTextIcon.imageset\sendTextIcon%403.png" />
     <None Include="Resources\Images.xcassets\sendTextIcon.imageset\sendTextIcon%402.png" />
+    <Compile Include="Conversation\SendButton.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main\TabOrder.cs" />

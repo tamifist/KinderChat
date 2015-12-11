@@ -19,7 +19,7 @@ namespace KinderChat.iOS
 		public static readonly float ToolbarMinHeight = 44;
 
 		public UITextView TextView { get; private set; }
-		public UIButton SendButton { get; private set; }
+		public SendButton SendButton { get; private set; }
 
 		public ChatInputView()
 		{
@@ -44,7 +44,7 @@ namespace KinderChat.iOS
 			TextView.ContentMode = UIViewContentMode.Redraw;
 
 
-			SendButton = new UIButton ();
+			SendButton = new SendButton ();
 			SendButton.SetImage (UIImage.FromBundle ("sendTextIcon"), UIControlState.Normal);
 			SendButton.TranslatesAutoresizingMaskIntoConstraints = false;
 
