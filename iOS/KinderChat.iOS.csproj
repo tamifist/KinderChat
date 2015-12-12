@@ -179,7 +179,6 @@
     <None Include="Resources\Images.xcassets\sendTextIcon.imageset\sendTextIcon%403.png" />
     <None Include="Resources\Images.xcassets\sendTextIcon.imageset\sendTextIcon%402.png" />
     <Compile Include="Conversation\SendButton.cs" />
-    <None Include="PluginsHelp\SettingsReadme.txt" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main\TabOrder.cs" />
@@ -256,6 +255,12 @@
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Connectivity">
+      <HintPath>..\packages\Xam.Plugin.Connectivity.2.0.0\lib\Xamarin.iOS10\Plugin.Connectivity.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Connectivity.Abstractions">
+      <HintPath>..\packages\Xam.Plugin.Connectivity.2.0.0\lib\Xamarin.iOS10\Plugin.Connectivity.Abstractions.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
