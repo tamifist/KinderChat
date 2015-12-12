@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Windows.Input;
 using System.Threading.Tasks;
-using Media.Plugin;
-using Media.Plugin.Abstractions;
+using Plugin.Media;
+using Plugin.Media.Abstractions;
 using System.IO;
 using KinderChat.ServerClient.Managers;
 using System.Collections.ObjectModel;

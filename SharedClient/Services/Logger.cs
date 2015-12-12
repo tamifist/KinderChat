@@ -8,7 +8,7 @@ namespace KinderChat
 {
 	public class Logger
 	{
-		public void Report(Exception ex, IDictionary extraData = null, ReportSeverity warningLevel = ReportSeverity.Warning)
+		public void Report(Exception ex, IDictionary extraData = null, Insights.Severity warningLevel = Insights.Severity.Warning)
 		{
 			Debug.WriteLine ("KINDER: Exception occurred: " + ex); 
 

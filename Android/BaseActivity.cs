@@ -3,6 +3,7 @@ using Android.OS;
 using Android.Support.V7.App;
 using Android.Support.V7.Widget;
 using Android.App;
+using Android.Content.PM;
 
 namespace KinderChat
 {
@@ -38,6 +39,11 @@ namespace KinderChat
 		protected override void OnStop ()
 		{
 			base.OnStop ();
+		}
+
+		public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
+		{
+			Plugin.Permissions.PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 		}
 
 		protected abstract int LayoutResource {
