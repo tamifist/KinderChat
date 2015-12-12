@@ -51,17 +51,7 @@ namespace KinderChat.iOS
 
 			App.ConnectionManager.TryKeepConnectionAsync();
 
-//			Reachability.InternetConnectionStatus (); 
-//			Reachability.LocalWifiConnectionStatus ();
-//			Reachability.RemoteHostStatus ();
-//			Reachability.ReachabilityChanged += ReachabilityChanged;
-
 			return false;
-		}
-
-		static async void ReachabilityChanged(object sender, EventArgs e)
-		{
-			await App.ConnectionManager.TryKeepConnectionAsync();
 		}
 
 		void SetupAppearance ()
