@@ -105,7 +105,7 @@ namespace KinderChat.iOS
 
 		public void UpdateLayout(CGSize cellSize, AvatarType type)
 		{
-			nfloat scale = (type == AvatarType.User || type == AvatarType.None) ? 0.592f: 1;
+			nfloat scale = 0.592f;
 			nfloat avatarDiameter = cellSize.Width * scale;
 			nfloat strokeDiameter = avatarDiameter + 4;
 

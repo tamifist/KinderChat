@@ -297,7 +297,7 @@
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="115" placeholderIntrinsicHeight="115" translatesAutoresizingMaskIntoConstraints="NO" id="K8X-2B-obB">
-                                <rect key="frame" x="130" y="7" width="115" height="115"/>
+                                <rect key="frame" x="130" y="4" width="115" height="115"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="115" id="RxQ-fC-1Gn"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="115" id="nGL-jh-sxk"/>
@@ -328,7 +328,7 @@
                             <constraint firstAttribute="trailing" secondItem="CpG-fZ-tul" secondAttribute="trailing" id="MF6-eF-WPj"/>
                             <constraint firstItem="CpG-fZ-tul" firstAttribute="top" secondItem="FN7-PT-5Ue" secondAttribute="bottom" constant="50" id="S9N-F6-eGe"/>
                             <constraint firstAttribute="trailing" secondItem="FN7-PT-5Ue" secondAttribute="trailing" id="SRC-lu-kMQ"/>
-                            <constraint firstItem="K8X-2B-obB" firstAttribute="topMargin" secondItem="26" secondAttribute="top" id="VHM-2r-fy3" constant="15"/>
+                            <constraint firstItem="K8X-2B-obB" firstAttribute="topMargin" secondItem="26" secondAttribute="top" id="VHM-2r-fy3" constant="12"/>
                             <constraint firstItem="FN7-PT-5Ue" firstAttribute="top" secondItem="26" secondAttribute="bottom" id="hfv-b0-mGj"/>
                             <constraint firstItem="CpG-fZ-tul" firstAttribute="leading" secondItem="41" secondAttribute="leading" id="mTP-Do-YWv"/>
                             <constraint firstItem="CpG-fZ-tul" firstAttribute="centerY" secondItem="KTV-02-L1y" secondAttribute="centerY" id="pl6-EJ-Anr"/>

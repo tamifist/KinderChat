@@ -78,7 +78,7 @@
     <MtouchArch>ARMv7, ARM64</MtouchArch>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <BuildIpa>True</BuildIpa>
-    <CodesignProvision>Automatic:AdHoc</CodesignProvision>
+    <CodesignProvision>72cd0245-c2fe-4298-977f-46006ec4bcee</CodesignProvision>
     <CodesignKey>iPhone Distribution</CodesignKey>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
@@ -180,6 +180,7 @@
     <None Include="Resources\Images.xcassets\sendTextIcon.imageset\sendTextIcon%403.png" />
     <None Include="Resources\Images.xcassets\sendTextIcon.imageset\sendTextIcon%402.png" />
     <Compile Include="Conversation\SendButton.cs" />
+    <Compile Include="Reachability.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main\TabOrder.cs" />

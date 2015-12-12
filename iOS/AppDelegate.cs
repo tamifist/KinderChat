@@ -49,9 +49,19 @@ namespace KinderChat.iOS
 			window.RootViewController = InitStartViewController ();
 			window.MakeKeyAndVisible ();
 
-		    App.ConnectionManager.TryKeepConnectionAsync();
+			App.ConnectionManager.TryKeepConnectionAsync();
+
+//			Reachability.InternetConnectionStatus (); 
+//			Reachability.LocalWifiConnectionStatus ();
+//			Reachability.RemoteHostStatus ();
+//			Reachability.ReachabilityChanged += ReachabilityChanged;
 
 			return false;
+		}
+
+		static async void ReachabilityChanged(object sender, EventArgs e)
+		{
+			await App.ConnectionManager.TryKeepConnectionAsync();
 		}
 
 		void SetupAppearance ()

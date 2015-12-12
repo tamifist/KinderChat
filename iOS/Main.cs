@@ -19,7 +19,7 @@ namespace KinderChat.iOS
             catch (Exception ex)
             {
                 App.Logger.Report(ex);
-                throw;
+                //throw;
             }
         }
 	}
