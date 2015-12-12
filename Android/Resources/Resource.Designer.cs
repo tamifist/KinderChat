@@ -3249,17 +3249,11 @@ namespace KinderChat
 			// aapt resource value: 0x7f09011e
 			public const int MyTheme = 2131296542;
 			
-			// aapt resource value: 0x7f090122
-			public const int MyTheme_ActionBar = 2131296546;
-			
 			// aapt resource value: 0x7f090121
 			public const int MyTheme_Base = 2131296545;
 			
 			// aapt resource value: 0x7f090120
 			public const int MyTheme_Base_Red = 2131296544;
-			
-			// aapt resource value: 0x7f090123
-			public const int MyTheme_Toolbar_Title = 2131296547;
 			
 			// aapt resource value: 0x7f09011f
 			public const int MyThemeRed = 2131296543;

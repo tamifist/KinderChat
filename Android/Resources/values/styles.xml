@@ -11,7 +11,7 @@
   </style>
 
    <!-- Base theme applied no matter what API -->
-  <style name="MyTheme.Base.Red" parent="Theme.AppCompat.Light">
+  <style name="MyTheme.Base.Red" parent="@style/Theme.AppCompat.Light.NoActionBar">
     <item name="windowNoTitle">true</item>
     <!--We will be using the toolbar so no need to show ActionBar-->
     <item name="windowActionBar">false</item>
@@ -26,14 +26,13 @@
     <item name="colorAccent">@color/primaryBlack</item>
     
     <!-- Option to hide the drop shadow here-->
-    
-      <item name="actionBarStyle">@style/MyTheme.ActionBar</item>
+
       <item name="android:windowContentOverlay">@null</item>
     
   </style>
 
   <!-- Base theme applied no matter what API -->
-  <style name="MyTheme.Base" parent="Theme.AppCompat.Light">
+  <style name="MyTheme.Base" parent="@style/Theme.AppCompat.Light.NoActionBar">
     <item name="windowNoTitle">true</item>
     <!--We will be using the toolbar so no need to show ActionBar-->
     <item name="windowActionBar">false</item>
@@ -48,20 +47,9 @@
     <item name="colorAccent">@color/primaryBlack</item>
     
     <!-- Option to hide the drop shadow here-->
-    
-      <item name="actionBarStyle">@style/MyTheme.ActionBar</item>
+
       <item name="android:windowContentOverlay">@null</item>
     
   </style>
 
-  <style name="MyTheme.ActionBar" parent="style/Widget.AppCompat.Light.ActionBar.Solid">
-    <!-- remove shadow below action bar -->
-    <!-- <item name="android:elevation">0dp</item> -->
-    <!-- Support library compatibility -->
-    <item name="elevation">0dp</item>
-  </style>
-
-  <style name="MyTheme.Toolbar.Title" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
-    <item name="android:textColor">@android:color/white</item>
-  </style>
 </resources>
