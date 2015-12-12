@@ -470,7 +470,9 @@ namespace KinderChat
 			global::com.refractored.Resource.Dimension.abc_text_size_title_material = global::KinderChat.Resource.Dimension.abc_text_size_title_material;
 			global::com.refractored.Resource.Dimension.abc_text_size_title_material_toolbar = global::KinderChat.Resource.Dimension.abc_text_size_title_material_toolbar;
 
-
+			global::com.refractored.Resource.Dimension.disabled_alpha_material_dark = global::KinderChat.Resource.Dimension.disabled_alpha_material_dark;
+			global::com.refractored.Resource.Dimension.disabled_alpha_material_light = global::KinderChat.Resource.Dimension.disabled_alpha_material_light;
+			global::com.refractored.Resource.Dimension.highlight_alpha_material_colored = global::KinderChat.Resource.Dimension.highlight_alpha_material_colored;
 			global::com.refractored.Resource.Dimension.highlight_alpha_material_dark = global::KinderChat.Resource.Dimension.highlight_alpha_material_dark;
 			global::com.refractored.Resource.Dimension.highlight_alpha_material_light = global::KinderChat.Resource.Dimension.highlight_alpha_material_light;
 			global::com.refractored.Resource.Dimension.notification_large_icon_height = global::KinderChat.Resource.Dimension.notification_large_icon_height;
@@ -847,7 +849,7 @@ namespace KinderChat
 			global::com.refractored.Resource.Style.Platform_Widget_AppCompat_Spinner = global::KinderChat.Resource.Style.Platform_Widget_AppCompat_Spinner;
 			global::com.refractored.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat = global::KinderChat.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat;
 			global::com.refractored.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem = global::KinderChat.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem;
-		
+
 			global::com.refractored.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon = global::KinderChat.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon;
 			global::com.refractored.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem = global::KinderChat.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem;
 			global::com.refractored.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup = global::KinderChat.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup;

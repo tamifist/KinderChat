@@ -28,10 +28,6 @@ namespace KinderChat
                 SupportActionBar.SetHomeButtonEnabled(true);
             }
 
-            ServiceContainer.Register<IUIThreadDispacher>(() => new UIThreadDispacher());
-            ServiceContainer.Register<ILiveConnection>(() => new WebSocketConnection());
-			App.Init ();
-
 			//don't need to do this every time unless testing
 			if (Settings.IsLoggedIn && !App.ForceSignup) {
 				StartActivity (typeof(MainActivity));

@@ -3,6 +3,7 @@ using Android.App;
 using Android.OS;
 using System.IO;
 using Plugin.CurrentActivity;
+using KinderChat.Infrastructure;
 
 using Environment = System.Environment;
 
@@ -31,6 +32,10 @@ namespace KinderChat
 			var library = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
 			dbLocation = Path.Combine(library, dbLocation);
 			KinderDatabase.DatabaseLocation = dbLocation;
+
+			ServiceContainer.Register<IUIThreadDispacher>(() => new UIThreadDispacher());
+			ServiceContainer.Register<ILiveConnection>(() => new WebSocketConnection());
+			App.Init ();
 		}
 
 		public override void OnTerminate()

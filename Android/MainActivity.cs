@@ -47,9 +47,9 @@ namespace KinderChat
                 pager.CurrentItem = 0;
             }
 
-            IntentFilter connectivityIntentFilter = new IntentFilter();
-            connectivityIntentFilter.AddAction(Android.Net.ConnectivityManager.ConnectivityAction);
-            RegisterReceiver(new NetworkChangeReceiver(), connectivityIntentFilter);
+            //IntentFilter connectivityIntentFilter = new IntentFilter();
+            //connectivityIntentFilter.AddAction(Android.Net.ConnectivityManager.ConnectivityAction);
+            //RegisterReceiver(new NetworkChangeReceiver(), connectivityIntentFilter);
 
             // Register for GCM
             KinderGcmService.Register(this);

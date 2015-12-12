@@ -6,6 +6,7 @@ using KinderChat.ServerClient;
 using KinderChat.ServerClient.Entities;
 using KinderChat.ServerClient.Ws.Proxy;
 using KinderChat.Services.Messages;
+using Plugin.Connectivity;
 
 namespace KinderChat
 {
@@ -40,6 +41,17 @@ namespace KinderChat
 
             ServiceContainer.Register<TypingService>(() => new TypingService(ServiceContainer.Resolve<MessagingService>()));
 
+			CrossConnectivity.Current.ConnectivityChanged += (sender, args) =>
+			{
+				if(CrossConnectivity.Current.IsConnected)
+				{
+					App.ConnectionManager.HandleResume();
+				}
+				else
+				{
+					App.ConnectionManager.HandlePause();
+				}
+			};
 		}
 
 		public static void Logout()
