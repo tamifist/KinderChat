@@ -65,7 +65,7 @@ namespace KinderChat.ServerClient.Ws.Proxy
                     onPause = true;
                     ForceClose();
                 }
-                catch (OperationCanceledException) { }
+                catch (OperationCanceledException ex) { }
             }
         }
 

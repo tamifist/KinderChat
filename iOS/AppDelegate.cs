@@ -163,10 +163,14 @@ namespace KinderChat.iOS
 
 		public override void DidEnterBackground (UIApplication application)
 		{
+			Settings.InForeground = false;
+			App.ConnectionManager.HandlePause();
 		}
 
 		public override void WillEnterForeground (UIApplication application)
 		{
+			Settings.InForeground = true;
+			App.ConnectionManager.HandleResume ();
 		}
 
 		public override void WillTerminate (UIApplication application)
