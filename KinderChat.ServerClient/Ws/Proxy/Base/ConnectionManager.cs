@@ -12,8 +12,8 @@ namespace KinderChat.ServerClient.Ws.Proxy
     {
         private readonly ILiveConnection connection;
         private readonly ICredentialsProvider credentialsProvider;
-        private readonly TimeSpan reconnectInterval = TimeSpan.FromSeconds(50);
-        private readonly TimeSpan closeConnectionOnPauseInterval = TimeSpan.FromSeconds(100);
+        private readonly TimeSpan reconnectInterval = TimeSpan.FromSeconds(5);
+        private readonly TimeSpan closeConnectionOnPauseInterval = TimeSpan.FromSeconds(10);
         private readonly Dictionary<long, TaskCompletionSource<BaseResponse>> requestsTasks = new Dictionary<long, TaskCompletionSource<BaseResponse>>();
         private CancellationTokenSource pauseCancellationTokenSource = new CancellationTokenSource();
         private Task<bool> connectionTask;

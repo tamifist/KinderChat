@@ -45,11 +45,11 @@ namespace KinderChat
 			{
 				if(CrossConnectivity.Current.IsConnected)
 				{
-					App.ConnectionManager.HandleResume();
+					App.ConnectionManager.TryKeepConnectionAsync();
 				}
 				else
 				{
-					App.ConnectionManager.HandlePause();
+					App.ConnectionManager.ForceClose();
 				}
 			};
 		}
