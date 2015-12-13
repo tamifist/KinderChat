@@ -23,6 +23,7 @@ namespace KinderChat
             var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             if (toolbar != null)
             {
+				toolbar.SetBackgroundResource (Settings.AppTheme == AppTheme.Red ? Resource.Drawable.red_gradient : Resource.Drawable.blue_gradient);
                 SetSupportActionBar(toolbar);
                 SupportActionBar.SetDisplayHomeAsUpEnabled(true);
                 SupportActionBar.SetHomeButtonEnabled(true);

@@ -10,7 +10,6 @@
         android:id="@+id/tabs"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:background="?attr/gradientAccent"
         local:pstsPaddingMiddle="false"
         local:pstsShouldExpand="true"
         android:textColor="@color/unselected_tab"

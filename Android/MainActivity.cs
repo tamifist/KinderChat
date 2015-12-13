@@ -30,6 +30,7 @@ namespace KinderChat
             adapter = new MyPagerAdapter(this, SupportFragmentManager);
             pager = FindViewById<ViewPager>(Resource.Id.pager);
             tabs = FindViewById<PagerSlidingTabStrip>(Resource.Id.tabs);
+			tabs.SetBackgroundResource (Settings.AppTheme == AppTheme.Red ? Resource.Drawable.red_gradient : Resource.Drawable.blue_gradient);
             pager.Adapter = adapter;
             tabs.SetViewPager(pager);
             tabs.OnPageChangeListener = this;
