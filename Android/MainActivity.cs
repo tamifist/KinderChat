@@ -54,7 +54,7 @@ namespace KinderChat
             // Register for GCM
             KinderGcmService.Register(this);
 
-			App.ConnectionManager.TryKeepConnectionAsync();
+			App.ConnectionManager.TryKeepConnectionAsync ();
         }
 
 	    public void OnPageScrollStateChanged (int state)
