@@ -49,36 +49,64 @@ namespace KinderChat.iOS
 		public override NSAttributedString GetMessageBubbleTopLabelAttributedText (MessagesCollectionView collectionView, NSIndexPath indexPath)
 		{
 			var timestampAttributes = new UIStringAttributes { 
-				ForegroundColor = UIColor.Red,
-				BackgroundColor = UIColor.Gray,
+				ForegroundColor = Theme.Current.IncomingTextColor,
+				BackgroundColor = UIColor.White,
 				Font = Theme.Current.MessageFont
 			};
-			var message = viewModel.Messages [indexPath.Row];
-			var timestamp = new NSAttributedString (message.Timestamp.ToString("ddd, MMM d, hh:mm tt"), timestampAttributes);
+			MessageViewModel message = viewModel.Messages [indexPath.Row];
+			var timestamp = new NSAttributedString (message.Timestamp.ToString("MMM d, hh:mm tt"), timestampAttributes);
 
 			return timestamp;
 		}
 
 		public override NSAttributedString GetCellBottomLabelAttributedText (MessagesCollectionView collectionView, NSIndexPath indexPath)
 		{
-			var timestampAttributes = new UIStringAttributes { 
-				ForegroundColor = UIColor.Red,
-				BackgroundColor = UIColor.Gray,
-				Font = Theme.Current.MessageFont
-			};
-			var timestamp = new NSAttributedString ("Delivered", timestampAttributes);
+			MessageViewModel message = viewModel.Messages [indexPath.Row];
+			if (!message.IsIncoming) 
+			{
+				var messageStatusAttributes = new UIStringAttributes { 
+					ForegroundColor = Theme.Current.IncomingTextColor,
+					BackgroundColor = UIColor.White,
+					Font = Theme.Current.MessageFont
+				};
+				var messageStatus = new NSAttributedString (GetMessageStatus(message), messageStatusAttributes);
 
-			return timestamp;
+				return messageStatus;
+			}
+
+			return null;
+		}
+
+		private string GetMessageStatus(MessageViewModel message)
+		{
+			string msgStatus = "";
+			switch (message.Status)
+			{
+			case MessageStatus.Unsent:
+				msgStatus = "Sending";
+				break;
+			case MessageStatus.Sent:
+				msgStatus = "Sent";
+				break;
+			case MessageStatus.Delivered:
+				msgStatus = "Delivered";
+				break;
+			case MessageStatus.Seen:
+				msgStatus = "Seen";
+				break;
+			}
+
+			return msgStatus;
 		}
 
 		public override nfloat GetMessageBubbleTopLabelHeight (MessagesCollectionView collectionView, MessagesCollectionViewFlowLayout collectionViewLayout, NSIndexPath indexPath)
 		{
-			return 20;
+			return 20.0f;
 		}
 
 		public override nfloat GetCellBottomLabelHeight (MessagesCollectionView collectionView, MessagesCollectionViewFlowLayout collectionViewLayout, NSIndexPath indexPath)
 		{
-			return 20;
+			return 20.0f;
 		}
 
 		#region Stroke utils
@@ -145,6 +173,9 @@ namespace KinderChat.iOS
 
 			ShowLoadEarlierMessagesHeader = false;
 
+			this.InputToolbar.ContentView.TextView.PlaceHolder = "Type a message here";
+			this.InputToolbar.ContentView.RightBarButtonItem.SetImage (UIImage.FromBundle ("sendTextIcon"), UIControlState.Normal);
+			this.InputToolbar.ContentView.RightBarButtonItem.SetTitle("", UIControlState.Normal);
 			this.InputToolbar.ContentView.LeftBarButtonItem = null;
 			/*NavigationItem.RightBarButtonItem = new UIBarButtonItem (
 				BubbleImageFromBundleWithName ("typing"), UIBarButtonItemStyle.Bordered, ReceiveMessagePressed);*/
@@ -162,7 +193,22 @@ namespace KinderChat.iOS
 
 			viewModel.PropertyChanged += OnPropertyChanged;
 			viewModel.Messages.CollectionChanged += OnMessagesCollectionChanged;
-			viewModel.ExecuteLoadMessagesCommand ();
+			LoadMessages ();
+		}
+
+		private async void LoadMessages() 
+		{
+			await viewModel.ExecuteLoadMessagesCommand ();
+			foreach (MessageViewModel message in viewModel.Messages) {
+				if (!message.IsIncoming) 
+				{
+					message.PropertyChanged += (object s, PropertyChangedEventArgs propertyChangedEventArgs) => {
+						DispatchQueue.MainQueue.DispatchAsync (() => {
+							CollectionView.ReloadData();
+						});
+					}; 
+				}
+			}
 		}
 
 		public override void ViewWillDisappear(bool animated)
@@ -183,12 +229,17 @@ namespace KinderChat.iOS
 				DispatchQueue.MainQueue.DispatchAsync (() => { 
 					var msg = viewModel.Messages [e.NewStartingIndex];
 					if (msg.IsIncoming) {
-							SystemSoundPlayer.PlayMessageReceivedSound ();
+							//SystemSoundPlayer.PlayMessageReceivedSound ();
 							FinishReceivingMessage (true);
 
 					} else {
 						
-							SystemSoundPlayer.PlayMessageSentSound ();
+							//SystemSoundPlayer.PlayMessageSentSound ();
+						msg.PropertyChanged += (object s, PropertyChangedEventArgs propertyChangedEventArgs) => {
+							DispatchQueue.MainQueue.DispatchAsync (() => {
+								CollectionView.ReloadData();
+							});
+						}; 
 							FinishSendingMessage (true);
 						}
 
@@ -199,6 +250,11 @@ namespace KinderChat.iOS
 				CollectionView.ReloadData();
 				ScrollToBottom (false);
 			});
+		}
+
+		void HandleStatusChanged(Message message, int index) 
+		{
+			
 		}
 
 		void OnPropertyChanged (object sender, PropertyChangedEventArgs e)
@@ -221,7 +277,7 @@ namespace KinderChat.iOS
 
 		public override async void PressedSendButton (UIButton button, string text, string senderId, string senderDisplayName, NSDate date)
 		{
-			SystemSoundPlayer.PlayMessageSentSound ();
+			//SystemSoundPlayer.PlayMessageSentSound ();
 			await viewModel.SendMessage(text);
 		}
 
