@@ -164,6 +164,8 @@ namespace KinderChat
         {
             get { return ServiceContainer.Resolve<IMessageRepository>(); }
         }
+
+		public static INotificationsHub NotificationsHub { get; set; }
 	}
 
     public class SettingsToCredentialsProviderAdapter : ICredentialsProvider

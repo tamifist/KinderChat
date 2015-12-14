@@ -218,11 +218,7 @@ namespace KinderChat
 						Settings.MyId = user.Id;
 						Settings.Avatar = user.Avatar.Location;
 
-						#pragma warning disable 4014
-						// This is like "fire and forget" we are not interested in result
-						// also we are not interested in possible exceptions
-						//ServiceContainer.Resolve<ConnectionManager> ().TryKeepConnectionAsync (); //we don't need to await it
-						#pragma warning disable restore
+						App.NotificationsHub.RegisterForPushNotifications();
 
 						App.Logger.Track ("PickTheme", new Dictionary<string, string> {
 							{ "nickname", Settings.NickName },

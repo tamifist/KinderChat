@@ -3,11 +3,13 @@ using Foundation;
 using UIKit;
 using System.IO;
 using System.Linq;
+using KinderChat.ServerClient.Managers;
+using KinderChat.ServerClient.Interfaces;
 
 namespace KinderChat.iOS
 {
 	[Register ("AppDelegate")]
-	public partial class AppDelegate : UIApplicationDelegate
+	public partial class AppDelegate : UIApplicationDelegate, INotificationsHub
 	{
 		const string StartViewControllerId = "StartViewControllerId";
 		const string SignUpViewControllerId = "SignUpViewControllerId";
@@ -51,7 +53,97 @@ namespace KinderChat.iOS
 
 			App.ConnectionManager.TryKeepConnectionAsync();
 
+			App.NotificationsHub = this;
+			RegisterForPushNotifications ();
+
 			return false;
+		}
+
+		public void RegisterForPushNotifications() 
+		{
+			if (UIDevice.CurrentDevice.CheckSystemVersion (8, 0)) {
+				var pushSettings = UIUserNotificationSettings.GetSettingsForTypes (
+					UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound,
+					new NSSet ());
+
+				UIApplication.SharedApplication.RegisterUserNotificationSettings (pushSettings);
+				UIApplication.SharedApplication.RegisterForRemoteNotifications ();
+			} else {
+				UIRemoteNotificationType notificationTypes = UIRemoteNotificationType.Alert | UIRemoteNotificationType.Badge | UIRemoteNotificationType.Sound;
+				UIApplication.SharedApplication.RegisterForRemoteNotificationTypes (notificationTypes);
+			}
+
+			UIApplication.SharedApplication.ApplicationIconBadgeNumber = 0;
+		}
+
+		public async override void RegisteredForRemoteNotifications(UIApplication application, NSData deviceToken)
+		{
+			if(string.IsNullOrWhiteSpace(Settings.UserDeviceId)) 
+			{
+				return;
+			}
+				
+			var registrationId = deviceToken.Description;
+			if (!string.IsNullOrWhiteSpace(registrationId)) {
+				registrationId = registrationId.Trim('<').Trim('>').Replace(" ", "");
+			}
+			if(Settings.NotificationRegId != registrationId)
+			{
+				Settings.NotificationRegId = registrationId;
+				try 
+				{
+					var manager = new DeviceRegistrationManager();
+					await manager.RegisterAsync(Settings.NotificationRegId, new string[] { "username:" + Settings.UserDeviceId }, PlatformType.iOS, null);
+				} 
+				catch(Exception ex) {
+					App.Logger.Report(ex);
+				}
+			}
+		}
+
+		public override void ReceivedRemoteNotification(UIApplication application, NSDictionary userInfo)
+		{
+			UIApplication.SharedApplication.ApplicationIconBadgeNumber = 0;
+			//ProcessNotification(userInfo, false);
+		}
+
+		public override void FailedToRegisterForRemoteNotifications (UIApplication application, NSError error)
+		{
+			var test = error;
+		}
+
+		void ProcessNotification(NSDictionary options, bool fromFinishedLaunching)
+		{
+			// Check to see if the dictionary has the aps key.  This is the notification payload you would have sent
+			if (null != options && options.ContainsKey(new NSString("aps")))
+			{
+				//Get the aps dictionary
+				NSDictionary aps = options.ObjectForKey(new NSString("aps")) as NSDictionary;
+
+				string alert = string.Empty;
+
+				//Extract the alert text
+				// NOTE: If you're using the simple alert by just specifying
+				// "  aps:{alert:"alert msg here"}  ", this will work fine.
+				// But if you're using a complex alert with Localization keys, etc.,
+				// your "alert" object from the aps dictionary will be another NSDictionary.
+				// Basically the JSON gets dumped right into a NSDictionary,
+				// so keep that in mind.
+				if (aps.ContainsKey(new NSString("alert")))
+					alert = (aps [new NSString("alert")] as NSString).ToString();
+
+				//If this came from the ReceivedRemoteNotification while the app was running,
+				// we of course need to manually process things like the sound, badge, and alert.
+				if (!fromFinishedLaunching)
+				{
+					//Manually show an alert
+					if (!string.IsNullOrEmpty(alert))
+					{
+						UIAlertView avAlert = new UIAlertView("Notification", alert, null, "OK", null);
+						avAlert.Show();
+					}
+				}
+			}
 		}
 
 		void SetupAppearance ()
@@ -170,6 +262,7 @@ namespace KinderChat.iOS
 		public override void WillEnterForeground (UIApplication application)
 		{
 			Settings.InForeground = true;
+			UIApplication.SharedApplication.ApplicationIconBadgeNumber = 0;
 			App.ConnectionManager.HandleResume ();
 		}
 

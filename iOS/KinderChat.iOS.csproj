@@ -56,6 +56,7 @@
     <IpaPackageName>
     </IpaPackageName>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <CodesignProvision>11fe0ce6-1cce-4fe1-b530-91eaaf9c0b49</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>

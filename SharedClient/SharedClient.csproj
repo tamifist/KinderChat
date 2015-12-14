@@ -95,6 +95,7 @@
     <Compile Include="Common\ListExtension.cs" />
     <Compile Include="Services\Messages\EventArgs\MessageStatusEventArgs.cs" />
     <Compile Include="Services\Messages\EventArgs\MessageEventArgs.cs" />
+    <Compile Include="Common\INotificationsHub.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Refractored.Xam.Settings">
