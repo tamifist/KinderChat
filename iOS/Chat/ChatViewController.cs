@@ -16,7 +16,8 @@ using KinderChat.ViewModels.Messages;
 
 namespace KinderChat.iOS
 {
-	[Register("ChatViewController")]
+	//[Register("ChatViewController")]
+	[Register ("ConversationViewController")]
 	public class ChatViewController : MessagesViewController
 	{
 		IMessageBubbleImageDataSource incomingBubbleImageData;
@@ -43,6 +44,41 @@ namespace KinderChat.iOS
 			incomingBubbleImageData = new MessagesBubbleImage (img,	highlighedImg);
 
 			HidesBottomBarWhenPushed = true;
+		}
+
+		public override NSAttributedString GetMessageBubbleTopLabelAttributedText (MessagesCollectionView collectionView, NSIndexPath indexPath)
+		{
+			var timestampAttributes = new UIStringAttributes { 
+				ForegroundColor = UIColor.Red,
+				BackgroundColor = UIColor.Gray,
+				Font = Theme.Current.MessageFont
+			};
+			var message = viewModel.Messages [indexPath.Row];
+			var timestamp = new NSAttributedString (message.Timestamp.ToString("ddd, MMM d, hh:mm tt"), timestampAttributes);
+
+			return timestamp;
+		}
+
+		public override NSAttributedString GetCellBottomLabelAttributedText (MessagesCollectionView collectionView, NSIndexPath indexPath)
+		{
+			var timestampAttributes = new UIStringAttributes { 
+				ForegroundColor = UIColor.Red,
+				BackgroundColor = UIColor.Gray,
+				Font = Theme.Current.MessageFont
+			};
+			var timestamp = new NSAttributedString ("Delivered", timestampAttributes);
+
+			return timestamp;
+		}
+
+		public override nfloat GetMessageBubbleTopLabelHeight (MessagesCollectionView collectionView, MessagesCollectionViewFlowLayout collectionViewLayout, NSIndexPath indexPath)
+		{
+			return 20;
+		}
+
+		public override nfloat GetCellBottomLabelHeight (MessagesCollectionView collectionView, MessagesCollectionViewFlowLayout collectionViewLayout, NSIndexPath indexPath)
+		{
+			return 20;
 		}
 
 		#region Stroke utils
@@ -97,6 +133,8 @@ namespace KinderChat.iOS
 			SenderId = Settings.MyId.ToString();
 			SenderDisplayName = Settings.NickName;
 
+			this.CollectionView.CollectionViewLayout.SpringinessEnabled = false;
+
 			/**
 		     *  Load up our fake data for the demo
 		     */
@@ -107,10 +145,15 @@ namespace KinderChat.iOS
 
 			ShowLoadEarlierMessagesHeader = false;
 
-
 			this.InputToolbar.ContentView.LeftBarButtonItem = null;
 			/*NavigationItem.RightBarButtonItem = new UIBarButtonItem (
 				BubbleImageFromBundleWithName ("typing"), UIBarButtonItemStyle.Bordered, ReceiveMessagePressed);*/
+		}
+
+		public override void Changed (UITextView textView)
+		{
+			base.Changed (textView);
+			viewModel.HandleTyping(textView.Text);
 		}
 
 		public override void ViewWillAppear (bool animated)
@@ -168,6 +211,10 @@ namespace KinderChat.iOS
 							Title = viewModel.Friend.Name;
 					}
 					break;
+				case ConversationViewModel.IsTypingPropertyName:
+					ShowTypingIndicator = viewModel.IsTyping;
+					ScrollToBottom(false);
+					break;
 				}
 			});
 		}
@@ -224,7 +271,7 @@ namespace KinderChat.iOS
 				senderName = string.Empty;
 
 			NSDate msgDate = (NSDate)(new DateTime (msg.Timestamp.Ticks, DateTimeKind.Utc));
-			IMessageData result = new JSQMessagesViewController.Message (senderId, senderName, msgDate, msgAsImage != null ? "Image message" : msgAsText.Text);
+			var result = new JSQMessagesViewController.Message (senderId, senderName, msgDate, msgAsImage != null ? "Image message" : msgAsText.Text);
 			return result;
 		}
 

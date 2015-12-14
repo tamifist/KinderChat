@@ -244,7 +244,8 @@ namespace KinderChat.iOS
 		public override void PrepareForSegue (UIStoryboardSegue segue, NSObject sender)
 		{
 			if (segue.Identifier == ConverstationSegueId) {
-				((ConversationViewController)segue.DestinationViewController).RecipientId = friendId;
+				var chatViewController = segue.DestinationViewController as ChatViewController;
+				chatViewController.RecipientId = friendId;
 			} else {
 				base.PrepareForSegue (segue, sender);
 			}

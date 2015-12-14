@@ -58,7 +58,7 @@ namespace KinderChat.ServerClient
             }
             catch (Exception ex)
             {
-                throw new WebException("Kinder Chat API Error: Service error", ex);
+                throw new WebException("Inner 6 Chat API Error: Service error", ex);
             }
         }
 
@@ -85,7 +85,7 @@ namespace KinderChat.ServerClient
                 var response = await httpClient.GetAsync(uri);
                 if (response.StatusCode == HttpStatusCode.NotFound)
                 {
-                    throw new WebException("Kinder Chat API Error: Service not found.");
+                    throw new WebException("Inner 6 Chat API Error: Service not found.");
                 }
                 var responseContent = await response.Content.ReadAsStringAsync();
                 return string.IsNullOrEmpty(responseContent) ? new Result(response.IsSuccessStatusCode, string.Empty) : new Result(response.IsSuccessStatusCode, responseContent);
@@ -93,7 +93,7 @@ namespace KinderChat.ServerClient
             catch (Exception ex)
             {
 
-                throw new WebException("Kinder Chat API Error: Service error", ex);
+				throw new WebException("Inner 6 Chat API Error: Service error", ex);
             }
         }
     }

@@ -14,7 +14,7 @@ using KinderChat.ViewModels.Messages;
 
 namespace KinderChat.iOS
 {
-	[Register ("ConversationViewController")]
+	//[Register ("ConversationViewController")]
 	public class ConversationViewController : UIViewController
 	{
 		NSObject willShowToken;
