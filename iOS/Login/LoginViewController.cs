@@ -71,21 +71,21 @@ namespace KinderChat.iOS
 
 			#region Theme switcher
 
-			BoyButton.SetTitle("Blue", UIControlState.Normal);
-			GirlButton.SetTitle("Red", UIControlState.Normal);
+			BoyButton.SetTitle("Red", UIControlState.Normal);
+			GirlButton.SetTitle("Blue", UIControlState.Normal);
 
-			BoyButton.TouchUpInside += BlueThemeSelected;
-			GirlButton.TouchUpInside += GirlThemeSelected;
+			BoyButton.TouchUpInside += RedThemeSelected;
+			GirlButton.TouchUpInside += BlueThemeSelected;
 
 			ThemeSelectorContainerView.BackgroundColor = Theme.Current.BackgroundColor;
 
 			SausageButtons.SetUp (BoyButton);
-			SausageButtons.ApplyTheme(AppDelegate.BlueTheme, BoyButton);
-			SausageButtons.UpdateBackgoundColor(AppDelegate.BlueTheme, BoyButton);
+			SausageButtons.ApplyTheme(AppDelegate.RedTheme, BoyButton);
+			SausageButtons.UpdateBackgoundColor(AppDelegate.RedTheme, BoyButton);
 
 			SausageButtons.SetUp (GirlButton);
-			SausageButtons.ApplyTheme(AppDelegate.RedTheme, GirlButton);
-			SausageButtons.UpdateBackgoundColor(AppDelegate.RedTheme, GirlButton);
+			SausageButtons.ApplyTheme(AppDelegate.BlueTheme, GirlButton);
+			SausageButtons.UpdateBackgoundColor(AppDelegate.BlueTheme, GirlButton);
 			#endregion
 
 			UpdateText ();
@@ -341,7 +341,7 @@ namespace KinderChat.iOS
 			SetTheme (AppTheme.Blue, AppDelegate.BlueTheme);
 		}
 
-		void GirlThemeSelected (object sender, EventArgs e)
+		void RedThemeSelected (object sender, EventArgs e)
 		{
 			SetTheme (AppTheme.Red, AppDelegate.RedTheme);
 		}

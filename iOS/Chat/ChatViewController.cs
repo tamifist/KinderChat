@@ -32,9 +32,6 @@ namespace KinderChat.iOS
 		{
 			var bubbleFactory = new MessagesBubbleImageFactory ();
 
-			incomingBubbleImageData = bubbleFactory.CreateIncomingMessagesBubbleImage (Theme.Current.BackgroundColor);
-			outgoingBubbleImageData = bubbleFactory.CreateOutgoingMessagesBubbleImage (Theme.Current.OutgoingBubbleColor);
-
 			var border = UIImage.FromBundle ("bubble_stroked");
 			var bubble = UIImage.FromBundle ("bubble_regular");
 
@@ -42,6 +39,8 @@ namespace KinderChat.iOS
 			var img = CreateBubbleWithBorder (bubble, Theme.Current.BackgroundColor, border, Theme.Current.IncomingBubbleStroke);
 			var highlighedImg = bubbleSrc.MessageBubbleHighlightedImage;
 			incomingBubbleImageData = new MessagesBubbleImage (img,	highlighedImg);
+
+			outgoingBubbleImageData = bubbleFactory.CreateOutgoingMessagesBubbleImage (Theme.Current.OutgoingBubbleColor);
 
 			HidesBottomBarWhenPushed = true;
 		}
