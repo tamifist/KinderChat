@@ -849,7 +849,7 @@ namespace KinderChat
 			global::com.refractored.Resource.Style.Platform_Widget_AppCompat_Spinner = global::KinderChat.Resource.Style.Platform_Widget_AppCompat_Spinner;
 			global::com.refractored.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat = global::KinderChat.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat;
 			global::com.refractored.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem = global::KinderChat.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem;
-		
+
 			global::com.refractored.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon = global::KinderChat.Resource.Style.RtlOverlay_Widget_AppCompat_DialogTitle_Icon;
 			global::com.refractored.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem = global::KinderChat.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem;
 			global::com.refractored.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup = global::KinderChat.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_InternalGroup;
@@ -3207,8 +3207,8 @@ namespace KinderChat
 			// aapt resource value: 0x7f02007d
 			public const int msg_status_sent = 2130837629;
 			
-			// aapt resource value: 0x7f020083
-			public const int notification_template_icon_bg = 2130837635;
+			// aapt resource value: 0x7f020082
+			public const int notification_template_icon_bg = 2130837634;
 			
 			// aapt resource value: 0x7f02007e
 			public const int psts_background_tab = 2130837630;
@@ -3221,9 +3221,6 @@ namespace KinderChat
 			
 			// aapt resource value: 0x7f020081
 			public const int roundedbgdark = 2130837633;
-			
-			// aapt resource value: 0x7f020082
-			public const int tile_bg = 2130837634;
 			
 			static Drawable()
 			{

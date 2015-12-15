@@ -218,8 +218,11 @@ namespace KinderChat
 						Settings.MyId = user.Id;
 						Settings.Avatar = user.Avatar.Location;
 
-						App.NotificationsHub.RegisterForPushNotifications();
-
+					    if (App.NotificationsHub != null)
+					    {
+                            App.NotificationsHub.RegisterForPushNotifications();
+                        }
+					    
 						App.Logger.Track ("PickTheme", new Dictionary<string, string> {
 							{ "nickname", Settings.NickName },
 							{ "avatar", user.Avatar.Location },

@@ -246,7 +246,6 @@
     <AndroidResource Include="Resources\layout\tab_layout.axml">
       <SubType>AndroidResource</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\drawable\bg_messages.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\strings.xml" />
@@ -284,9 +283,6 @@
     <AndroidResource Include="Resources\drawable-mdpi\ic_profile_save.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\ic_profile_save.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_profile_save.png" />
-    <AndroidResource Include="Resources\drawable\tile_bg.xml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
     <AndroidResource Include="Resources\drawable-hdpi\msg_incoming.9.png" />
     <AndroidResource Include="Resources\drawable-hdpi\msg_outgoing.9.png" />
     <AndroidResource Include="Resources\drawable-mdpi\msg_incoming.9.png" />
@@ -339,6 +335,7 @@
     <AndroidResource Include="Resources\drawable-mdpi\ic_action_edit.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\ic_action_edit.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_action_edit.png" />
+    <AndroidResource Include="Resources\drawable\bg_messages.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="packages\SQLitePCL.raw_basic.0.7.1\build\MonoAndroid\SQLitePCL.raw_basic.targets" Condition="Exists('packages\SQLitePCL.raw_basic.0.7.1\build\MonoAndroid\SQLitePCL.raw_basic.targets')" />

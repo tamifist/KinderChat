@@ -81,7 +81,7 @@ namespace KinderChatServer.Controllers
                     registration = new WindowsTemplateRegistrationDescription(deviceUpdate.Handle, toastTemplate);
                     break;
                 case "apns":
-                    var alertTemplate = "{\"aps\":{\"alert\":\"$(message)\"}}";
+                    var alertTemplate = "{\"aps\":{\"alert\":\"$(message)\",\"badge\":1}}";
                     registration = new AppleTemplateRegistrationDescription(deviceUpdate.Handle, alertTemplate);
                     break;
                 case "gcm":
